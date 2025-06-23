@@ -1,0 +1,179 @@
+\documentclass[12pt,a4paper,twoside,openany]{report}
+%\setcounter{tocdepth}{4}
+%\setcounter{secnumdepth}{4}
+\linespread {1.5}
+\setcounter{secnumdepth}{3}
+
+\addtocontents{toc}{\setcounter{tocdepth}{3}} 
+\usepackage[a4paper,width=150mm,top=35mm,bottom=30mm,bindingoffset=7mm, outer=1.5cm,inner=2.5cm, hratio=1:1]{geometry}
+\addtolength{\footskip}{10pt}
+\usepackage{tcolorbox}
+\usepackage{float}
+\usepackage{enumerate}% http://ctan.org/pkg/enumerate
+
+\usepackage{fancyhdr}
+\pagestyle{fancy} \fancyhf{}
+\renewcommand{\sectionmark}[1]{\markright{\it\thesection~ ~#1}}
+\renewcommand{\chaptermark}[1]{\markboth{\it Chapter \thechapter}{}}
+\fancyhead[RO]{\rightmark} \fancyhead[LE]{\leftmark}
+\renewcommand{\headrulewidth}{1pt}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{dcolumn}   
+\usepackage{times} 
+\usepackage{bm}       
+\usepackage{ifpdf}
+\usepackage{layout}
+\usepackage{titlesec} 
+\usepackage{multirow}
+\usepackage{dsfont}
+\usepackage{booktabs}
+\usepackage{threeparttable}
+%\titleformat{\chapter}
+%{\normalfont\LARGE\bfseries\color{blue}}{\thechapter.}{1em}{}
+\usepackage{wrapfig}
+\usepackage{siunitx}
+\usepackage{amssymb,lineno,amsfonts}
+\usepackage{graphicx}  
+\usepackage{bbm}
+\usepackage{mathrsfs}
+\usepackage{fancyhdr}
+\usepackage{upgreek}
+\usepackage{epstopdf}
+\usepackage{setspace}
+\usepackage[linktocpage=true]{hyperref}
+\usepackage[matrix,frame,arrow]{xypic}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{color} 
+\usepackage{subcaption}
+\usepackage{emptypage}
+\usepackage{pdfpages}
+\usepackage{braket}
+\usepackage{amsmath}
+\usepackage{bbold}
+\usepackage{mathtools}
+\usepackage{blindtext}
+\usepackage{titletoc}
+\usepackage{unicode-math}
+
+
+%\usepackage[small,bf]{caption}
+\makeindex
+\renewcommand*\contentsname{\vspace{-2.5cm} \hspace{12.9cm}\huge{Contents}\\ \HRule \vspace{-2cm}}
+\cfoot{\thepage}
+\pagenumbering{roman}  
+
+\definecolor{med-blue}{RGB}{25,25,112} 
+\hypersetup{colorlinks, linkcolor={blue},citecolor={blue}, urlcolor={blue}}
+
+% \newcommand{\ket}[1]{\vert{#1}\rangle}
+% \newcommand{\bra}[1]{\langle{#1}\vert}
+\newcommand{\outpr}[2]{\vert{#1}\rangle\langle{#2}\vert}
+\newcommand{\inpr}[2]{\langle{#1}\vert{#2}\rangle}
+\newcommand{\expv}[1]{\langle{#1}\rangle}
+\newcommand{\mprod}[3]{\langle{#1}\vert{#2}\vert{#3}\rangle}
+\newcommand{\proj}[1]{\outpr{#1}{#1}}
+\newcommand{\expec}[1]{\langle{#1}\rangle}
+\newcommand{\abs}[1]{\vert{#1}\vert}
+\newcommand{\norm}[1]{\vert{#1}\vert^2}
+\newcommand{\tr}{\mathrm{Tr}}
+\newcommand{\dbydt}{\frac{d}{dt}}
+\newcommand{\tabhead}[1]{\textbf{#1}}
+\newcommand{\rothead}[1]{\rotatebox{45}{\tabhead{#1}}}
+\usepackage{afterpage}
+\usepackage{geometry}
+\newenvironment{changemargin}[3]{%
+	\begin{list}{}{%
+			\setlength{\topsep}{0pt}%
+			\setlength{\topmargin}{#1}%
+			\setlength{\leftmargin}{#2}%
+			\setlength{\rightmargin}{#3}%
+			\setlength{\listparindent}{\parindent}%
+			\setlength{\itemindent}{\parindent}%
+			\setlength{\parsep}{\parskip}%
+		}%
+		\item[]}{\end{list}}
+	\newcommand{\HRule}{\vspace{0.2cm}\rule[20pt]{\linewidth}{0.50mm}}
+
+\begin{document}
+
+\include{cover}
+
+\linespread {1}
+\cleardoublepage
+\tableofcontents
+\cleardoublepage
+\titlespacing*{\chapter}{0pt}{-20pt}{20pt}
+
+\titleformat{\chapter}[display]
+{\bfseries\Large}
+{\filright\MakeUppercase{\chaptertitlename} \Large\thechapter}
+{1ex}
+{\vspace{-0.5cm} \HRule \vspace{-0.5cm} \filleft}
+[\HRule]
+\pagestyle{fancy}
+\setcounter{page}{1}
+\pagenumbering{arabic}
+\cleardoublepage
+\input{chapter1}
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\input{chapter2}
+\cleardoublepage 
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\input{chapter3}
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\input{chapter4}
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\input{chapter5}
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\bibliographystyle{unsrt}
+\cleardoublepage \addcontentsline{toc}{chapter}{References}
+\bibliography{References}
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\appendix
+\input{appendixA}
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\input{appendixB}
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\input{appendixC}
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\input{appendixD}
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\input{appendixE}
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\input{appendixF}
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\input{appendixG}
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\input{appendixH}
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\end{document}

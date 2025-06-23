@@ -1,0 +1,718 @@
+
+\chapter{First Detection of Threshold Crossing Events under Intermittent Sensing}
+\label{chap2}
+
+In the previous chapter, we established the motivation for our work and the preliminary setup of our approach. We now shift our focus towards making those ideas more concrete. In this chapter, we will aim to establish a connection between the statistics of the first-passage time and the first detection time of a stochastic process and then leverage it to derive general formulas for computing the statistics of the first detection times. 
+
+\section{Problem Statement}
+
+Our primary objective in this chapter is to extend the standard notion of threshold crossing and first-passage times to include the concept of intermittent sensing by an independent sensor that stochastically switches between active and inactive states. The central quantity of interest is the first detection time distribution of the threshold crossing event by the sensor. This can be thought of as first detection of an extreme event \cite{kishore_extreme_2011,malik_rare_2020,kumar_extreme_2020} or a general threshold activated process \cite{greben1,bdapprox,dao_duc_threshold_2010,grebenkov_reversible_2022,grebenkov2022first} under intermittent sensing. 
+
+Concretely, we will assume throughout this chapter that the underlying process $X_{x_0}(t)$, initially in state $x_0$, follows Markovian evolution. The case of discrete state space and continuous state space will be treated separately for reasons explained in Sec.~\ref{fail}. In the case of discrete states, we will assume that $X_{x_0}(t)$ can take integer values $x \in \mathbb{Z}$ and transitions take places only between nearest integers, i.e., the only allowed transitions from state $x$ are to states $x+1$ or $x-1$. Similarly, while considering continuous state space, we will assume that the stochastic process $X_{x_0}(t)$ can take real values $x \in \mathbb{R}$, and is continuous. A stochastic sensor intermittently monitors whether the process of interest has crossed the pre-defined threshold $x^*$ or not. A threshold crossing event is detected only if $X_{x_0}(t) \geq x^*$ {\it and} the sensor is active. 
+
+\subsection{Dynamics of the Gate: Explicit Formula for $p_{t}(\sigma|\sigma_0)$} \label{S1}
+
+The sensor is modeled as a two-state continuous-time Markov process that intermittently switches between an active ($A$) state and an inactive ($I$) state. This sensor switches from state $A$ to $I$ at rate $\alpha$, and from $I$ to $A$ at $\beta$. For $\sigma_0, \sigma \in \{A,I\}$, we define  $p_{t}(\sigma|\sigma_0)$ to be the probability that the gate is in state $\sigma$ at time $t$, given that it was in state $\sigma_0$ initially, and let $\pi_A=\beta / \lambda$ and $\pi_I=\alpha / \lambda$ denote the equilibrium occupancy probabilities of states $A$ and $I$ respectively, where $\lambda=\alpha+\beta$ is the relaxation rate to equilibrium. 
+
+To obtain the sensor dynamics propagator $p_{t}(\sigma|\sigma_0)$, we note that $p_{t}(A|A)$ is governed by the following differential equation
+\begin{equation} 
+\frac{d p_{t}(A|A)}{d t} = -\alpha p_{t}(A|A) + \beta \left(1-p_{t}(A|A)\right),
+\end{equation}
+and from normalization we have $p_{t}(I|A)=1-p_{t}(A|A)$. Similarly,
+\begin{equation} 
+\frac{d p_{t}(A|I)}{d t} = -\alpha p_{t}(A|I) + \beta \left(1-p_{t}(A|I)\right),
+\end{equation}
+and $p_{t}(I|I)=1-p_{t}(A|I)$. The solutions for these differential equations are
+\begin{equation} \label{internal_propagator}
+  \begin{array}{ll}
+   p_t(A \mid I) =\pi_{A}(1-e^{-\lambda t}) ,     \\
+   p_t(I \mid I) =\pi_{I}+\pi_{A}e^{-\lambda t}  ,     \\
+   p_t(A \mid A) =\pi_{A}+\pi_{I}e^{-\lambda t},     \\
+   p_t(I \mid A) =\pi_{I}(1-e^{-\lambda t}).  
+  \end{array}
+\end{equation}
+It is evident that in the long time limit, these probabilities tend to the corresponding equilibrium occupancy probabilities, \emph{i.e.,} $\lim_{t\to \infty} p_t(A|A) = \lim_{t\to \infty} p_t(A|I) = \pi_A$ and $\lim_{t\to \infty} p_t(I|A) = \lim_{t\to \infty} p_t(I|I) = \pi_I$.
+
+It is important to note that $\sigma_0$ need not only be either $A$ or $I$, but can also be a mixture, where it is initially in state $A$ with some probability $p_A$ and in $I$ with probability $p_I$. One such practically relevant mixture preparation is the equilibrium initial condition $\sigma_0 = E$ where $p_A = \pi_A$ and $p_I = \pi_I$. This initial condition could especially be important in some cases where the sensor initialization is not possible, e.g. gated chemical reactions. Thus, the most natural initial condition is $\sigma_0 = E$, which is asymptotically reached starting from any other initial condition.
+
+\section{Connecting the First-Passage and First Detection Statistics}
+
+The first step of our analysis consists of decomposing the first detection time density $D_t(x_0,\sigma_0)$ into two parts as follows
+\begin{equation}
+    D_t(x_0,\sigma_0) = F_t(x^*|x_0)p_t(A|\sigma_0) + \int_0^t  F_{t'}(x^*|x_0)p_{t'}(I|\sigma_0) \cdot D_{t-t'}(x^*,I) ~dt'. \label{imp}
+\end{equation}
+The above equation essentially classifies all possible ways in which a detection event can take place at time $t$ in two parts.
+\begin{enumerate}
+    \item The first term on the RHS accounts for all the events when the first-passage occurs at time $t$, and it is immediately detected as the sensor is active.
+    \item The second term on the RHS represents the weight of all events in which the first-passage occurs at some time $t'<t$, but is missed as the sensor is inactive. But then, starting from the new initial condition where the process is at $x^*$ and the sensor is in state $I$, a detection event occurs in time $t-t'$.
+\end{enumerate}
+\begin{figure}
+    \centering
+    \includegraphics*[width=0.9\columnwidth]{fig_chap2/c2_fig_schematic_new.pdf}
+    \caption{(a) An example of a discrete state Markov process -- a birth-death process as the underlying process -- with $6$ states in total, (b) a sensor, modeled as a two-state Markov process, switching between active and inactive states. (c) The composite process with threshold $x^*=4$. The threshold crossing event can be detected in the states marked in yellow.}
+  \label{fig1}
+\end{figure}
+Equation \eqref{imp} forms the backbone of our analysis and holds for both types of processes considered in this thesis -- continuous Markov processes or with discrete states and nearest neighbor transitions. By defining the Laplace transform of a probability density $f(t)$ as
+\begin{equation}
+    \mathcal{L} \{ f(t) \} = \widetilde{f}(s) = \int_0^\infty e^{-st} f(t) ~dt,
+\end{equation}
+we note that the Laplace transform of $D_t(x_0,\sigma_0)$ satisfies
+\begin{equation}
+    \widetilde{D}_s(x_0,\sigma_0) = \mathcal{L} \{ F_t(x^*|x_0)p_t(A|\sigma_0) \} + \mathcal{L} \{ F_{t}(x^*|x_0)p_{t}(I|\sigma_0) \} \cdot \widetilde{D}_{s}(x^*,I).  \label{imp_lap}
+\end{equation}
+Equation \eqref{imp_lap} uses the convolution theorem \cite{klafter2011first} which can be simply stated as
+\begin{equation}
+    \mathcal{L}\left\{  \int_0^t f(t') g(t-t') ~dt'\right\}  = \widetilde{f}(s) \widetilde{g}(s). 
+\end{equation}
+To proceed with our analysis, we shift our focus to the term $D_t(x^*,I)$, which denotes the probability density of the first detection of a threshold crossing event occurring at time $t$, given that the underlying process starts from the threshold $x^*$ when the sensor is inactive. The analysis of this term quite sensitively depends on whether the underlying process of interest is a continuous process or has a discrete state-space. 
+
+In the section that follows, we discuss the case of discrete states and illustrate our results. This will be followed by a discussion of why the formalism fails to generalize to continuous processes and how this can be remedied. 
+
+
+\section{Discrete State Markov Processes}
+
+To study Markov processes with a discrete state-space, we take the underlying process of interest to be a Markovian continuous-time birth-death process (BDP), which has previously been used to study a variety of processes \cite{azaele_statistical_2016,novozhilov_biological_2006,crawford_transition_2012,freidenfelds_capacity_1980,math7060489,ho_birthbirth-death_2018,pre_assaf_2020,prl_assaf_2020,sanders_how_2008,di_lauro_network_2020,kiss_mathematics_2017,nagy_approximate_2014}. Though in this section, we consider BDPs with a finite number of states, it is important to note that generalization to discrete state processes with infinite number of states is straightforward. 
+
+The state of the BDP can be interpreted as the stress or damage accumulated over time or any other physical 
+quantity where threshold crossing is of prime interest. The BDP is defined on the state space $\mathcal{S} = \{0,1,2,\cdots,N\}$ with its dynamics 
+governed by the rates  $W_{+}(j)$ and  $W_{-}(j)$ for transitioning from state $j$ to states $j+1$ and $j-1$ respectively, where $j \in \mathcal{S}$, with $W_{+}(N)=W_{-}(0)=0$, while $W_{\pm}(j)>0$ for $j \notin \{0,N\}$. Figure \ref{fig1}(a) is an illustration of a BDP with $N=5$.
+The probability of finding the BDP in state $x \in \mathcal{S}$ at time $t$, given that the 
+system started from state $x_0\in\mathcal{S}$ initially, is given by the propagator $C(x,t|x_0)$, and its Laplace transform is denoted by $\widetilde{C}(x,s|x_0)$. A well studied quantity of the BDP is the first-passage time distribution, denoted by $F_{t}(x^*|x_0)$, which is the probability density that the BDP reaches state $x^*$ for the first time, at time $t$, given that it started from state $x_0$. Through the renewal formula \cite{redner2001}, the Laplace transform of the first-passage time density is given by
+$\widetilde{F}_{s}(x^*|x_0)=\frac{\widetilde{C}(x^*,s|x_0)}{\widetilde{C}(x^*,s|x^*)}$, for $x_0 \neq x^*$. This analysis assumes perfect detection, {\it i.e.}, as soon as the threshold $x^*$ is reached, the event is detected.  
+
+As previously outlined, this BDP is being monitored by a stochastic sensor depicted in Fig.~\ref{fig1} (b). The Markov diagram of the composite process, {\it i.e.}, the underlying process and the sensor combined, is shown in Fig. \ref{fig1} (c) for the special case of $N=5$, and threshold $x^*=4$. The composite process is another continuous-time Markov process on the state space $\mathbb{S}=\mathcal{S}\times\Omega$. The key object of interest is the statistics of the first detection time of a threshold crossing event, defined as the first time when the composite process is found in any of the states $(x,A)$ such that $x \geq x^*$, where $x^*$ is the pre-defined threshold. The states in which such a detection event can take place, called ``absorbing states'', are denoted in yellow color in Fig.~\ref{fig1}~(c). The composite process has a total of $N-x^*+1$ absorbing states. 
+
+In the analysis that follows, the knowledge of $C(x^*,t|x_0)$ for the BDP is assumed. This is known exactly for a variety of examples \citep{parthasarathy_exact_2006,sasaki_exactly_2009,crawford_transition_2012}. Furthermore, the propagator can be obtained, in principle, for any BDP governed by an $N \times N$ tridiagonal Markovian transition matrix $\mathbb{W}$ as $C(x^*,t|x_0) = \bra{x^*}e^{\mathbb{W}t}\ket{x_0}$
+where $\bra{l} = ( 0 ~0 ~0 \dots 0 ~1 ~0 \dots 0)$ denotes a row vector with $1$ as its  $l^\textrm{th}$ element, with $0$ elsewhere.
+
+\subsection{Results}
+
+\subsubsection{Distribution of the First Detection Time}
+
+Equation~\eqref{imp} contains the quantity $D_t(x^*,I)$, which is central to our analysis. In fact, the computation of this quantity requires different approaches in discrete and continuous state-space settings. For the case of discrete states, it can be seen that the quantity $D_t(x^*,I)$ satisfies the following decomposition
+\begin{equation}
+    D_t(x^*,I) = \beta e^{-\beta t} \int_{t}^{\infty}  F_{t'}(x^*-1|x^*)~dt' + \int_{0}^{t} e^{-\beta t'} F_{t'}(x^*-1|x^*) \cdot D_{t-t'}(x^*-1,I) ~dt'. \label{imp2}
+\end{equation}
+In the above equation, we express the density $D_t(x^*,I)$ as a sum of two contributions:
+\begin{enumerate}
+    \item The first term of the RHS denotes the weight of events where the sensor turns active at time $t$, and until then, the underlying process, which is initially at $x^*$, has not ventured to states below $x^*$.
+    \item The second term of the RHS accounts for the possibilities where the underlying BDP goes to state $x^*-1$ at some time $t'<t$ before the sensor has been able to turn active. Starting from the new initial condition where the BDP is in state $x^*-1$ and the sensor is in state $I$, we now require a detection event to occur in time $t-t'$.
+\end{enumerate}
+
+
+Compactly, we may express Eqs.~\eqref{imp} and \eqref{imp2} as
+\begin{align}
+    &D_t(x_0, \sigma_0) = f_1(t) + \int_0^t f_2(t') D_{t-t'}(x^*,I)dt',    \label{mast1} \\
+    &D_t(x^*, I) = f_3(t) + \int_0^t e^{-\beta t'}F_{t'}(x^*-1|x^*) D_{t-t'}(x^*-1,I) dt'
+    \label{mast2}
+\end{align}
+where $x_0<x^*$ and we define the following functions for brevity:
+\begin{align}
+ f_{1}(t) &= F_t(x^*|x_0) p_{t}(A|\sigma_0),\\ f_{2}(t) &= F_t(x^*|x_0)p_{t}(I|\sigma_0),  \\
+ f_{3}(t) &= \beta e^{-\beta t} \int_t^{\infty}F_{t'}(x^*-1|x^*)dt'.
+\end{align}
+We obtain $D_t(x^*-1,I)$ from Eq.~\eqref{mast1} in terms of $D_t(x^*,I)$, and taking a Laplace transform of Eqs. \eqref{mast1} and \eqref{mast2}, we can write
+\begin{equation}
+    \widetilde{D}_s(x_0, \sigma_0) = \widetilde{f}_1(s) + \frac{ \widetilde{f}_2(s)\left(\widetilde{f}_3(s)+\widetilde{f}_4(s)\widetilde{F}_{s+\beta}(x^*-1|x^*)\right)}{1-\widetilde{f}_5(s)\widetilde{F}_{s+\beta}(x^*-1|x^*)}.
+    \label{c2_centres}
+\end{equation}
+where we define:
+\begin{align}
+ f_{4}(t) &= F_{t}(x^*|x^*-1)p_t(A|I), \\
+ f_{5}(t) &= F_{t}(x^*|x^*-1)p_t(I|I).
+\end{align}
+Equation~\ref{c2_centres} is a central result of this chapter that asserts that the first detection time statistics can be obtained in terms of the first-passage time distribution. The first term on the RHS, $f_1(t)$, denotes the trajectories where the first-passage time and first detection time coincide, whereas the second term accounts for all trajectories where the first-passage event goes unnoticed, and detection happens at a later time. In the limit of $\alpha \to 0^+$, then $f_{2}(t) \to 0$, when $\sigma_0=A$, and it leads to $D_{t}(x_0,\sigma_0) = F_t(x^*|x_0)$. This is consistent with the expectation that in the $\alpha \to 0^+$ limit, deactivation of the sensor is extremely unlikely and renders the composite process equivalent to a simple BDP.  
+
+\subsubsection*{Interpreting the First Detection Time Formula}
+
+We noted in Eq.~\ref{c2_centres} that in Laplace space, $\widetilde{D}_s(x_0, \sigma_0)$ is expressed as
+\begin{equation*}
+    \widetilde{D}_s(x_0, \sigma_0) = \underbrace{\widetilde{f}_1(s)}_{\substack{\text{First detection}\\ \text{at first-passage}}} + \underbrace{\frac{ \widetilde{f}_2(s)\left(\widetilde{f}_3(s)+\widetilde{f}_4(s)\widetilde{F}_{s+\beta}(x^*-1|x^*)\right)}{1-\widetilde{f}_5(s)\widetilde{F}_{s+\beta}(x^*-1|x^*)}}_{\substack{\text{First detection happening}\\ \text{strictly after first-passage event}}}.
+\end{equation*}
+% where we define:
+% \begin{align}
+%  f_{1}(t) &= F_t(x^*|x_0) p_{t}(A|\sigma_0),\\
+%  f_{2}(t) &= F_t(x^*|x_0)p_{t}(I|\sigma_0), \\
+%  f_{3}(t) &= \beta e^{-\beta t}\int_t^{\infty}F_{t'}(x^*-1|x^*)dt'\\
+%  f_{4}(t) &= F_{t}(x^*|x^*-1)p_t(A|I)\\
+%  f_{5}(t) &= F_{t}(x^*|x^*-1)p_t(I|I).
+% \end{align}
+The second term on the RHS can be understood intuitively if expressed as the following
+\begin{equation}
+      \underbrace{ \widetilde{f}_2(s)}_{\substack{ \text{Factor I:} \\ \text{First-passage }\\ \text{while sensor} \\ \text{is inactive}}}\cdot \underbrace{ \frac{1}{1 -\widetilde{f}_5(s)\widetilde{F}_{s+\beta}(x^*-1|x^*) }}_{\substack{\text{Factor II: Accounts for the} \\ \text{number of undetected threshold }\\ \text{crossings before first detection}}}\cdot\underbrace{ \left(\widetilde{f}_3(s)+\widetilde{f}_4(s)\widetilde{F}_{s+\beta}(x^*-1|x^*)\right)}_{\substack{\text{Factor III: Ensures detection}\\ \text{of threshold crossing event}}}.
+\end{equation}
+Factor II is the sum of the following geometric series in Laplace space, which accounts for the number of threshold crossings that go undetected before eventual detection:
+\begin{align}
+    \nonumber \frac{1}{1 -\widetilde{f}_5(s)\widetilde{F}_{s+\beta}(x^*-1|x^*) } =   &1 + \left( \widetilde{f}_5(s)\widetilde{F}_{s+\beta}(x^*-1|x^*)\right) \\  +&\left( \widetilde{f}_5(s)\widetilde{F}_{s+\beta}(x^*-1|x^*)\right)^2 + \left( \widetilde{f}_5(s)\widetilde{F}_{s+\beta}(x^*-1|x^*)\right)^3 + \cdots 
+\end{align}
+Factor III consists of two different terms:
+\begin{enumerate}
+    \item $\widetilde{f}_3(s)$: since the last undetected threshold crossing, the birth-death process stays above the threshold, and at time $t$, the sensor becomes active, and thus the threshold crossing event is detected.
+    \item $\widetilde{f}_4(s)\widetilde{F}_{s+\beta}(x^*-1|x^*)$: since the last undetected threshold crossing, the birth-death process stays above the threshold for some time and remains undetected. It then comes below the threshold, and finally, the birth-death process reaches the threshold at time $t$ when the sensor is active.
+\end{enumerate}
+Both the terms add up to give two different ways of detecting the threshold crossing event. Overall, our central result computes the sum of probabilities of all trajectories where the first detection of the threshold crossing event occurs at time $t$, and the sum can be expressed completely in terms of the first-passage probabilities without any imperfect sensing. 
+
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\columnwidth]{fig_chap2/fig2.2.pdf}
+%    \includegraphics[width=6.5cm]{fig2b.eps}
+%    \includegraphics[width=6.5cm]{fig2c.eps}
+    \caption{The first detection time distribution for the BDP with stochastic switching (solid lines), with $x_0=0, N=20, \gamma=0.1$ and $k=1$, shown for threshold values $x^* = 3, 5, 7$ and $\alpha =\beta=1$. The symbols are from simulations. The dashed lines are first detection time distributions if the sensor is {\sl not} intermittent and is always on.}
+    \label{fdt1}
+\end{figure}
+
+
+To illustrate these results, consider a BDP with transition rates $W_{+}(j)= \gamma (N-j)$ and $W_{-}(j)= kj$, with $j \in \{0,1,2,\cdots,N\}$. These rates were previously used to model threshold crossing processes \cite{bdapprox} in the context of triggering of biochemical reactions \cite{greben1}. Figure \ref{fdt1} shows the first detection time distribution for this process with 
+parameters $x_0=0, N=20, \gamma=0.1$ and $k=1$, for threshold values $x^* = 3,5$ and $7$, and 
+$(\alpha,\beta)=(1,1),(10,1)$ and $(1,10)$. This figure shows analytical results (solid lines) for 
+which inverse Laplace transform of Eq.~\ref{c2_centres} has been numerically performed, and 
+simulations (open triangles) were generated by performing $10^7$ realizations of the stochastic process.
+An excellent agreement is observed between the analytical result and the simulations.
+For comparison, the case of the sensor being always-on is also shown (as dashed lines), and it effectively
+corresponds to the first-passage time distribution.
+If the sensor is initially active, then for $t << \frac{1}{\alpha}$, the first detection time distribution matches with the first-passage time distribution.
+This is because, in this limit, the threshold is crossed earlier than the typical timescale for the inactivation of the sensor. Starting from around $t \approx \frac{1}{\alpha}$, the first detection time distribution deviates from the first-passage time distribution, a feature captured by the analytical result. For $t >> \frac{1}{\alpha}$, both the first detection time distribution and first-passage time distribution show an exponential tail with different decay rates. 
+
+
+
+\begin{figure}
+    \centering
+    \includegraphics*[width=0.95\columnwidth]{fig_chap2/fig2.3.pdf}
+    \caption{(a) Asymptotic first detection time distribution for $t>>1$ with $x^*=5$ for $(\alpha,\beta)$ = $(1,1), (0.1,1), (1,0.1), (10,1)$, and $(1,10)$. Other parameters are the same as in Fig. \ref{fdt1}. (b) Mean detection time as a function of $\beta$, where along each curve $\kappa=\frac{\alpha}{\beta}$ is held constant.}
+    \label{fdt2}
+\end{figure}
+
+The Laplace transform obtained in Eq.~\ref{c2_centres} is of utmost importance as it allows us to systematically obtain the moments of the first detection time density. The mean first detection time can be computed as 
+\begin{equation}
+    \langle T_d(x_0,\sigma_0) \rangle  = -\frac{d}{ds} \widetilde{D}_{s}(x_0,\sigma_0) \bigg{|}_{s=0}.
+\end{equation} 
+The Laplace transform also contains valuable information about the tail of the first detection time distribution. For a BDP, with the same parameters as for Fig.~\ref{fdt1}, the first detection time distribution takes the asymptotic form $\frac{1}{\langle T_d \rangle} e^{-t/\langle T_d \rangle}$ for $t>>1$. In Fig.~\ref{fdt2}(a) for a threshold of $x^*=5$, and for several pairs of $(\alpha, \beta)$, this asymptotic result stands validated. Note that, in general, the asymptotic tail need not be Poisson-like. A detailed discussion on these asymptotics is given in Refs.~\cite{godec_universal_2016,hartich_duality_2018,hartich_interlacing_2019}.
+
+
+Further, we define $\kappa = \alpha/\beta$, which is the fraction of time the sensor spends in the inactive state. If $\kappa << 1$, then the sensor is active nearly all the time. The mean detection time $\langle T_d \rangle$ is plotted as a function of $\beta$ for a constant value of $\kappa$ in Fig. \ref{fdt2}(b). As this figure reveals, the $\langle T_d \rangle \approx \langle T_f \rangle$ for small
+and large values of $\alpha$. For intermediate values of $\alpha$, the mean first-passage and detection
+times can differ from one another by several orders of magnitude depending on the value of $\kappa$ -- larger
+$\kappa$ leads to larger $\langle T_d \rangle$. This has a surprising outcome for event detections. Physically, this implies that even if $\kappa >> 1$, where the sensor spends most of its time in the inactive state, the detection can happen at timescales comparable to $\langle T_f \rangle$ as long as the time scales of the sensor switching is much faster than the intrinsic time scale of the underlying process. This effectively renders the switching to have little effect on the detection times. Though seemingly counterintuitive,  a similar result was also noted in a different scenario of diffusing particles searching for an intermittent target \citep{int-target-1}.
+
+
+\subsubsection{Splitting Probabilities} 
+\begin{figure}
+\centering
+\includegraphics*[width=10cm]{fig_chap2/fig2.4.pdf}
+\caption{Splitting probability for states of the underlying process (lines), for $\gamma=1$, $k=1$, $N=10$, $x_0=0$, $x^*=4$, and three different pairs of $(\alpha,\beta)$ = $(1,1), (1,10)$, and $(10,1)$. Symbols are from simulations. (Inset) Splitting probability density $H_t(\zeta)$ with $\zeta$ taking values from $4$ to $10$, as a function of time, for $(\alpha,\beta)=(1,1)$.}
+\label{splitprob}
+\end{figure}
+
+A key feature in the problem of detecting threshold crossing events under intermittent sensing is that the detection of the threshold crossing event does not necessarily happen at state $x^*$ of the BDP, but can happen at any state $\zeta\in\{x^*, x^*+1, \cdots, N \}$. This crucial information is contained in the \emph{splitting probabilities} $H_\zeta$, defined as the probability that the event is detected in state $\zeta$. 
+
+For brevity, the following quantities are defined:
+\begin{align}
+  h_{1}(t) &= F_t(x^*-1|x^*) e^{-\beta t}, \\ h_{2}(k,x^*, t) &= \beta e^{-\beta t}~\hat{P}_{t}(k|x^*), 
+\end{align}
+for $k \in \{x^*,x^*+1,\cdots,~N\}$, where $\hat{P}_{t}(k|x^*)$ denotes the probability that the underlying BDP is found in state $k$ at time $t$, starting from state $x^*$ without visiting the state $x^*-1$ during this process. By performing an analysis similar to the computation of the first detection time density, the density $H_t(\zeta)$ of the threshold crossing event being detected at $\zeta$ at time $t$ can be obtained. Summing over the weights of all trajectories that lead to the threshold crossing event at $\zeta=x^*$ at time $t$, the Laplace transform of splitting probability density $\widetilde{H}_{s}(x^*)$ is
+\begin{align}
+    \widetilde{H}_{s}(x^*) &= \widetilde{f}_{1}(s) + \frac{\widetilde{f}_{2}(s) \left( \widetilde{h}_{1}(s) \widetilde{f}_{4}(s)+  \widetilde{h}_{2}(x^*,x^*, s)\right) }{1- \widetilde{h}_{1}(s) \widetilde{f}_{5}(s)}
+\end{align}
+and for $\zeta= x^*+r$, where $r\in \{1,2,\cdots,N-x^*\}$, we obtain
+\begin{align}
+  \widetilde{H}_{s}(x^*+r) = \frac{\widetilde{f}_{2}(s) \widetilde{h}_{2}(x^*+r,x^*, s)}{1 - \widetilde{h}_{1}(s) \widetilde{f}_{5}(s)}.
+\end{align}
+The splitting probability $H_\zeta$ can thus be obtained as $H_\zeta = \int_0^\infty dt ~ H_t(\zeta)$, and is equal to the $s\to 0$ limit of $\widetilde{H}_{s}(\zeta)$. Figure \ref{splitprob} shows the splitting
+probabilities $H_\zeta$ for different values of $\zeta$, for the parameter values $\gamma=1$, $k=1$, $N=10$, $x_0=0$, $x^*=4$ and three different pairs of $(\alpha,\beta)$ -- $(1,1), (10,1)$ and $(1,10)$. 
+This demonstrates an excellent agreement between the analytical and simulation results. Furthermore, the inset in Fig.~\ref{splitprob} shows the analytically computed splitting probability density
+for $(\alpha,\beta)=(1,1)$.
+
+
+\subsubsection{First-Passage Time Distribution Conditioned on a Detection Event} \label{cond}
+
+If the first detection of a threshold crossing event happens at time $T_d$, what can we say about the first-passage time $T_f$? This has practical value as it estimates the first occurrence time for an event that possibly went
+undetected. In sensors that detect abnormal voltage fluctuations (with potential for damage), $T_f$ corresponds to the time until when the device being monitored was fully functional, and $T_d$ denotes the time when the sensor detects the large fluctuation. 
+
+We define $F_{T_f}(m|n_0,\sigma_0, T_d)$ to be the density that the first-passage to the threshold $x^*$ happens at time $T_f$, conditioned on the fact that the first detection of the threshold crossing event happens at $T_d$, and that the underlying process starts from a state $x_0$ whereas the sensor starts from state $\sigma_0$. Clearly, for $T_f>T_d$, $F_{T_f}(x^*|x_0,\sigma_0, T_d) = 0$.
+
+For $T_f<T_d$, we are interested in the trajectories that reach the threshold $x^*$ for the first time at $T_f$, but go undetected, and eventually, the threshold crossing event is detected at time $T_d$. We can break each such trajectory into two parts: the evolution up to time $T_f$ and the evolution up to time $T_d$, starting from time $T_f$. The first part of each trajectory is a \emph{first-passage trajectory}, {\it{i.e.,}} one which reaches the threshold for the first time at time $T_f$. We can immediately also conclude that at time $t=T_f$, the state of the underlying birth-death process must be equal to the threshold, and the state of the sensor must have been inactive. Furthermore, the second part of each trajectory is a \emph{first detection trajectory}, which starts from an initial state such that the birth-death process is at the threshold and the sensor is inactive, and subsequently, the first detection of the threshold crossing event happens at time $T_d$. Putting this together, we have
+\begin{equation}
+F_{T_f}(x^*|x_0, \sigma_0,T_d) = F_{T_f}(x^*|x_0) \cdot p_{T_f}(I|\sigma_0)\frac{D_{T_d-T_f}(x^*,I)}{D_{T_d}(x_0,\sigma_0)}
+\end{equation}
+where the denominator $D_{T_d}(x_0,\sigma_0)$ is due to the fact that we are looking at the subset of trajectories, which are conditioned to undergo the first detection event at time $T_d$. This shows that the first-passage time distribution conditioned on detection at a specific time $F_{T_f}(x^*|x_0,\sigma_0, T_d)$ can be expressed explicitly as the unconditioned first-passage time distribution $F_{T_f}(x^*|x_0)$, multiplied by additional \emph{tilting} factors which ensure that the threshold crossing event is detected exactly at $T_d$, after it goes undetected at $T_f$.
+
+A similar argument enables us to see that for $T_f = T_d$, we have
+\begin{equation}
+F_{T_f}(x^*|x_0, \sigma_0,T_d=T_f)=F_{T_f}(x^*|x_0) \frac{p_{T_f}(A|\sigma_0)}{D_{T_f}(x_0,\sigma_0)}.
+\end{equation}
+
+We emphasize again that the calculation of $F_{T_f}(x^*|x_0,\sigma_0, T_d)$ which is the conditioned first-passage time density is extremely important as it allows us to take in the available information (the time of first detection of the threshold crossing event) and improve our estimate of when the first-passage event could have occurred based on that. This calculation falls under the theme of the study of the statistics of \emph{stochastic bridges} -- where the initial and final states of the process are known, and we are interested in the computation of the statistics of events in between the final and initial states. The ideas discussed here and the general notion of stochastic bridges will appear again in Sec.~\ref{c4_bridge} where we will demonstrate how these ideas can be used to infer missing statistics in real-world time-series data.
+
+
+\subsubsection{Applications} 
+
+These results can be applied to threshold crossing events in processes with other absorbing states. Important examples are models of population dynamics and compartmental models for disease propagation. These models can estimate the time taken for the size of a population or the infected caseload to cross a threshold, and such models contain an absorbing state where the size of the population or number of infected individuals goes to zero. During a pandemic, while the dynamics of the number of infected individuals follows a continuous time BDP, they are intermittently reported in specific time windows. Thus, the formalism developed in this work has practical relevance as well. In Fig.~\ref{fig:applns}, the analytical first detection time distribution for the SIS model and the logistic model are shown along with simulation results. 
+
+
+Our work can further be extended to processes with stochastic resetting \cite{evans_diffusion_2011,reuveni_optimal_2016,pal_first_2017,evans_stochastic_2020,pal_search_2020,pal_first_2019}, in which some observable such as the accumulated stress or damage can undergo burst-like relaxations. Recently, this process has received considerable research attention with extensive applications that include population dynamics under stochastic catastrophes \cite{di_crescenzo_note_2008,di_crescenzo_mm1_2003,kumar_transient_2000} to the dynamics of queues subject to intermittent failure. In Fig.~\ref{fig:applns}, the first detection time density under intermittent sensing is shown for two cases: a BDP with simple resets, and with resets that include a refractory period \cite{evans_effects_2018}. In both cases, analytical and simulation results are in agreement. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=8cm]{fig_chap2/fig5.eps}
+\caption{First detection time distributions for various processes -- Logistic model (violet), SIS epidemiological model (green), BDP with stochastic resets (red) and that with a refractory period (blue) -- showing an excellent agreement with numerical simulations of these processes (circles).}
+\label{fig:applns}
+\end{figure}
+
+\subsection*{Simulation Details for Fig.~\ref{fig:applns}}
+
+\subsubsection*{SIS Model}
+The susceptible-infected-susceptible (SIS) model \cite{wang2016statistical} of disease propagation is a stochastic model that describes the spread of a disease in a population, which we consider to be well-mixed. The population consists of two types of individuals: those that are susceptible to the infection and those that are currently infected. The rate at which the disease is transmitted between individuals is $\gamma$, and the recovery rate for each infected individual is $\mu$. If $j$ represents the number of infected individuals, there are $j(N-j)$ pairwise contacts between infected and susceptible people in a well-mixed population. Each of the $j$ infected individuals recovers at rate $\mu$. The rates of increase and decrease of the number of infected individuals is given by
+ \begin{equation}
+W_{+}(j) = \gamma j (N-j), \quad \quad W_-(j) = \mu j.
+ \end{equation}
+The parameter values chosen to obtain the curve for Fig.~\ref{fig:applns} are $N=15, x^*= 7, x_0 = 1, \gamma = 0.1$, and $\mu=0.4$.  
+
+
+
+
+\textbf{Extension to SIS models on networks:} It is of great interest to go beyond the fully connected graph (well-mixed limit), and study models of epidemics, like the SIS model, on arbitrary networks -- which better describe the heterogeneous connection patterns observed among people in a society. However, analytical calculations for such processes are difficult. In particular, the explicit computation of the probability distributions of the time taken for $x^*$ individuals to be infected for the first time in a population of $N$ agents has not yet been possible. A difficulty associated with analytical calculations for processes on networks is highlighted in Fig.~\ref{whybdp}.
+\begin{figure*}[h]
+    \centering
+    \includegraphics[width=0.6\columnwidth]{fig_chap2/epicase.jpeg}
+    \caption{A schematic of two scenarios in the SIS model, both of which have $3$ infected (red) individuals. The blue circles denote the agents which are at risk of getting infected. While the effective rate at which the number of infected individuals will drop from $3$ to $2$ is $3\mu$ in both the configurations, the rate for the number of infected people to go from $3$ to $4$ is different for both configurations -- (a) $6\gamma$ and (b) $3\gamma$. Thus, it is difficult to theoretically define a single effective rate by which the number of infected individuals in the population changes from $n$ to $n+1$, as the rates depend on the specific configuration that the process is in.}
+    \label{whybdp}
+\end{figure*}
+
+In order to build a better theoretical understanding of these problems, an approximate scheme has been developed \cite{kiss_mathematics_2017,nagy_approximate_2014,di_lauro_network_2020}, wherein the dynamics of the number of infected people in a population is mapped to a birth-death process, whose rates are inferred from stochastic simulations of the exact dynamics on the network of choice. Encoded in these rates is the information of the epidemic parameters, as well as some information about the network structure. In particular, the choice of rates for $W_+{(j)}$ was chosen to be
+\begin{equation}
+	W_+{(j)}= \gamma\frac{\sum_{q}qt_{q,j}}{\sum_{q} t_{q,j}},\;1\leq j\leq N,
+	\label{Eq:average_ak}
+\end{equation}
+where $t_{q,j}$ keeps track of how often a state with $j$ infected nodes and $q$ S-I links is visited in the evolution. As mentioned earlier, the rate $W_-(j)$ is already known to be exactly $\mu \cdot j$. Once these rates are numerically determined through stochastic simulations, the formalism we have developed for birth-death processes can be used to estimate the first detection time distribution for the number of infected individuals to cross a threshold. 
+
+We note that while the above prescription will allow us to build an approximate scheme for studying threshold crossing events for observables linked to dynamical processes on networks under perfect and imperfect (intermittent) sensing, using recent advances in the study of stochastic processes with memory on networks \cite{hartich2021emergent}, future works should be dedicated towards obtaining the first-passage time distribution and first detection time distribution of such observables exactly. 
+
+
+
+ \subsubsection*{Logistic Model}
+The stochastic version of the logistic model describes the dynamics of a population of mortal agents who can reproduce. A constant rate $B$ is assumed for each agent, which means that in a small time interval $dt$, each individual gives birth to a new individual with probability $Bdt$. For each agent, there is a constant death rate (set to $1$) when the population size is low. However, for larger population sizes, the death rate increases by an amount that is quadratic in the size of the population. In the birth-death formulation, the transition rates are 
+ \begin{equation}
+ W_+(j) = B j, \quad \quad W_-(j) = j + K j^2/N,
+ \end{equation}
+ where $K$ determines the strength of influence of competition towards the death rates. The parameter values chosen to obtain the curve for Fig.~\ref{fig:applns} from the main text are $N=15, x^*= 8, x_0 = 4, B=1.5$, $K=0.1$, $\alpha=\beta=1$. 
+ 
+\subsubsection*{Stochastic Resets}
+In the birth-death process with stochastic resets, apart from the simple birth-death dynamics, with a rate $r$, the underlying process can be \emph{reset} to the state $0$. This dynamics is reminiscent of fluctuating observables that undergo burst-like relaxations. Furthermore, one can also consider the process, where the reset happens to a dormant state, at rate $r$. When this reset happens, the underlying process spends some refractory time in this dormant state and resumes its birth-death dynamics at a rate $y$ from the state $0$.
+Following similar steps as outlined in the previous sections, the survival probability for a birth-death process with stochastic resets under intermittent sensing can be obtained as 
+ \begin{equation}
+      \widetilde{S}_s(x_0,A) = \widetilde{Q}(s) + \frac{\widetilde{q}_1(s)\widetilde{q}_2(s)\widetilde{q}_4(s)+\widetilde{q}_1(s)\widetilde{q}_6(s)\widetilde{q}_8(s)+\widetilde{q}_1(s)\widetilde{q}_5(s)}{1- \widetilde{q}_2(s)\widetilde{q}_3(s)-\widetilde{q}_6(s)\widetilde{q}_7(s)}
+ \end{equation}
+where the following functions are defined:
+  \begin{align}
+  Q(t)    &= \int_{t}^{\infty} dt' F^{(r)}_{t'}(x^*|x_0)\\
+  q_{1}(t) &= F^{(r)}_t(x^*|x_0)\ p_t(I|A)\\
+  q_{2}(t) &= F_t(x^*-1|x^*)\ e^{-(\beta + r)  t}\\
+  q_{3}(t) &= F^{(r)}_t(x^*|x^*-1)\ p_t(I|I)\\
+  q_{4}(t) &= \int_{t}^{\infty} dt' F^{(r)}_{t'}(x^*|x^*-1)\\
+  q_{5}(t) &= e^{-(\beta+r) t} \int_{t}^{\infty} dt' F_{t'}(x^*-1|x^*)\\
+  q_{6}(t) &= r q_5(t)\\
+  q_{7}(t) &= F^{(r)}_t(x^*|-1)\ p_t(I|I)\\
+  q_{8}(t) &= \int_{t}^{\infty} dt'~ F^{(r)}_{t'}(x^*|-1) 
+ \end{align}
+where $F^{(r)}_{t}(x^*|x_0)$ denotes the first-passage time density from $x_0$ to $x^*$ for the birth-death process with resets being considered, and the state `$-1$' denotes the state in which the birth-death process spends a refractory period, before resuming its dynamics. The survival probability can be leveraged to obtain the  detection statistics using the relation
+\begin{equation}
+    \widetilde{D}_s(x_0,\sigma_0)  = 1- s\widetilde{S}_s(x_0,\sigma_0)
+\end{equation}
+The parameter values chosen to obtain the curve for Fig.~\ref{fig:applns} from the main text are $N=10, x^*=5, x_0 = 0, r=\alpha=\beta=1$ while the birth-death rates were chosen to be the same as the ones for the curves in Fig.~2. In the case where a refractory period is also considered, we choose $y=1$. 
+
+\subsection{Why does this formalism fail to generalize to continuous stochastic processes?}\label{fail}
+
+A quick look at Eq.~\eqref{imp2} reveals the presence of the term $F_t(x^*-1|x^*)$. In the case of a continuous process, e.g., simple diffusion, this term is ill-defined and extremely tricky to deal with. This is due to the fact that for a continuous process, transitions happen from state a $x$ to states $x \pm \epsilon$ where $\epsilon\to 0$. Thus, one is often confronted with terms like $F_t(x^*-\epsilon|x^*)$, which are singular in the limit $\epsilon\to 0$ and thus are tricky to deal with. A diffusing particle starting from $x$ is guaranteed to immediately hit $x-\epsilon$. In fact, the particle crosses $x-\epsilon$ infinitely many times within an infinitesimally short time period. Does this mean that the statistics of detection times of gated first-passage processes cannot be written in terms of the properties of the ungated process? As we will explain in the next section, this is not true. 
+
+\section{Continuous State Markov Processes}
+
+In this section, we discuss the computation of the first detection time statistics for continuous Markov processes. The presentation in this section differs from the previous section in two ways.
+\begin{enumerate}
+    \item In the previous section, we focused on equations that the distributions of the first detection time and first-passage time satisfied. In this section, however, we will shift our focus to the relations between the random variables themselves. Despite this change in presentation, we note that the two approaches are equivalent.
+    \item Given that we are working with continuous processes now, it allows us to establish more concrete connections with the gated chemical reactions literature, which has understandably largely focused on continuous processes. Thus, we generalize our analysis (discussed in Sec.~\ref{genset}) such that the problem of gated chemical reactions and detecting threshold crossing events under intermittent sensing emerge as limiting cases of the model. Moreover, the terms ``reaction time" and ``detection time" are interchangeable, and their use is context-dependent. Thus, in this chapter, we may often interpret $X_{x_0}(t)$ as the position of a particle stochastically evolving in time, which may `react' when it is in the target region in its `reactive' state. The reactive state is akin to the sensor being active, whereas the non-reactive state is like the sensor being inactive.
+\end{enumerate}
+
+\subsection{A Generalized Setup} \label{genset}
+
+Consider a continuous one-dimensional stochastic process $X_{x_0}(t)$ that undergoes Markovian evolution, with $X_{x_0}(0)=x_0$, and a gated interval $[a,b]$, that stochastically switches between active ($A$) and inactive ($I$) states. It is imperative to note that this generalized formalism of detecting the underlying process in an interval readily yields the limiting cases of gated reactions with point-like targets (when $\lim b \to a$) and threshold crossing under intermittent sensing (when $\lim b \to \infty$). Thus, this approach provides a unifying framework as illustrated in Fig.~\ref{cont_fig1}. 
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\linewidth]{fig_chap2/Figure1.pdf}
+\caption{Continuous gated first-passage processes. Two central examples of such processes are gated chemical reactions (top panel) and the detection of threshold crossing by intermittent sensing (middle panel). Red represents the molecule being in the reactive state or, respectively, the sensor being on. Blue represents the molecule being in the non-reactive state or, respectively, the sensor being off. The corresponding first-passage times of these processes are denoted by $T_f$, while the reaction/detection times are denoted by $T_d$. The point target (top) and threshold crossing (middle) scenarios can both be seen as special cases of the gated interval problem (bottom).}
+\label{cont_fig1}
+\end{figure} 
+
+
+We define the random variable $T_d(x_0,\sigma_0)$, with $\sigma_{0} \in \{A, I\}$, to be the detection time starting from the composite state $(x_0,\sigma_0)$. Namely, $T_d(x_0,\sigma_0)$ is the first time the underlying process $X_{x_0}(t)$ is in the interval $[a,b]$, \emph{while} the gate is in its active state $A$. Let us define the shorthand notation 
+%
+\begin{equation}  \label{rho}
+\rho = 
+    \begin{cases}
+    a, &\text{if~~} x_0 \le a,\\
+    b, &\text{if~~} x_0 \ge b. \\
+    \end{cases}
+\end{equation}
+%
+We can express the random variable $T_d(x_0,\sigma_0)$ recursively in the following manner
+%
+\begin{equation}  \label{renewal_interval1}
+T_d(x_0,\sigma_0)= T_f(\rho \mid x_0) +
+    \begin{cases}
+      0, &\text{if~~} \sigma_{T_f(\rho|x_0)}=A\\
+       T_d(\rho,I), &\text{otherwise},
+    \end{cases}
+\end{equation}
+%
+where $T_f(\rho \mid x_0)$ is a random variable that denotes the simple ungated first-passage time to $\rho$, starting from $x_0$, and $\sigma_{T_f(\rho|x_0)}$ denotes the state of the gate at this time. 
+
+In turn, the recursive relation satisfied by $T_d(\rho,I)$ follows a different logic. Instead of analyzing the renewal of the process when the \textit{first return} to the gated interval happens, we consider the event where the gate state switches from the state $I$ to $A$ for the first time. This allows us to write  
+%
+\begin{equation}  \label{renewal_interval2}
+T_d(\rho,I)= W_\beta +
+    \begin{cases}
+      0, &\text{if~~} X_{\rho}(W_\beta) \in [a,b], \\
+       T_d(y,A), &\text{if~~} X_{\rho}(W_\beta) = y \in (-\infty, a),\\
+       T_d(y,A), &\text{if~~} X_{\rho}(W_\beta) = y \in (b, \infty),
+    \end{cases}
+\end{equation}
+%
+where $W_\beta$ is the exponentially distributed random variable that denotes the time taken to switch from state $I$ to $A$. The structure of Eq. \eqref{renewal_interval2} embodies the crucial difference between continuous and discrete-space gated processes. 
+
+To circumvent the ill-defined first-return time, we break the subsequent trajectory in Eq. (\ref{renewal_interval2}) into two: (i) First, we let the underlying process evolve as if there is no target for the time $W_\beta$ it takes the sensor to become active. The probability of finding the underlying process at some point $y$ after $W_\beta$ is given by the conserved propagator $C(y, W_\beta \mid \rho)$, i.e., the propagator for the corresponding problem in the absence of any gating or absorbing boundaries. (ii) The process then continues from position $y$ and state $A$. If $y$ happens to fall inside the target interval, we are done. Otherwise, the particle is either above or below the target. The detection time from that state is respectively given by plugging $x_0=y$ in Eq.~\eqref{renewal_interval1} and the corresponding value of $\rho$ according to Eq.~\eqref{rho}.
+
+Two things are immediately apparent. First, for this trick to work, we require Markovianity of the underlying process -- the exact trajectory that the process has taken to reach $y$ in stage (i) is irrelevant when stage (ii) begins. Second, to know the statistics of the point $y$, knowledge of the corresponding conserved propagator is required. In turn, there is no way to express the first detection time solely in terms of the ungated first-passage time and transition rates $\alpha$ and $\beta$, and the propagator is carried into this relation. These two realizations are in contrast to the analogue theory of discrete-space gated processes, which do not require a knowledge of the propagator and can also be extended beyond Markov processes (to include renewal processes). Nonetheless, the additional requirements in continuous space are a necessary price to pay for the solution of a much more complex gated problem.
+
+
+\subsection{Results}
+
+We now leverage the above set of equations to compute statistics of the gated first-passage time. 
+
+\subsubsection{Mean detection time}\label{sub_mean_detection}
+
+Let us assume that the mean detection time is finite, later on we will deal with cases of diverging mean.
+\noindent Taking expectations of both sides of Eq.~\eqref{renewal_interval1}, we obtain
+%
+\begin{equation} \label{mean1}
+\Braket{T_d(x_0,\sigma_0)} = \Braket{T_f(\rho \mid x_0 )} + \Braket{I_f} \Braket{T_d(\rho, I)},
+\end{equation}
+%
+where $I_f$ is an indicator random variable that receives the
+value $1$ if the particle first arrived at $\rho$ in the inactive state and $0$ otherwise. In Eq.~\eqref{mean1} we have used the independence of $I_f$ and $T_d(\rho, I)$: $\Braket{I_f T_d(\rho, I)}=\Braket{I_f} \Braket{T_d(\rho, I)}$. For this, we have noted that $T_d(\rho, I)$ is the additional time it takes the reaction to complete in a scenario where the particle arrived at $\rho$ in the inactive state, i.e., conditioned on $I_f=1$. Thus, while $I_f$ determines if an additional time $T_d(\rho, I)$ should be added or not, it is uncorrelated with the duration of this time. The duration of $T_d(\rho, I)$ does not depend on whatever happened prior to arriving at the interval boundary. The expectation of the indicator function is
+%
+\begin{equation} \label{mean2}
+\Braket{I_f} = \Braket{p_{T_f(\rho\mid x_0 )}(I \mid \sigma_0)}.   
+\end{equation}
+%
+Recalling Eq. (\ref{internal_propagator}), when $\sigma_0=I$ we have
+%
+\begin{equation} \label{mean3}
+\langle I_f (\sigma_0=I) \rangle=\pi_{\textrm{I}}+\pi_{\textrm{A}}\widetilde{F}_{\lambda}(\rho | x_0),
+\end{equation}
+%
+where $\widetilde{F}_\lambda(\rho| x_0)$ is the Laplace transform of $F_t(\rho\mid x_0)$ evaluated at $s=\lambda$.
+Similarly, when $\sigma_0=A$, we have 
+%
+\begin{equation} \label{mean4}
+\Braket{I_f (\sigma_0=A)}=\pi_{\textrm{I}}\Big[1-\widetilde{F}_\lambda(\rho \mid x_0)\Big].   
+\end{equation}
+%
+Equations \eqref{mean3} or \eqref{mean4} can, in turn, be plugged into Eq.~\eqref{mean1} in accordance with the initial condition $\sigma_0$. Note that if the initial state of the gating dynamics is the equilibrium occupancy probabilities, denoted here by $\sigma_0=E$, we simply have
+%
+\begin{equation}
+\Braket{I_f (\sigma_0=E)}=\pi_{\textrm{I}}.   
+\end{equation}
+%
+Moving on, taking expectations of both sides of Eq.~\eqref{renewal_interval2} we obtain
+%
+\begin{align} \label{mean5}
+\Braket{T_d(\rho, I)} =\beta^{-1}  + \int^{\infty}_{-\infty} \widetilde{\Phi}_{\rho}(\beta)  \Braket{T_d(y,A)} \Big[\Theta_{-}(y)+\Theta_{+}(y)\Big] dy
+\end{align}
+%
+where $\widetilde{\Phi}_{\rho}(z):=\beta \widetilde{C}(y,z \mid \rho)$, such that $\widetilde{C}(y,\beta \mid \rho)$ is the Laplace transform of $C(y, t \mid \rho)$ evaluated at $\beta$, and where $\Theta_{-}(y)$ is a step function that equals $1$ for all $y<a$ and $0$ otherwise, and $\Theta_{+}(y)$ equals $1$ for all $y>b$ and $0$ otherwise. In deriving Eq.~\eqref{mean5} we have used the independence of stages (i) and (ii) that were described below Eq.~\ref{renewal_interval2}, which requires Markovianity of the propagator. Note that we have also used $\Braket{C(y,W_\beta \mid \rho)}=\beta \widetilde{C}(y,\beta \mid \rho)=\widetilde{\Phi}_{\rho}(\beta)$. 
+
+We can now plug Eq.~\eqref{mean1} into Eq.~\eqref{mean5} while noting that $\Braket{T_d(\rho, I)}$ of Eq.~\eqref{mean1} is independent of $y$ in the integral of Eq.~\eqref{mean5}, and so can be taken out of the integral. This gives
+%
+\begin{align} 
+\label{mean6}
+     \Braket{T_d(\rho, I)} = \beta^{-1} + \tau_{\rho} 
++  p^{-}_{\rho} \Braket{T_d(a, I)} +  p^{+}_{\rho} \Braket{T_d(b, I)}
+\end{align}
+%
+where we have defined
+%
+\begin{equation} \label{mean7}
+\tau_{\rho} = \int^{\infty}_{-\infty} \widetilde{\Phi}_{\rho}(\beta) \braket{T_f(\iota_{\pm}\mid y)}  \Big[\Theta_{-}(y)+\Theta_{+}(y)\Big] dy , 
+\end{equation}
+%
+such that $\iota_- = a$ for $y<a$ and $\iota_+ = b$ for $y>b$, and
+%
+\begin{equation} \label{mean8}
+  p^{\pm}_{\rho} =  \int^{\infty}_{-\infty} \widetilde{\Phi}_{\rho}(\beta)
+ \Braket{p_{T_f(\iota_\pm \mid y ) }(I\mid A)}   \Theta_{\pm}(y) dy ,
+\end{equation}
+%
+where $\Braket{p_{T_f(\iota_{\pm}\mid y )}(I \mid A)}=\pi_{I}\Big[ 1  - \widetilde{F}_{\lambda}(\iota_{\pm} \mid y) \Big]$. Note that Eq.~\eqref{mean6} is actually a shorthand notation for a system of two equations, for the two unknowns $\Braket{T_d(a, I)}$ and $\Braket{T_d(b,I)}$, which one gets by substituting the two possible values of $\rho=\{a,b\}$. 
+
+Each term on the right-hand side of Eq.~\eqref{mean6} gives us insight into the different mechanisms through which a detection event can take place. For instance, the first term $\beta^{-1}$ denotes the mean time taken for the particle to turn active ($A$), starting from the inactive state ($I$). It is easy to see that the mean detection time $\Braket{T(\rho, I)}$ satisfies $\Braket{T(\rho, I)} \geq \beta^{-1}$ where the equality holds only in the extreme cases where the particle is always detected as soon as it turns reactive. However, in almost all practically relevant scenarios, this will not be the case. Namely, there will be a non-zero probability for a particle that starts at the boundary of the gated interval to be found \emph{outside} the interval when it turns reactive. In this case, the additional time taken for detection is captured by the other three terms in Eq.~\eqref{mean6}. 
+
+If detection did not happen when the particle turned reactive, it can happen later in two different ways. Suppose that when the particle turns reactive, it is at $y \notin [a,b]$. For a detection event to take place, the particle now has to reach the boundary nearest to it, starting from position $y$. If at the moment when the particle reaches the nearest boundary, it is found reactive, then it is detected right away. In Eq.~\eqref{mean6}, $\tau_{\rho}$ captures the weighted contribution of such events, starting from different values of $y$, to the mean detection time. However, if upon reaching the boundary closest to it, the particle is non-reactive, the dynamics is renewed, and the mean additional time taken for detection is either $\Braket{T_d(a, I)}$ or $\Braket{T_d(b, I)}$, depending on whether $y$ was closer to boundary point $a$ or $b$. 
+
+The identification of a renewal moment provides us with the needed closure that allows us to obtain the exact formula for the mean detection time. In particular, by solving the system of equations in~(\ref{mean6}) for the two unknowns $\Braket{T_d(a, I)}$ and $\Braket{T_d(b,I)}$, we obtain
+%
+\begin{equation}\label{mean9}
+  \Braket{T_d(a, I)}    = \frac{(\beta^{-1}+\tau_a)(1-p^{+}_{b}) + p^{+}_{a} (\beta^{-1}+\tau_b)}{1 - p^{-}_{a} - p^{+}_{b} + p^{-}_{a} p^{+}_{b} - p^{-}_{b} p^{+}_{a} }, 
+\end{equation} 
+%
+\noindent and
+%
+\begin{equation}\label{mean10}
+\Braket{T_d(b, I)}    =
+  \frac{(\beta^{-1}+\tau_b)(1-p^{-}_{a}) + p^{-}_{b} (\beta^{-1}+\tau_a)}{1 - p^{-}_{a} - p^{+}_{b} + p^{-}_{a} p^{+}_{b} - p^{-}_{b} p^{+}_{a} }. 
+\end{equation} 
+%
+
+For the symmetric case in which the dynamics and the boundary conditions to the left and the right of the target center are the same (e.g., diffusion on the infinite line), Eqs.~\eqref{mean9} and \eqref{mean10} are equal and simplify considerably. Setting $\tau_a = \tau_b:=\tau$ and $p^{\pm}_{a} = p^{\pm}_{b}:=p^{\pm}$, we obtain
+%
+\begin{equation} \label{mean11}
+  \Braket{T_d(\rho, I)} = \frac{\beta^{-1} + \tau}{1-p^- - p^+}.
+\end{equation}
+%
+The above exact equation for the mean detection time admits a simple interpretation in the form of Bernoulli trials. We define each trial as an independent attempt at detection when the particle is initially non-reactive at one of the target's boundaries. Each attempt takes on average $\beta^{-1} + \tau$, where $\beta^{-1}$ is the mean time for the particle to turn reactive, and $\tau$ denotes the additional contribution coming from events where the particle is found outside the interval when it turns reactive, and thus has to return to its nearest boundary. The number of trials until detection follows a geometric distribution, and the mean number of trials is given by $(1-p_a-p_b)^{-1}$. This acts as a multiplicative factor to the mean time taken for one trial and altogether yields the mean detection time.    
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Distribution of the First Detection Time}
+
+We now turn to compute the full distribution of the first detection time. This is required to complement the limited information provided by the mean.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.35\linewidth]{fig_chap2/Figure2.pdf}
+\caption{A comparison of the detection time distribution and its dependence on the transition rates between models of (a) a gated interval of length $b-a=1$, (b) a gated point, and (c) gated threshold crossing. In all cases, we set $\mathcal{D}=1$ for the diffusion coefficient, a non-reactive initial gate state, and $a$ for the initial position of the particle. In each panel, we plot three color-coded curves, where each color represents a different choice of values for the transition rates $\alpha$ and $\beta$. For each choice of parameters, the lines represent numerical Laplace inversion of Eq. (\ref{diffusion1}), and the dashed lines are the corresponding transient and asymptotic power laws according to Eqs.  (\ref{free_diffusion2}) and (\ref{free_diffusion4}), and circles come from Monte-Carlo simulations with $10^5$ particles and a simulation time step $\Delta t = 10^{-4}$.}
+\label{fig2}
+\end{figure} 
+The calculation of the Laplace transforms of the distributions of the random variables in Eqs. (\ref{renewal_interval1}) and (\ref{renewal_interval2}) is done along the lines followed for their respective means (Sec. \ref{sub_mean_detection}). We have thus delegated the details of this calculation to Appendix \ref{Appendix:C}, and will only quote the results here. The Laplace transform of Eq. (\ref{renewal_interval1}) is
+
+\begin{align}
+\widetilde{D}_s(x_0,\sigma_{0})=
+\widetilde{F}_s(\rho\mid x_0)\left[\pi_{A} + \pi_{I}\widetilde{D}_s(\rho,I)\right] 
+\pm (1-\pi_{\sigma_{0}})\widetilde{F}_{s+\lambda}(\rho\mid x_0)\left[ \widetilde{D}_s(\rho,I) -1 \right], \label{distribution_1}
+\end{align}
+%
+where we have a plus sign if $\sigma_0=I$, and a minus sign if $\sigma_0=A$. For $\sigma_0=E$, the second term vanishes, and we retain only the first term.
+
+ 
+The Laplace transform of Eq.~\eqref{renewal_interval2} for the case $\rho=a$ is
+%
+\begin{equation} \label{distribution_2}
+\widetilde{D}_s(a,I)    = 
+\frac{(\widetilde{\phi}_a + \widetilde{\chi}_a)(1- \widetilde{\psi}^{+}_{b}) +  \widetilde{\psi}^{+}_{a} (\widetilde{\phi}_b + \widetilde{\chi}_b)}{1 - \widetilde{\psi}^{-}_{a} -\widetilde{\psi}^{+}_{b} + \widetilde{\psi}^{-}_{a}\widetilde{\psi}^{+}_{b}  - \widetilde{\psi}^{-}_{b}\widetilde{\psi}^{+}_{a} } , 
+\end{equation}
+%
+and for the case $\rho=b$ is
+%
+\begin{equation} \label{distribution_3}
+ \widetilde{D}_s(b,I)    = 
+\frac{ (\widetilde{\phi}_b + \widetilde{\chi}_b)(1- \widetilde{\psi}^{-}_{a})  + \widetilde{\psi}^{-}_{b}(\widetilde{\phi}_a + \widetilde{\chi}_a)  }{1 - \widetilde{\psi}^{-}_{a} -\widetilde{\psi}^{+}_{b} + \widetilde{\psi}^{-}_{a}\widetilde{\psi}^{+}_{b}  - \widetilde{\psi}^{-}_{b}\widetilde{\psi}^{+}_{a} } ,
+\end{equation}
+%
+where we have defined
+%
+\begin{equation} \label{defined_1}
+ \widetilde{\phi}_\rho(s) \equiv  \beta\int^{b}_{a}\widetilde{C}(y,s+\beta\mid \rho) dy \equiv  \int^{b}_{a} \widetilde{\Phi}_{\rho}(s+\beta) dy, 
+\end{equation}
+%
+\begin{align} \label{defined_2}
+\widetilde{\chi}_\rho(s) \equiv \int^{\infty}_{-\infty} \widetilde{\Phi}_{\rho}(s+\beta)  \Big[\pi_{A}\widetilde{F}_s(\iota_{\pm} \mid y) + \pi_{I}\widetilde{F}_{s+\lambda}(\iota_{\pm} \mid y) \Big] 
+ \Big[\Theta_{-}(y)+\Theta_{+}(y)\Big]dy ,  
+\end{align}
+%
+\noindent and
+%
+\begin{align} \label{defined_3}
+\widetilde{\psi}^{\pm}_{\rho}(s)  \equiv  \int^{\infty}_{-\infty} \widetilde{\Phi}_{\rho}(s+\beta)  \pi_{I} \Big[ \widetilde{F}_s(\iota_\pm \mid y) - \widetilde{F}_{s+\lambda}(\iota_\pm \mid y) \Big]  \Theta_{\pm}(y)dy, 
+\end{align}
+%
+\noindent where again $\iota_- = a$ and $\iota_+ = b$.
+%
+As happened for the formulas for the mean, for the symmetric case in which the dynamics and the boundary conditions to the left and the right of the target center are the same Eqs.~\eqref{distribution_2} and \eqref{distribution_3} are equal and simplify considerably.  Setting $\phi_a = \phi_b := \phi$, $\chi_a = \chi_b := \chi$ and $\psi^{\pm}_{a} = \psi^{\pm}_{b}:=\psi^{\pm}$, we obtain
+%
+\begin{equation} \label{distribution_4}
+  \widetilde{D}_s(\rho, I)   = \frac{\widetilde{\phi} + \widetilde{\chi}}{1 - \widetilde{\psi}^{-} -\widetilde{\psi}^{+} }.
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Long Time Asymptotics -- Inheritance of Power-Laws} \label{subsec:long}
+
+For simplicity, let us assume the symmetric case in which both the dynamics and the boundary conditions to the left and the right of the target are the same. We focus on processes for which the first-passage time distribution of the underlying ungated process has an asymptotic power-law behavior of the form 
+%
+\begin{equation} \label{heavytail}
+    F_t(\rho \mid y) \simeq \frac{\theta}{\Gamma(1-\theta)} \frac{\tau_f^{\theta}}{t^{1+\theta}}, \quad 0<\theta<1,
+\end{equation}
+%
+where $\tau_f>0$. Note that in this case, the mean first-passage time diverges. Using the Tauberian theorem, it can be shown that the small $s$ asymptotics of the Laplace transform of the first-passage time is given by $\widetilde{F}_s(\rho \mid y) \simeq1-(\tau_f s)^{\theta}$ (see pp. 43-45 in Ref. \cite{klafter2011first}). Note that $\tau_f$ is a function of the distance to the closest boundary of the interval target.
+
+In Appendix \ref{Appendix:D}, we show that corresponding gated processes inherit the above asymptotics. That is to say, the first detection time density also decays as a power law, and the power law exponent $\theta$ remains the same. The asymptotics differ only in the corresponding prefactor, which is determined exactly
+%
+\begin{equation} \label{asymptot1}
+D_t(\rho, I) \simeq
+  \frac{\theta }{\Gamma(1-\theta)} \frac{\left(\pi^{-1}_{I}\frac{B}{A}\right)}{t^{1+\theta}},
+\end{equation}
+%
+where $A$ and $B$ are given in Appendix \ref{Appendix:D}. 
+
+We thus see that, for the cases studied here, the gated detection time has a power law behavior with the same $\theta$ of the corresponding ungated process but with a different prefactor, which can be determined exactly based on descriptors of the corresponding ungated process. In particular, for a single-point target ($b \to a$), we find
+%
+\begin{align} \label{asymptot2}
+ D_t(a, I) \simeq  \frac{1}{t^{1+\theta}} \frac{\theta}{\Gamma(1-\theta)} \times \frac{\int^{\infty}_{-\infty} \widetilde{\Phi}_{\rho}(\beta)\tau^{\theta}_f(y) dy}{\pi_{A} +\pi_{I} \int^{\infty}_{-\infty} \widetilde{\Phi}_{\rho}(\beta) \widetilde{F}_\lambda(a\mid y) dy },
+\end{align}
+%
+where we recall that $\pi_{\textrm{A}}=\beta / \lambda$ and $\pi_{\textrm{I}}=\alpha / \lambda$. In the converse limit of threshold crossing ($b \to \infty$) we obtain
+%
+\begin{align} \label{asymptot3}
+ D_t(a, I) \simeq \frac{1}{t^{1+\theta}} \frac{\theta}{\Gamma(1-\theta)} \times \frac{\int^{a}_{-\infty} \widetilde{\Phi}_{\rho}(\beta)\tau^{\theta}_f(y) dy}{\pi_{A} +\pi_{I} \Big[\int^{\infty}_{a} \widetilde{\Phi}_{\rho}(\beta)dy + \int^{a}_{-\infty} \widetilde{\Phi}_{\rho}(\beta) \widetilde{F}_\lambda(a \mid y) dy  \Big] } .  
+\nonumber 
+\end{align}
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\linewidth]{fig_chap2/Figure3.pdf}
+    \caption{The first detection time distribution at a gated interval $[a,b]$, for a diffusing particle restricted to a box $[0,L]$ with reflecting boundaries. The lines are numerical Laplace inversions of Eq. (\ref{distribution_4}), where $\phi$, $\chi$ and $\psi^{\pm}$ are calculated using the results of Appendix \ref{Appendix:F}. The circles are the results of Monte-Carlo simulations with $10^5$ particles and a simulation time step $\Delta t = 10^{-4}$. Here, we take: $\alpha=1$, $L=10$, $D=1$ and $l=1$ where $a=(L-l)/2$ and $b=(L+l)/2$. The gate is initially in the non-reactive state, and we set $a$ for the initial position of the particle. The blue line is drawn for the case $\beta=1$ and $K_{eq}=1$, and the orange line is drawn for the case $\beta=10^{-2}$ and $K_{eq}=10^{2}$.  The dashed lines represent exponential distributions whose means are taken to be the mean detection times according to Eq. (\ref{mean11}). While a single exponential is not expected a priori, it is observed for the case of high-crypticity (orange). It can be appreciated that the distribution is well described by the dashed line (also see inset).}
+    \label{fig3}
+\end{figure}
+
+\subsubsection{Transient behavior under high crypticity}
+
+In the work of Mercado-Vásquez and Boyer \cite{mercado2019first}, a freely diffusing particle in search of a gated \textit{single-point target} was considered. The authors showed that when $K_{eq} = \frac{\alpha}{\beta} \gg 1$ an interim regime of slower power-law decay emerges before the asymptotic regime. In particular, the asymptotic decay of the first detection time density of $t^{-3/2}$ that is seen for simple diffusion is preceded by a long stretch of time where the density decays as $t^{-1/2}$.  A detection process for which $K_{eq} \gg 1$ was termed highly cryptic since it spends most of its time in the non-reactive (inactive) state.
+
+Yet, there remains a question: Is the condition $K_{eq} \gg 1$ sufficient to guarantee a slower transient regime for any gated process, provided that the underlying ungated process has the asymptotic power-law behavior of Eq. (\ref{heavytail})? In appendix \ref{Appendix:E}, we show that the answer to this question is no. Specifically, we show that whenever there is a possibility to spend some time in the target region while being in the non-reactive state, an additional condition is required to guarantee a slower pre-asymptotic power-law decay. 
+
+Simply put, the time spent in the non-reactive state before transitioning to the reactive state must be considerably larger than the time spent on the target upon arrival. For the problem of a gated interval considered in this work, there is certainly a probability to spend time within the interval $[a,b]$ while being in the non-reactive state. In appendix \ref{Appendix:E}, we show that, in this case, the additional requirement translates to
+%
+\begin{equation} \label{crypric1}
+ \frac{b-a}{\tau_r^\theta} \ll \beta^{\theta-1} ,
+\end{equation}
+%
+with $\tau_r$ set by the small $s$ asymptotics of the propagator $\widetilde{C}(y,s\mid y) \simeq (\tau_r s)^{-\theta} $, and where we have assumed that $\widetilde{C}(y,s\mid a) \simeq s^{-\theta} H(\abs{y-a}s^\theta)$, where $H$ is some function. Simple diffusion is just one example of a process that belongs to this group. In Appendix \ref{Appendix:E}, we also show that for such processes $\tau_f$ and $\tau_r$ are related by
+%
+\begin{equation} \label{taus_relation}
+\tau_r = \left(\frac{\abs{y-a} \frac{d\widetilde{C}(y,s\mid a)}{dy}}{\tau_f^{\theta}}\right)_{y=a} ^{-1/\theta}.
+\end{equation}
+
+Examining Eq. (\ref{crypric1}), it is thus clear that in the limit of a single-point target, $b \to a$, the left-hand side of Eq. (\ref{crypric1}) is zero. The additional requirement is then fulfilled for every finite transition rate $\beta$. From the qualitative understanding above, this is anticipated. Indeed, when the target is of measure zero, the particle spends no time on the target and can react with it only by crossing it while being in the reactive state. Thus, in such cases, we only care about the equilibrium occupancies of the reactive and non-reactive states. Namely, the rates can be arbitrarily large as long as the rate to become reactive is much slower than its converse. On the other hand, Eq. (\ref{crypric1}) will never be satisfied in the case of threshold crossing, where $b \to \infty$. This means that the cryptic transient regime will never be observed in gated threshold crossing problems of the type analyzed herein.
+
+In appendix \ref{Appendix:E}, we show that when $K_{eq} \gg 1$ and the condition in Eq. (\ref{crypric1}) is satisfied, the transient regime of the first detection time density scales like
+%
+\begin{equation} \label{crypric2}
+D_t(\rho, I) \simeq \frac{1}{\Gamma(\theta)}\frac{A}{B}  t^{\theta-1}  ,  
+\end{equation}
+%
+where $A$ and $B$ are the same as in the previous subsection (definitions can be found in Appendix \ref{Appendix:D}). Thus, under these conditions, we indeed see a transient regime with a different power law than the asymptotic. Furthermore, we can exactly determine this power-law, and its prefactor.
+
+The findings presented in this subsection call for a refined definition of high-crypticity, which takes into account the time spent on the target: A process is highly-cryptic if it spends most of its time in the non-reactive state \textit{and} the time spent in the non-reactive state before transitioning to the reactive state is considerably larger than the time spent on the target upon arrival to it.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+
+\subsubsection{Diffusion to a Gated Interval}\label{Sec:5}
+
+In this section, we show how to apply the framework developed above to obtain explicit solutions for the first detection time of a diffusing particle by a gated interval. We first solve for free diffusion and then consider the effects of confinement and drift.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection*{Freely diffusing particle}\label{sub:free}
+
+Consider the gated interval problem illustrated in (Fig.~\ref{fig1}, bottom); and further assume that the particle, initially at $x_0$ at state $\sigma_{0} \in \{\text{A, I}\}$, is not restricted and free to diffuse on the entire one-dimensional line. The gated target is the interval $[a,b]$.
+
+The free-diffusion conserved propagator is a Gaussian and its Laplace transform is given by $ \widetilde{C}(y, s | x_{0}) = \frac{1}{\sqrt{4 \mathcal{D} s}} e^{-\sqrt{\frac{s}{\mathcal{D}}} \abs{y-x_{0}}}$. Also, the Laplace transform of the first-passage time distribution from an arbitrary point $y$ to an arbitrary point $\rho$ is $\widetilde{F}_s(\rho \mid y) = e^{-\sqrt{\frac{s}{\mathcal{D}}}\abs{\rho-y}}$ \cite{redner2001}. In fact, these two classical results are all we need in order to solve the gated problem, using the renewal formalism established in Sec.~\ref{genset}. 
+
+For any $x_0 \notin[a,b]$ we can break the trajectory of the gated problem into two parts. A first-passage trajectory to $\rho \in \{a,b\}$ that is followed, if the particle was not detected upon arrival, by a first detection process starting from the state $(\rho,I)$. Because the first part of the trajectory is a first-passage process that is well understood, from now on, we will focus on the second part, i.e., a detection process with initial state $(\rho,I)$. It is important to note that accounting for the entire trajectory by adding its first-passage part is then a simple task that can generally be done via Eqs. (\ref{mean1}) and (\ref{distribution_1}).
+
+
+It can be easily appreciated that in this example, the dynamics and the boundary conditions to the left and right of the target are the same, and we can use Eq.~\eqref{distribution_4} to calculate the Laplace transform of the first detection time distribution. Plugging $\widetilde{C}(y, s \mid x_{0})$ and $\widetilde{F}_s(\rho \mid y)$ into Eq. (\ref{distribution_4}) we obtain
+%
+\begin{equation} \label{diffusion1}
+ \widetilde{D}_s(\rho, I) =   \frac{\frac{1}{\omega^{+}_{1}}-\frac{e^{-(b-a) \sqrt{\frac{s+\beta}{D}}}\left(\lambda+\omega^{-}_{1} \right)-\lambda}{\omega_2}}{2\beta^{-1} +\frac{\left(1+e^{-(b-a)} \sqrt{\frac{s+\beta}{D}}\right) \alpha \omega^{-}_{1}}{\omega_2 \left(\sqrt{\beta +s}+\sqrt{s}\right) \left(\sqrt{\beta +s}+\sqrt{\lambda +s}\right)}},    
+\end{equation}
+%
+where we have defined $\omega^{\pm}_{1}=\sqrt{s+\beta}(\sqrt{s} \pm \sqrt{s+\lambda})$ and $\omega_2=(s+\beta) \lambda$. Similarly we can get the long-time asymptotics by plugging $\widetilde{C}(y, s | x_{0})$ and $\widetilde{F}_s(\rho \mid y)$ into  Eq. (\ref{asymptot1}). Noting that $\tau_f = \frac{\abs{y-x_0}^2}{\mathcal{D}}$, we obtain
+%
+\begin{align} \label{free_diffusion2}
+ D_t(\rho, I) \simeq \frac{1}{2 \sqrt{\pi}} t^{-3/2}   \frac{\left(1+e^{-(b-a) \sqrt{\frac{\beta}{\mathcal{D}}}}\right)(\sqrt{\beta}+\sqrt{\lambda}) \lambda}{2 \alpha \beta+\left(1-e^{-(b-a) \sqrt{\frac{\beta}{\mathcal{D}}}}\right) \alpha \sqrt{\beta \lambda}+2\left(\beta^{2}+\sqrt{\beta^{3} \lambda}\right)}. 
+\end{align}
+
+Finally, in the previous section, we have seen that for a finite-sized target, high-crypticity requires the condition in Eq. (\ref{crypric1}) as well as $K_{eq} = \frac{\alpha}{\beta} \gg 1$. For our example here $\tau_r = 4 \mathcal{D}$ and so the condition in Eq. (\ref{crypric1}), after squaring both sides of the equation, translates to
+%
+\begin{equation} \label{free_diffusion3}
+ \frac{(b-a)^2}{4 \mathcal{D}} \ll \beta^{-1} ,
+\end{equation}
+%
+namely, the time spent in the non-reactive state before transitioning to the reactive state must be considerably larger than the time it takes the particle to diffuse a distance comparable to the size of the target. If both $K_{eq} \gg 1$ and Eq. (\ref{free_diffusion3}) hold, a transient regime emerges before the asymptotic regime of Eq. (\ref{free_diffusion2}). In this regime, according to Eq. (\ref{crypric2}), we have
+%
+\begin{align} \label{free_diffusion4}
+ D_t(\rho, I) \simeq  \frac{1}{\sqrt{\pi}} t^{-1/2} 
+\sqrt{\beta}\left(\frac{2}{1+e^{-(b-a) \sqrt{\frac{\beta}{\mathcal{D}}}}}-\frac{1}{1+\sqrt{K^{-1}_{eq}}}\right)   .
+\end{align}
+
+
+In Fig.~\ref{fig2} there are three panels corresponding to: %\st{each corresponds to the respective panel in Fig.~\ref{fig1}}
+(a) the gated interval problem, and its two extreme limits (b) the gated single-point target problem, and (c) the gated threshold crossing problem, which was illustrated in Fig.~\ref{fig1}. In each panel, we plot three color-coded curves, where each color represents a different choice of values for the transition rates $\alpha$ and $\beta$. Purple curves represent $\alpha=\beta=1$ such that $K_{eq}=\alpha/\beta=1$. Green curves represent $\alpha=10^4$ and $\beta=1$ such that $K_{eq}=10^4$. Orange curves represent $\alpha=10^2$ and $\beta=10^{-2}$ such that again $K_{eq}=10^4$. The green and orange curves have the same ratio of transition rates ($K_{eq}=10^4$), but the latter transitions are much slower, and specifically, $\beta$ is much smaller. 
+
+In panel (a), the case of an interval target, we see that the purple and green curves are similar in shape --- an asymptotic $\sim t^{-3/2}$ power-law kicks in rather early. In contrast, the orange curve possesses a prolonged transient regime of $\sim t^{-1/2}$ before the asymptotic regime enters. This is because the orange curve fulfills both conditions for high-crypticity, i.e., $K_{eq} \gg 1$ \textit{and} Eq. (\ref{free_diffusion3}). 
+
+In panel (b), the case of a single-point target, the green curve is actually similar in shape to the orange curve. In this limit, the condition in Eq. (\ref{free_diffusion3}) is always met, and it is sufficient to require that $K_{eq} \gg 1$. Note, however, that while the ratio of the transition rates alone determines whether a prolonged transient regime exists, the duration of this regime is affected by the magnitude of the rates through $\lambda=\alpha+\beta$. More specifically, the transition between the transient and asymptotic regimes occurs at $K_{eq}^2/\lambda$ \cite{mercado2019first}.
+
+Finally, in panel (c), we present the case of threshold crossing. There, we see that none of the curves possess a prolonged transient regime, as the condition in Eq. (\ref{free_diffusion3}) is never met. Furthermore, for short times (up to $\beta^{-1}$) the detection probability density is constant with a value of $\beta/2$. This can be easily understood by the following argument: With probability $\beta e^{- \beta t} \simeq \beta$, the particle becomes reactive after a short time $t$. Since the motion is symmetric, upon becoming reactive, the particle has a probability half to be found above its starting position. Recalling the particle started on the threshold, it has a probability half of being detected upon becoming reactive. In total, the first detection probability density at short times is $\beta/2$.
+
+
+\subsubsection*{Diffusion in confinement}\label{sub:confinement}
+
+Let us now restrict the particle to diffuse inside a box $[0,L]$ with reflecting boundaries, such that the gated target is inside the box ($0<a \leq b<L$). The confinement renders the first-passage asymptotics exponential, so the results derived for heavy-tailed distributions are no longer valid. However, it also renders the mean first-passage time finite, and so one can use Eq. (\ref{mean1}) together with Eqs. (\ref{mean9}) and (\ref{mean10}) to obtain the mean detection time.
+
+Furthermore, as we did for the freely diffusing particle, we can, of course, calculate the entire Laplace transform of the reaction time. Let us again focus on a reaction with initial state $(\rho,I)$, i.e., assume the particle starts on the boundary in the non-reactive state. For simplicity, let us further assume that the center of the gated interval is situated exactly at the center of the confining box: $a=(L-l)/2$ and $b=(L+l)/2$, such that $l=b-a$. We can thus use Eq. (\ref{distribution_4}). All we require for this calculation is the conserved propagator for diffusion restricted to a box $[0,L]$, and the first-passage time to $a$, starting from some $x \in [0,a]$ (which in our case is equal to the first-passage time to $b$ starting from $L-x$). These quantities are calculated in Appendix \ref{Appendix:F}.
+
+In Fig.~\ref{fig3}, we set $\alpha=1$, $L=10$, $l=1$ and $D=1$, and plot the detection time density for $\beta=1$ (blue line, $K_{eq}=1$) and for $\beta=10^{-2}$ (orange line, $K_{eq}=10^{2}$). For each case, we also plot an exponential distribution with the mean taken to be the mean detection time calculated according to Eq. (\ref{mean11}) (dashed lines of corresponding colors).  For $\beta=1$ the distribution is clearly non-exponential, there are two distinct phases. Therefore, despite having an exponential tail, the gated distribution cannot be captured by a single exponent, which is to be expected since multiple time scales are involved in the problem. However, for $\beta=10^{-2}$ high-crypticity conditions are met, and we observe Poisson-like asymptotics \cite{godec_universal_2016}. This is to say that the distribution is well approximated by an exponential distribution whose mean is simply the mean detection time. This can be understood by noting that the time it takes for the diffusing particle's position to equilibrate over the box is much shorter than the time it takes the particle to turn reactive. The latter then becomes the rate-limiting step, which dominates the distribution of detection times. This example warrants caution --- Poisson kinetics is not guaranteed in the general case but does emerge in the cryptic regime. \\ 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsubsection*{Diffusion with drift} \label{Sec:6}
+
+As we discussed above, the mean first-passage time of a freely diffusing particle diverges, and this property is inherited by the corresponding gated problem. Confinement can regularize the mean and make it finite. This can also be done by introducing a constant drift velocity $v$ in the target's direction. The mean first-passage time of the ungated problem is then simply given by $\ell/v$, where $\ell$ denotes the distance between the initial position of the particle and the point target. However, considering the gated counterpart of this problem, we observe that the mean detection time diverges despite the constant drift. This fact can be intuitively understood through the following argument: when the drift drives the particle downhill towards the target, there is a non-zero probability that the particle will arrive at the target in the non-reactive state. Subsequently, by the time it turns reactive again, the particle is likely to be on the other side of the target, and it now has to travel ``uphill" for the detection to occur. This renders the mean detection time infinite.  It is thus clear that the mean detection time under stochastic gating can be remarkably different from its ungated counterpart.
+
+A slight variation of the drift-diffusion model discussed above can nevertheless render the gated mean finite. In particular, consider a particle diffusing under a constant drift velocity $v$ towards the origin, with the origin also being a reflective boundary. For $0<a<b$, we consider a gated interval $[a,b]$, where the particle can get detected and absorbed in its reactive state. Despite the constant drift, the reflecting boundary at the origin ensures that the mean first-passage time to the boundaries of the interval remains finite, irrespective of whether the particle has to travel uphill or downhill. Consequently, the mean detection time is also finite. A schematic of this setup is provided in Fig.~\ref{fig:schematic_bounded}a.
+
+The formalism developed in Sec. \ref{genset} asserts that knowing certain ungated observables is enough in order to obtain the first detection time statistics. In particular, a key quantity is the conserved propagator for the diffusion equation with drift. This obeys
+%
+\begin{equation} \label{drift}
+    \frac{\partial C(x, t  | x_{0} )}{\partial t}=\mathcal{D} \frac{\partial^{2}C(x, t | x_{0})}{\partial^2 x} + v \frac{\partial  C(x, t | x_{0})}{\partial x},
+\end{equation}
+%
+with the initial condition $C(x, t=0 | x_{0})=\delta\left(x-x_{0}\right)$ and boundary conditions $\frac{dC(x, t | x_{0})}{dr} \big|_{x=0} = 0$ and $C(x \to \infty, t  | x_{0} ) = 0$. The drift is $v>0$ and its direction is towards the reflecting boundary at zero. In appendix \ref{Appendix:H}, we obtain $ \widetilde{C}(x, s | x_{0})$ in Eq. (\ref{H:2}).  The Laplace transform of the first-passage probability $\widetilde{F}_s(x | x_{0})$ and its mean $\braket{T_f (x| x_{0})}$ can also be obtained and we give them in Eqs. (\ref{H:11}) and (\ref{H:12}). Assuming for simplicity that the particle starts at the boundary $b$, one can utilize Eq. (\ref{mean10}) to obtain the mean detection time $\langle T_d(b,I) \rangle$ by plugging in the ungated quantities obtained above.
+
+
+For intermediate values of $v>0$, it is clear that drift can speed up detection as it helps avoid situations where the particle drifts away from the interval. However, if $v$ is sufficiently large, a significant contribution to the detection time comes from trajectories where the diffusing particle crosses over to the other side of the interval (with its position somewhere between $0$ and $a$), and then travels uphill against the drift, for the eventual detection (see Fig. \ref{fig:schematic_bounded}a and the associated caption). Thus, one would expect the mean detection time $\langle T_d(b,I) \rangle$ to vary non-monotonically as a function of $v$. This expectation is indeed verified in Fig.~\ref{fig:schematic_bounded}(b), where we fix $\alpha=\mathcal{D}=1$, $a=1$ and $b=3$ and plot $\langle T_d(b,I) \rangle$ vs. $v$ for $\beta=0.25, 0.5, 1, 2,4$. For small values of $v$,  the mean detection time decreases linearly as the drift is increased. However, for large $v$, it increases rapidly, indicating that detection is much more difficult. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.45\columnwidth]{fig_chap2/Figure4.pdf}
+    \caption{Detecting a particle diffusing with drift by a gated interval. (a) Schematics of the process where a particle, initially at $x_0$ while the gate is in the non-reactive state, is diffusing on the positive ray $(0,\infty)$ with a drift velocity $v$ towards the origin. The gated interval is $[a,b]$, and the origin is considered reflective. The two trajectories represent two different types of detection events. The purple trajectory illustrates a scenario likely to happen when $v$ is large. Namely, if the particle arrives at the upper boundary $b$ when the gated interval is non-reactive, then the particle may be able to cross the interval without being detected. It will subsequently need to go against the drift for a detection event to occur. The green trajectory is representative of low $v$, where a particle that arrives at the upper boundary when the interval is non-reactive is unlikely to cross the interval without being detected. (b) Mean detection time $\langle T(b,I) \rangle $ vs. $v$ for $\beta = 0.25, 0.5, 1, 2,$ and $4$, at $\alpha=\mathcal{D}=1$ . The mean detection time displays a non-monotonic dependence on $v$, and achieves a minimum for some $v=v^*$. Inset shows plots for $\mathcal{D}=0.25, 0.5, 1, 2,$ and $4$, at $\alpha=\beta=1$, showing that $v^*$ also depends on $\mathcal{D}$.}
+    \label{fig:schematic_bounded}
+\end{figure}
+
+This naturally leads to the question of finding the optimal drift velocity which minimizes the mean detection time. From Fig.~\ref{fig:schematic_bounded}(b), it is evident that the value of $v^*$, which is the value of $v$ for which $\langle T_d(b,I) \rangle$ achieves its minimum value, increases as $\beta$ increases. This is expected as increasing $\beta$ increases the amount of time the particle spends in the reactive state. This, in turn, reduces the chance that the particle will cross the interval undetected, which allows for higher drift velocities. Naively, one could formulate the following argument to find $v^*$: the mean time taken for the particle to turn reactive is $\beta^{-1}$, while the particle travels an average distance of $v/\beta$ during this time. So, one could give a preliminary estimate of $v^* \approx (b-a)\beta$. However, as we show in the inset of Fig.~\ref{fig:schematic_bounded}(b), $v^*$ also depends on the diffusion coefficient, with smaller values of $\mathcal{D}$ corresponding to higher values of $v^*$. This highlights the importance of the exact result obtained in Eq. (\ref{mean10}), which captures the explicit dependence of the mean detection time on $\mathcal{D}$, along with other relevant parameters, and allows us to analytically study this optimization problem. 
+
+
+\section{Discussion} \label{Sec:8}
+
+Gated first-passage processes, which arise in various situations ranging from analysis of time-series data to several chemical reactions, were the focal point of this chapter. We presented a novel framework that yields closed-form solutions for the statistics of the detection time density in terms of the properties of the ungated first-passage process. In particular, our approach allowed us to obtain the Laplace transform of the detection time density and all its moments. 
+
+Crucially, we showed that the exact results derived herein shed light on universal features of gated first-passage processes. Namely, in situations where the ungated first-passage time density is characterized by power-law asymptotics, the corresponding detection time density inherits the same power-law decay, albeit with a different prefactor. The long-time power-law tail may be preceded by a slower transient power-law decay with a different exponent. Our formalism reveals that, in the case of point targets, such a transient power-law decay is a generic feature of Markovian gated first-passage processes. Yet, an additional condition is required to guarantee its existence for targets of non-zero volume. In Appendix~\ref{Appendix:highd}, we also discuss the generalization of our results to higher dimensions. 
+
+In this section, we focused on continuous processes. Yet, in fact, our formalism can also treat processes with discontinuous trajectories (albeit still in continuous space). An interesting example is stochastic jump processes, which can be treated by our formalism as long as jumps cannot be made into the gated target itself. Consider, for example, continuous stochastic processes that undergo stochastic resetting. We note that for the gated point target search and threshold crossing problems, the formulas derived in this section hold without change, even in the presence of resetting. Generalization to the case of a gated interval is also straightforward but requires careful consideration since restart can teleport the particle from one side of the interval to another without the need to cross the interval itself.
+
+Finally, an important generalization of the framework considered herein is to the case of non-Markovian gating. Indeed, it is often the case that the dynamics of molecular gates are governed by binding and unbinding events of ligands. In turn, these events themselves are governed by first-passage processes whose first-passage times distributions need not be exponential. This highlights the importance of understanding the role non-Markovianity plays in determining the statistics of gated detection times. Non-Markovian gating also plays a central role when considering periodically sampled time-series, which have been recently shown to have interesting and distinct behaviors compared to their ungated counterparts. Developing an analytical framework to address these questions is an important direction for future research. 
