@@ -1,0 +1,61 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: gameOfThrones.aux
+The style file: unsrt.bst
+Database file #1: ref.bib
+Warning--entry type for "DVN/VOQCHQ_2018" isn't style-file defined
+--line 1071 of file ref.bib
+Warning--I didn't find a database entry for "jacobson1987marginals"
+Warning--I didn't find a database entry for "mccrane1997threatening"
+Warning--I didn't find a database entry for "mulligan2003empirical"
+Warning--I didn't find a database entry for "magrino2011computing"
+Warning--I didn't find a database entry for "xia2012computing"
+Warning--I didn't find a database entry for "bhattacharyya2021predicting"
+Warning--I didn't find a database entry for "statistical-detection-of-systematic-election-irregularities"
+Warning--I didn't find a database entry for "testing-for-voter-rigging-in-small-polling-stations"
+Warning--I didn't find a database entry for "belarus2012parliamentary"
+Warning--I didn't find a database entry for "belarusian2019parliamentary"
+Warning--I didn't find a database entry for "belarus2020presidential"
+Warning--empty journal in opinioin-dynamics-and-bounded-confidence
+You've used 88 entries,
+            1791 wiz_defined-function locations,
+            996 strings with 20183 characters,
+and the built_in function-call counts, 19544 in all, are:
+= -- 1700
+> -- 887
+< -- 2
++ -- 334
+- -- 246
+* -- 1495
+:= -- 3161
+add.period$ -- 260
+call.type$ -- 88
+change.case$ -- 81
+chr.to.int$ -- 0
+cite$ -- 89
+duplicate$ -- 794
+empty$ -- 1938
+format.name$ -- 246
+if$ -- 4248
+int.to.chr$ -- 0
+int.to.str$ -- 88
+missing$ -- 90
+newline$ -- 438
+num.names$ -- 84
+pop$ -- 172
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 313
+stack$ -- 0
+substring$ -- 1458
+swap$ -- 106
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 190
+width$ -- 90
+write$ -- 942
+(There were 13 warnings)

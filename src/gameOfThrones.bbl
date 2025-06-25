@@ -25,6 +25,11 @@ Charles~G Lord, Lee Ross, and Mark~R Lepper.
 \newblock Biased assimilation and attitude polarization: The effects of prior theories on subsequently considered evidence.
 \newblock {\em Journal of personality and social psychology}, 37(11):2098, 1979.
 
+\bibitem{have-americans-social-attitudes-become-more-polarized}
+Paul DiMaggio, John Evans, and Bethany Bryson.
+\newblock Have american's social attitudes become more polarized?
+\newblock {\em American journal of Sociology}, 102(3):690--755, 1996.
+
 \bibitem{paritisans-without-constrait-political-polarization-and-trends}
 Delia Baldassarri and Andrew Gelman.
 \newblock Partisans without constraint: Political polarization and trends in american public opinion.
@@ -45,10 +50,25 @@ Wesley Cota, Silvio~C Ferreira, Romualdo Pastor-Satorras, and Michele Starnini.
 \newblock Quantifying echo chamber effects in information spreading over political communication networks.
 \newblock {\em EPJ Data Science}, 8(1):35, 2019.
 
+\bibitem{political-discourse-on-social-media-echo-chambers}
+Kiran Garimella, Gianmarco De~Francisci~Morales, Aristides Gionis, and Michael Mathioudakis.
+\newblock Political discourse on social media: Echo chambers, gatekeepers, and the price of bipartisanship.
+\newblock In {\em Proceedings of the 2018 world wide web conference}, pages 913--922, 2018.
+
+\bibitem{The-echo-chamber–effect-on-social-media}
+Matteo Cinelli, Gianmarco De~Francisci~Morales, Alessandro Galeazzi, Walter Quattrociocchi, and Michele Starnini.
+\newblock The echo chamber effect on social media.
+\newblock {\em Proceedings of the National Academy of Sciences}, 118(9):e2023301118, 2021.
+
 \bibitem{link-recommendation-algorithms-and-dynamics-of-polarization-in-social-networks}
 Fernando~P Santos, Yphtach Lelkes, and Simon~A Levin.
 \newblock Link recommendation algorithms and dynamics of polarization in online social networks.
 \newblock {\em Proceedings of the National Academy of Sciences}, 118(50):e2102141118, 2021.
+
+\bibitem{reaching-a-consensus}
+Morris~H DeGroot.
+\newblock Reaching a consensus.
+\newblock {\em Journal of the American Statistical association}, 69(345):118--121, 1974.
 
 \bibitem{the-voter-model}
 Richard~A Holley and Thomas~M Liggett.
@@ -69,41 +89,6 @@ Katarzyna Sznajd-Weron and Jozef Sznajd.
 Katarzyna Sznajd-Weron, J{\'o}zef Sznajd, and Tomasz Weron.
 \newblock A review on the sznajd model—20 years after.
 \newblock {\em Physica A: Statistical Mechanics and its Applications}, 565:125537, 2021.
-
-\bibitem{modeling-echo-chambers-and-polarizaiton-dynamics-in-social-networks}
-Fabian Baumann, Philipp Lorenz-Spreen, Igor~M Sokolov, and Michele Starnini.
-\newblock Modeling echo chambers and polarization dynamics in social networks.
-\newblock {\em Physical Review Letters}, 124(4):048301, 2020.
-
-\bibitem{birds-of-a-feather-homophily-in-social-networks}
-Miller McPherson, Lynn Smith-Lovin, and James~M Cook.
-\newblock Birds of a feather: Homophily in social networks.
-\newblock {\em Annual review of sociology}, 27(1):415--444, 2001.
-
-\bibitem{depolarization-of-echo-chambers-by-random-dynamical-nudge}
-Christopher~Brian Currin, Sebasti{\'a}n~Vallejo Vera, and Ali Khaledi-Nasab.
-\newblock Depolarization of echo chambers by random dynamical nudge.
-\newblock {\em Scientific Reports}, 12(1):9234, 2022.
-
-\bibitem{homophily-and-polarization-in-the-age-of-misinformation}
-Alessandro Bessi, Fabio Petroni, Michela~Del Vicario, Fabiana Zollo, Aris Anagnostopoulos, Antonio Scala, Guido Caldarelli, and Walter Quattrociocchi.
-\newblock Homophily and polarization in the age of misinformation.
-\newblock {\em The European Physical Journal Special Topics}, 225:2047--2059, 2016.
-
-\bibitem{brigaldino2011elections}
-Glenn Brigaldino.
-\newblock Elections in the imperial periphery: Ethiopia hijacked.
-\newblock {\em Review of African political economy}, 38(128):327--334, 2011.
-
-\bibitem{reaching-a-consensus}
-Morris~H DeGroot.
-\newblock Reaching a consensus.
-\newblock {\em Journal of the American Statistical association}, 69(345):118--121, 1974.
-
-\bibitem{have-americans-social-attitudes-become-more-polarized}
-Paul DiMaggio, John Evans, and Bethany Bryson.
-\newblock Have american's social attitudes become more polarized?
-\newblock {\em American journal of Sociology}, 102(3):690--755, 1996.
 
 \bibitem{the-dissemination-of-culture}
 Robert Axelrod.
@@ -140,15 +125,10 @@ Hegselmann Rainer and Ulrich Krause.
 \newblock Opinion dynamics and bounded confidence: models, analysis and simulation.
 \newblock 2002.
 
-\bibitem{political-discourse-on-social-media-echo-chambers}
-Kiran Garimella, Gianmarco De~Francisci~Morales, Aristides Gionis, and Michael Mathioudakis.
-\newblock Political discourse on social media: Echo chambers, gatekeepers, and the price of bipartisanship.
-\newblock In {\em Proceedings of the 2018 world wide web conference}, pages 913--922, 2018.
-
-\bibitem{The-echo-chamber–effect-on-social-media}
-Matteo Cinelli, Gianmarco De~Francisci~Morales, Alessandro Galeazzi, Walter Quattrociocchi, and Michele Starnini.
-\newblock The echo chamber effect on social media.
-\newblock {\em Proceedings of the National Academy of Sciences}, 118(9):e2023301118, 2021.
+\bibitem{modeling-echo-chambers-and-polarizaiton-dynamics-in-social-networks}
+Fabian Baumann, Philipp Lorenz-Spreen, Igor~M Sokolov, and Michele Starnini.
+\newblock Modeling echo chambers and polarization dynamics in social networks.
+\newblock {\em Physical Review Letters}, 124(4):048301, 2020.
 
 \bibitem{polarized-idoelogy}
 Fabian Baumann, Philipp Lorenz-Spreen, Igor~M Sokolov, and Michele Starnini.
@@ -174,116 +154,6 @@ Petter T{\"o}rnberg.
 Michela Del~Vicario, Alessandro Bessi, Fabiana Zollo, Fabio Petroni, Antonio Scala, Guido Caldarelli, H~Eugene Stanley, and Walter Quattrociocchi.
 \newblock The spreading of misinformation online.
 \newblock {\em Proceedings of the national academy of Sciences}, 113(3):554--559, 2016.
-
-\bibitem{the-group-polarization-phemomenon}
-David~G Myers and Helmut Lamm.
-\newblock The group polarization phenomenon.
-\newblock {\em Psychological bulletin}, 83(4):602, 1976.
-
-\bibitem{group-polarization-a-critical-review-and-meta-analysis}
-Daniel~J Isenberg.
-\newblock Group polarization: A critical review and meta-analysis.
-\newblock {\em Journal of personality and social psychology}, 50(6):1141, 1986.
-
-\bibitem{activity-driven-modeling-of-time-varying-networks}
-Nicola Perra, Bruno Gon{\c{c}}alves, Romualdo Pastor-Satorras, and Alessandro Vespignani.
-\newblock Activity driven modeling of time varying networks.
-\newblock {\em Scientific reports}, 2(1):469, 2012.
-
-\bibitem{topological-properties-of-time-integrated-activity-driven-netowork}
-Michele Starnini and Romualdo Pastor-Satorras.
-\newblock Topological properties of a time-integrated activity-driven network.
-\newblock {\em Physical Review E}, 87(6):062807, 2013.
-
-\bibitem{burstiness-and-aging-in-social-temporal-networks}
-Antoine Moinet, Michele Starnini, and Romualdo Pastor-Satorras.
-\newblock Burstiness and aging in social temporal networks.
-\newblock {\em Physical review letters}, 114(10):108701, 2015.
-
-\bibitem{controlling-contagion-processes-in-activity-driven-networks}
-Suyu Liu, Nicola Perra, M{\'a}rton Karsai, and Alessandro Vespignani.
-\newblock Controlling contagion processes in activity driven networks.
-\newblock {\em Physical review letters}, 112(11):118702, 2014.
-
-\bibitem{networkx}
-Aric Hagberg, Pieter Swart, and Daniel S~Chult.
-\newblock Exploring network structure, dynamics, and function using networkx.
-\newblock Technical report, Los Alamos National Lab.(LANL), Los Alamos, NM (United States), 2008.
-
-\bibitem{the-echo-chamber-is-overstated}
-Elizabeth Dubois and Grant Blank.
-\newblock The echo chamber is overstated: the moderating effect of political interest and diverse media.
-\newblock {\em Information, communication \& society}, 21(5):729--745, 2018.
-
-\bibitem{modeling-explosive-opinion-depolarization-in-interdependent-topics}
-Jaume Ojer, Michele Starnini, and Romualdo Pastor-Satorras.
-\newblock Modeling explosive opinion depolarization in interdependent topics.
-\newblock {\em arXiv preprint arXiv:2212.07879}, 2022.
-
-\bibitem{recommender-systems-and-their-ethical-challenges}
-Silvia Milano, Mariarosaria Taddeo, and Luciano Floridi.
-\newblock Recommender systems and their ethical challenges.
-\newblock {\em Ai \& Society}, 35:957--967, 2020.
-
-\bibitem{echo-chambers-in-collaborative-filtering-based-recommendation-systems}
-Emil Noordeh, Roman Levin, Ruochen Jiang, and Harris Shadmany.
-\newblock Echo chambers in collaborative filtering based recommendation systems.
-\newblock {\em arXiv preprint arXiv:2011.03890}, 2020.
-
-\bibitem{recommender-systems-and-the-amplification-of-extremist-content}
-Joe Whittaker, Se{\'a}n Looney, Alastair Reed, and Fabio Votta.
-\newblock Recommender systems and the amplification of extremist content.
-\newblock {\em Internet Policy Review}, 10(2):1--29, 2021.
-
-\bibitem{user-tampering}
-Charles Evans and Atoosa Kasirzadeh.
-\newblock User tampering in reinforcement learning recommender systems.
-\newblock {\em arXiv preprint arXiv:2109.04083}, 2021.
-
-\bibitem{youtube-audit}
-Muhammad Haroon, Anshuman Chhabra, Xin Liu, Prasant Mohapatra, Zubair Shafiq, and Magdalena Wojcieszak.
-\newblock Youtube, the great radicalizer? auditing and mitigating ideological biases in youtube recommendations.
-\newblock {\em arXiv preprint arXiv:2203.10666}, 2022.
-
-\bibitem{hohmann2023quantifying}
-Marilena Hohmann, Karel Devriendt, and Michele Coscia.
-\newblock Quantifying ideological polarization on a network using generalized euclidean distance.
-\newblock {\em Science Advances}, 9(9):eabq2044, 2023.
-
-\bibitem{KliYegHan2012}
-Peter Klimek, Yuri Yegorov, Rudolf Hanel, and Stefan Thurner.
-\newblock Statistical detection of systematic election irregularities.
-\newblock {\em Proceedings of the National Academy of Sciences}, 109(41):16469--16473, 2012.
-
-\bibitem{BorRayBou2012}
-Christian Borghesi, Jean-Claude Raynal, and Jean-Philippe Bouchaud.
-\newblock Election turnout statistics in many countries: Similarities, differences, and a diffusive field model for decision-making.
-\newblock {\em PLOS ONE}, 7(5):1--12, 05 2012.
-
-\bibitem{FerSucRam2014}
-Juan Fern\'andez-Gracia, Krzysztof Suchecki, Jos\'e~J. Ramasco, Maxi San~Miguel, and V\'{\i}ctor~M. Egu\'{\i}luz.
-\newblock Is the voter model a model for voters?
-\newblock {\em Phys. Rev. Lett.}, 112:158701, Apr 2014.
-
-\bibitem{ChaMitFor2013}
-Arnab Chatterjee, Marija Mitrovi{\'c}, and Santo Fortunato.
-\newblock Universality in voting behavior: an empirical analysis.
-\newblock {\em Scientific reports}, 3(1):1049, 2013.
-
-\bibitem{BokSzaVat2018}
-Eszter Bokányi, Zoltán Szállási, and Gábor Vattay.
-\newblock Universal scaling laws in metro area election results.
-\newblock {\em PLOS ONE}, 13(2):1--11, 02 2018.
-
-\bibitem{mantovani2011scaling}
-MC~Mantovani, HV~Ribeiro, MV~Moro, S~Picoli, and RS~Mendes.
-\newblock Scaling laws and universality in the choice of election candidates.
-\newblock {\em Europhysics Letters}, 96(4):48001, 2011.
-
-\bibitem{BraDeA2017}
-Dan Braha and Marcus A.~M. de~Aguiar.
-\newblock Voting contagion: Modeling and analysis of a century of u.s. presidential elections.
-\newblock {\em PLOS ONE}, 12(5):1--30, 05 2017.
 
 \bibitem{anderson1972more}
 Philip~W Anderson.
@@ -386,6 +256,21 @@ C.~Borghesi and J.-P. Bouchaud.
 \newblock Spatial correlations in vote statistics: a diffusive field model for decision-making.
 \newblock {\em Eur. Phys. J. B}, 75(3):395--404, June 2010.
 
+\bibitem{mantovani2011scaling}
+MC~Mantovani, HV~Ribeiro, MV~Moro, S~Picoli, and RS~Mendes.
+\newblock Scaling laws and universality in the choice of election candidates.
+\newblock {\em Europhysics Letters}, 96(4):48001, 2011.
+
+\bibitem{BokSzaVat2018}
+Eszter Bokányi, Zoltán Szállási, and Gábor Vattay.
+\newblock Universal scaling laws in metro area election results.
+\newblock {\em PLOS ONE}, 13(2):1--11, 02 2018.
+
+\bibitem{ChaMitFor2013}
+Arnab Chatterjee, Marija Mitrovi{\'c}, and Santo Fortunato.
+\newblock Universality in voting behavior: an empirical analysis.
+\newblock {\em Scientific reports}, 3(1):1049, 2013.
+
 \bibitem{hosel2019universality}
 Volker H{\"o}sel, Johannes M{\"u}ller, and Aurelien Tellier.
 \newblock Universality of neutral models: Decision process in politics.
@@ -406,6 +291,21 @@ Angelo~Mondaini Calvão, Nuno Crokidakis, and Celia Anteneodo.
 \newblock Stylized facts in brazilian vote distributions.
 \newblock {\em PLOS ONE}, 10(9):1--20, 09 2015.
 
+\bibitem{BorRayBou2012}
+Christian Borghesi, Jean-Claude Raynal, and Jean-Philippe Bouchaud.
+\newblock Election turnout statistics in many countries: Similarities, differences, and a diffusive field model for decision-making.
+\newblock {\em PLOS ONE}, 7(5):1--12, 05 2012.
+
+\bibitem{FerSucRam2014}
+Juan Fern\'andez-Gracia, Krzysztof Suchecki, Jos\'e~J. Ramasco, Maxi San~Miguel, and V\'{\i}ctor~M. Egu\'{\i}luz.
+\newblock Is the voter model a model for voters?
+\newblock {\em Phys. Rev. Lett.}, 112:158701, Apr 2014.
+
+\bibitem{BraDeA2017}
+Dan Braha and Marcus A.~M. de~Aguiar.
+\newblock Voting contagion: Modeling and analysis of a century of u.s. presidential elections.
+\newblock {\em PLOS ONE}, 12(5):1--30, 05 2017.
+
 \bibitem{MicIlkAtt2021}
 J{\'e}r{\^o}me Michaud, Ilkka~H M{\"a}kinen, Attila Szilva, and Emil Frisk.
 \newblock A spatial analysis of parliamentary elections in sweden 1985--2018.
@@ -415,5 +315,124 @@ J{\'e}r{\^o}me Michaud, Ilkka~H M{\"a}kinen, Attila Szilva, and Emil Frisk.
 Shintaro Mori, Masato Hisakado, and Kazuaki Nakayama.
 \newblock Voter model on networks and the multivariate beta distribution.
 \newblock {\em Phys. Rev. E}, 99:052307, May 2019.
+
+\bibitem{india_data}
+Election data of india.
+\newblock \url{https://www.eci.gov.in}.
+
+\bibitem{clea}
+Constituency-level elections archive [data file and codebook].
+\newblock \url{http://www.electiondataarchive.org}.
+
+\bibitem{canada_data}
+Election data of canada.
+\newblock \url{https://www.elections.ca}.
+
+\bibitem{DVN/VOQCHQ_2018}
+MIT~Election Data and Science Lab.
+\newblock {County Presidential Election Returns 2000-2020}, 2018.
+
+\bibitem{klimek2012statistical}
+Peter Klimek, Yuri Yegorov, Rudolf Hanel, and Stefan Thurner.
+\newblock Statistical detection of systematic election irregularities.
+\newblock {\em Proceedings of the National Academy of Sciences}, 109(41):16469--16473, 2012.
+
+\bibitem{jimenez2017testing}
+Ra{\'u}l Jimenez, Manuel Hidalgo, and Peter Klimek.
+\newblock Testing for voter rigging in small polling stations.
+\newblock {\em Science advances}, 3(6):e1602363, 2017.
+
+\bibitem{brigaldino2011elections}
+Glenn Brigaldino.
+\newblock Elections in the imperial periphery: Ethiopia hijacked.
+\newblock {\em Review of African political economy}, 38(128):327--334, 2011.
+
+\bibitem{the-group-polarization-phemomenon}
+David~G Myers and Helmut Lamm.
+\newblock The group polarization phenomenon.
+\newblock {\em Psychological bulletin}, 83(4):602, 1976.
+
+\bibitem{group-polarization-a-critical-review-and-meta-analysis}
+Daniel~J Isenberg.
+\newblock Group polarization: A critical review and meta-analysis.
+\newblock {\em Journal of personality and social psychology}, 50(6):1141, 1986.
+
+\bibitem{activity-driven-modeling-of-time-varying-networks}
+Nicola Perra, Bruno Gon{\c{c}}alves, Romualdo Pastor-Satorras, and Alessandro Vespignani.
+\newblock Activity driven modeling of time varying networks.
+\newblock {\em Scientific reports}, 2(1):469, 2012.
+
+\bibitem{topological-properties-of-time-integrated-activity-driven-netowork}
+Michele Starnini and Romualdo Pastor-Satorras.
+\newblock Topological properties of a time-integrated activity-driven network.
+\newblock {\em Physical Review E}, 87(6):062807, 2013.
+
+\bibitem{burstiness-and-aging-in-social-temporal-networks}
+Antoine Moinet, Michele Starnini, and Romualdo Pastor-Satorras.
+\newblock Burstiness and aging in social temporal networks.
+\newblock {\em Physical review letters}, 114(10):108701, 2015.
+
+\bibitem{controlling-contagion-processes-in-activity-driven-networks}
+Suyu Liu, Nicola Perra, M{\'a}rton Karsai, and Alessandro Vespignani.
+\newblock Controlling contagion processes in activity driven networks.
+\newblock {\em Physical review letters}, 112(11):118702, 2014.
+
+\bibitem{depolarization-of-echo-chambers-by-random-dynamical-nudge}
+Christopher~Brian Currin, Sebasti{\'a}n~Vallejo Vera, and Ali Khaledi-Nasab.
+\newblock Depolarization of echo chambers by random dynamical nudge.
+\newblock {\em Scientific Reports}, 12(1):9234, 2022.
+
+\bibitem{the-echo-chamber-is-overstated}
+Elizabeth Dubois and Grant Blank.
+\newblock The echo chamber is overstated: the moderating effect of political interest and diverse media.
+\newblock {\em Information, communication \& society}, 21(5):729--745, 2018.
+
+\bibitem{modeling-explosive-opinion-depolarization-in-interdependent-topics}
+Jaume Ojer, Michele Starnini, and Romualdo Pastor-Satorras.
+\newblock Modeling explosive opinion depolarization in interdependent topics.
+\newblock {\em arXiv preprint arXiv:2212.07879}, 2022.
+
+\bibitem{recommender-systems-and-their-ethical-challenges}
+Silvia Milano, Mariarosaria Taddeo, and Luciano Floridi.
+\newblock Recommender systems and their ethical challenges.
+\newblock {\em Ai \& Society}, 35:957--967, 2020.
+
+\bibitem{echo-chambers-in-collaborative-filtering-based-recommendation-systems}
+Emil Noordeh, Roman Levin, Ruochen Jiang, and Harris Shadmany.
+\newblock Echo chambers in collaborative filtering based recommendation systems.
+\newblock {\em arXiv preprint arXiv:2011.03890}, 2020.
+
+\bibitem{recommender-systems-and-the-amplification-of-extremist-content}
+Joe Whittaker, Se{\'a}n Looney, Alastair Reed, and Fabio Votta.
+\newblock Recommender systems and the amplification of extremist content.
+\newblock {\em Internet Policy Review}, 10(2):1--29, 2021.
+
+\bibitem{user-tampering}
+Charles Evans and Atoosa Kasirzadeh.
+\newblock User tampering in reinforcement learning recommender systems.
+\newblock {\em arXiv preprint arXiv:2109.04083}, 2021.
+
+\bibitem{youtube-audit}
+Muhammad Haroon, Anshuman Chhabra, Xin Liu, Prasant Mohapatra, Zubair Shafiq, and Magdalena Wojcieszak.
+\newblock Youtube, the great radicalizer? auditing and mitigating ideological biases in youtube recommendations.
+\newblock {\em arXiv preprint arXiv:2203.10666}, 2022.
+
+\bibitem{hohmann2023quantifying}
+Marilena Hohmann, Karel Devriendt, and Michele Coscia.
+\newblock Quantifying ideological polarization on a network using generalized euclidean distance.
+\newblock {\em Science Advances}, 9(9):eabq2044, 2023.
+
+\bibitem{BarBalNag2008}
+Barry~C. Arnold, N.~Balakrishnan, and H.~N. Nagaraja.
+\newblock {\em A First Course in Order Statistics}.
+\newblock Society for Industrial and Applied Mathematics, 2008.
+
+\bibitem{abramowitz_stegun}
+Milton Abramowitz and Irene~A. Stegun.
+\newblock {\em Handbook of Mathematical Functions with Formulas, Graphs, and Mathematical Tables}.
+\newblock Dover, New York, ninth dover printing, tenth gpo printing edition, 1964.
+
+\bibitem{supp}
+See Supplemental Material [URL] for (1) the description of RVM, (2) theoretical calculations for RVM and other related discussions, (3) data summary, and (4) figures, which includes Refs. [40].
 
 \end{thebibliography}

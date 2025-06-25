@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,twoside,openany]{report}
+\documentclass[12pt,a4paper,twoside]{report}
 \linespread {1.5}
 \setcounter{secnumdepth}{3}
 
@@ -51,6 +51,7 @@
 \usepackage{mathtools}
 \usepackage{blindtext}
 \usepackage{titletoc}
+\usepackage{cases}
 % \usepackage{unicode-math}
 
 \makeindex
@@ -60,19 +61,6 @@
 
 \definecolor{med-blue}{RGB}{25,25,112} 
 \hypersetup{colorlinks, linkcolor={blue},citecolor={blue}, urlcolor={blue}}
-
-\newcommand{\outpr}[2]{\vert{#1}\rangle\langle{#2}\vert}
-\newcommand{\inpr}[2]{\langle{#1}\vert{#2}\rangle}
-\newcommand{\expv}[1]{\langle{#1}\rangle}
-\newcommand{\mprod}[3]{\langle{#1}\vert{#2}\vert{#3}\rangle}
-\newcommand{\proj}[1]{\outpr{#1}{#1}}
-\newcommand{\expec}[1]{\langle{#1}\rangle}
-\newcommand{\abs}[1]{\vert{#1}\vert}
-\newcommand{\norm}[1]{\vert{#1}\vert^2}
-\newcommand{\tr}{\mathrm{Tr}}
-\newcommand{\dbydt}{\frac{d}{dt}}
-\newcommand{\tabhead}[1]{\textbf{#1}}
-\newcommand{\rothead}[1]{\rotatebox{45}{\tabhead{#1}}}
 \usepackage{afterpage}
 \usepackage{geometry}
 \newenvironment{changemargin}[3]{%
@@ -90,11 +78,12 @@
 
 \begin{document}
 
-\include{cover}
+% \include{cover}
 
 \linespread {1}
 \cleardoublepage
 \tableofcontents
+
 \cleardoublepage
 \titlespacing*{\chapter}{0pt}{-20pt}{20pt}
 
@@ -135,15 +124,15 @@
 \thispagestyle{empty}
 \mbox{}
 
-\input{chapters/chapter6/chapter6}
-\newpage
-\thispagestyle{empty}
-\mbox{}
+% \input{chapters/chapter6/chapter6}
+% \newpage
+% \thispagestyle{empty}
+% \mbox{}
 
-\input{chapters/chapter7/chapter7}
-\newpage
-\thispagestyle{empty}
-\mbox{}
+% \input{chapters/chapter7/chapter7}
+% \newpage
+% \thispagestyle{empty}
+% \mbox{}
 
 \bibliographystyle{unsrt}
 \cleardoublepage \addcontentsline{toc}{chapter}{References}
