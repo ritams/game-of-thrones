@@ -8,34 +8,34 @@
 \contentsline {subsection}{\numberline {1.3.1}The Search for Universal Patterns in Electoral Data}{6}{subsection.1.3.1}%
 \contentsline {subsection}{\numberline {1.3.2}Margins of Victory and Voter Turnout}{6}{subsection.1.3.2}%
 \contentsline {section}{\numberline {1.4}Structural Overview and Research Framework}{7}{section.1.4}%
-\contentsline {chapter}{\numberline {2}A Gentle Nudge Against Online Polarization}{10}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Opinion Dynamics in Digital Social Networks}{10}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Theoretical Framework: A Model of Opinion Dynamics}{11}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}The Opinion Dynamics Framework}{11}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}The Three States of Opinion Dynamics}{13}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Quantitative Metrics for Polarization Assessmen}{14}{subsection.2.2.3}%
-\contentsline {section}{\numberline {2.3}The Intervention: The ``Random Nudge" Strategy}{15}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Mechanisms and Challenges of Echo Chamber Formation}{16}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}The Random Nudge Mechanism}{16}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Mathematical Formulation}{17}{subsection.2.3.3}%
-\contentsline {section}{\numberline {2.4}Empirical Results of the Random Nudge Intervention}{17}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Depolarization Effects}{17}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Network Effect: Breaking of Distinct Clusters}{18}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}Quantitative Analysis of Polarization Reduction}{20}{subsection.2.4.3}%
-\contentsline {section}{\numberline {2.5}Balancing Depolarization Against Radicalization Risk}{22}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Finding the Sweet Spot: Optimizing the Nudge}{22}{subsection.2.5.1}%
-\contentsline {section}{\numberline {2.6}Robustness Check: Testing on Alternative Models}{23}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Discussion and Implications}{24}{section.2.7}%
-\contentsline {subsection}{\numberline {2.7.1}Implications for Digital Platform Design}{25}{subsection.2.7.1}%
-\contentsline {subsection}{\numberline {2.7.2}Ethical Considerations and Implementation Challenges}{25}{subsection.2.7.2}%
-\contentsline {subsection}{\numberline {2.7.3}Broader Implications for Collective Decision-Making}{25}{subsection.2.7.3}%
+\contentsline {chapter}{\numberline {2}A Gentle Nudge Against Online Polarization}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Opinion Dynamics in Digital Social Networks}{9}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Theoretical Framework: A Model of Opinion Dynamics}{10}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}The Opinion Dynamics Framework}{10}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}The Three States of Opinion Dynamics}{12}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Quantitative Metrics for Polarization Assessmen}{13}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}The Intervention: The ``Random Nudge" Strategy}{14}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Mechanisms and Challenges of Echo Chamber Formation}{15}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}The Random Nudge Mechanism}{15}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Mathematical Formulation}{16}{subsection.2.3.3}%
+\contentsline {section}{\numberline {2.4}Empirical Results of the Random Nudge Intervention}{16}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Depolarization Effects}{16}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Network Effect: Breaking of Distinct Clusters}{17}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Quantitative Analysis of Polarization Reduction}{19}{subsection.2.4.3}%
+\contentsline {section}{\numberline {2.5}Balancing Depolarization Against Radicalization Risk}{20}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Finding the Sweet Spot: Optimizing the Nudge}{21}{subsection.2.5.1}%
+\contentsline {section}{\numberline {2.6}Robustness Check: Testing on Alternative Models}{22}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Discussion and Implications}{23}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}Implications for Digital Platform Design}{24}{subsection.2.7.1}%
+\contentsline {subsection}{\numberline {2.7.2}Ethical Considerations and Implementation Challenges}{24}{subsection.2.7.2}%
+\contentsline {subsection}{\numberline {2.7.3}Broader Implications for Collective Decision-Making}{24}{subsection.2.7.3}%
 \contentsline {chapter}{\numberline {3}Digging into the Data: The Foundation of Electoral Analysis}{28}{chapter.3}%
 \contentsline {section}{\numberline {3.1}The Pivot: From Opinions to Elections}{28}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Data Collection Methodology and Sources}{28}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Dataset Structure and Variable Definitions}{29}{section.3.3}%
 \contentsline {section}{\numberline {3.4}Data Processing and Quality Assurance}{30}{section.3.4}%
 \contentsline {section}{\numberline {3.5}Descriptive Statistics and Cross-National Patterns}{31}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Dataset Validation and Analytical Framework}{32}{section.3.6}%
+\contentsline {section}{\numberline {3.6}Dataset Validation and Analytical Framework}{34}{section.3.6}%
 \contentsline {chapter}{\numberline {4}Universal Clues in the Ballot Box}{36}{chapter.4}%
 \contentsline {section}{\numberline {4.1}The Quest for Electoral Universality: From Previous Attempts to New Approaches}{36}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Historical Approaches to Electoral Universality: Prior Research and Limitations}{36}{subsection.4.1.1}%
@@ -66,5 +66,21 @@
 \contentsline {subsubsection}{\numberline {5.3.3.2}Scale-Independent Predictive Accuracy}{59}{subsubsection.5.3.3.2}%
 \contentsline {subsubsection}{\numberline {5.3.3.3}Comprehensive Validation Across All Countries}{59}{subsubsection.5.3.3.3}%
 \contentsline {section}{\numberline {5.4}Conclusion: The Power and Limitations of RVM}{61}{section.5.4}%
-\contentsline {chapter}{References}{65}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Beyond Margins: Winner and Runner-up votes}{63}{chapter.6}%
+\contentsline {section}{\numberline {6.1}The Effective Number of Candidates}{63}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Relationship Between Turnout and Vote Distributions}{64}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Predicting Vote Distributions from Turnout Distributions}{65}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Random Voting Model: a Quick Recap}{66}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Vote Share Distributions at Large Turnout Limit}{66}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Random Voting Model with two candidates}{66}{subsection.6.3.3}%
+\contentsline {subsubsection}{\numberline {6.3.3.1}Winner vote share distribution}{67}{subsubsection.6.3.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.3.2}Runner-up vote share distribution}{67}{subsubsection.6.3.3.2}%
+\contentsline {subsection}{\numberline {6.3.4}Random Voting Model with three candidates}{68}{subsection.6.3.4}%
+\contentsline {subsubsection}{\numberline {6.3.4.1}Winner vote share distribution}{68}{subsubsection.6.3.4.1}%
+\contentsline {subsubsection}{\numberline {6.3.4.2}Runner-up vote share distribution}{69}{subsubsection.6.3.4.2}%
+\contentsline {subsection}{\numberline {6.3.5}Calculating the \emph {scaled} distributions}{69}{subsection.6.3.5}%
+\contentsline {section}{\numberline {6.4}Empirical Validation across Electoral Scales}{70}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Scale Invariance of Margin Distributions in Indian Elections}{72}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Conclusion: Turnout Distributions as Electoral Predictors}{74}{section.6.6}%
+\contentsline {chapter}{References}{77}{section.6.6}%
 \contentsfinish 

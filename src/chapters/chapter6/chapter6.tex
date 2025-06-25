@@ -1,157 +1,223 @@
-\chapter{RVM, India, and ...}
+\chapter{Beyond Margins: Winner and Runner-up votes}
 \label{chap6}
 
-In the previous chapter, through regorous analysis we find RVM to be a powerful tool to predict the scaled margin distribution of elections. Furthermore, we demonstrated that voter turnouts play a fundamental role in driving the margins and, together with a proposed random voting model (RVM), can accurately predict the scaled distribution of victory margins. This robust connection between turnouts and margins holds across multiple elections and electoral scales. These findings naturally raise the question: Can the distribution of other relevant electoral statistics be uncovered using voter turnout distributions?
+Building on our exploration of the Random Voting Model in the previous chapter, we now extend our investigation to other key electoral statistics and their relationship with voter turnouts. While we established that the RVM successfully predicts the universal specific margin distribution and connects turnout distributions to margin distributions across different electoral contexts, a natural question arises: Can the distribution of other relevant electoral statistics be uncovered using voter turnout distributions?
 
-In this Letter, using empirical data from Indian elections \cite{india_data, lokdhaba} spanning several decades and vastly different electoral scales, we demonstrate a strong correlation between the distributions of votes received by winners and runner-ups and voter turnouts. Leveraging this correlation and the RVM, we analytically predict the scaled distributions of the votes secured by winners and runner-ups using the corresponding turnout distributions. This prediction remarkably holds good at all the electoral scales -- from large parliamentary constituencies ($ \sim 10^6$ voters) down to the smallest polling booth levels ($\sim 10^2-10^3$ voters). Further, we show a rather surprising scale invariance of the margin distributions, a characteristic typical of Indian elections. Finally, a robust universality in the distribution of scaled margin-to-turnout ratio is demonstrated, strengthening our recent proposition.
+To address this question effectively, we require large datasets covering a range of different electoral scales. India, the world's largest democracy, regularly conducts elections involving vast electorates (960 million in 2024), and its publicly available election data spans multiple decades and electoral scales. The diversity of India's linguistic and cultural landscape further adds to the complexities of its electoral outcomes, making it an excellent testing ground for assessing the robustness of the RVM framework.
 
-We formalize our framework as follows: An {\it election} happens at all the $N$ electoral units following the first-post-the-past principle \cite{johnston2007politics}. Let the $i$-th electoral unit have $n^c_i$ candidates and $n^v_i$ eligible voters, where $i=1,2, \dots N$. Usually, only a fraction of the eligible voters cast their votes. This is termed the turnout $T_i \le n^v_i$. It is a direct indicator of the people's interest in the electoral process, and its distribution $g(T)$ encodes information about electoral statistics \cite{pal2024universal}. Let $v_{i,1}, v_{i,2}, \dots, v_{i,n^c_i}$ be the votes secured by $n^c_i$ candidates such that $\sum_j v_{i,j}=T_i$. The candidate securing the highest number of votes, $V_{w}$, is declared the winner, while the candidate with the second-highest votes, $V_{r}$, is the runner-up. By definition $V_w > V_r$. Further, the \emph{margin} of victory is defined as $M_i = V_{i, w} - V_{i, r}$, and indicates the extent of electoral competition.
-\begin{table}[b]
-\caption{\label{tab:example}Electoral units in various elections in India}
-\begin{ruledtabular}
-\begin{tabular}{llll}
-Type & Type of electoral unit & Type of election & Size \\
-\hline
-GE-PB & Polling booth & General election  &  $10^3$ \\
-GE-AC & Assembly constituency & General election  &  $10^5$ \\
-GE-PC & Parliamentary constituency & General election  &  $10^6$ \\
-SE-AC & Assembly constituency & State election  &  $10^5$ \\
-\end{tabular}
-\end{ruledtabular}
-\label{table1}
-\end{table}
+In this chapter, using empirical data from Indian elections spanning several decades and vastly different electoral scales, we demonstrate a strong correlation between the distributions of votes received by winners and runner-ups and voter turnouts. Leveraging this correlation and the RVM, we analytically predict the scaled distributions of the votes secured by winners and runner-ups using the corresponding turnout distributions. This prediction remarkably holds good at all the electoral scales -- from large parliamentary constituencies ($ \sim 10^6$ voters) down to the smallest polling booth levels ($\sim 10^2-10^3$ voters). Further, we show a rather surprising scale invariance of the margin distributions, a characteristic typical of Indian elections. 
 
-The electoral units in this work have three distinct scales in terms of the size of the electorate: (i) parliamentary constituency (PC, largest scale), (ii) assembly constituency (AC, intermediate scale), and (iii) polling booth (PB, smallest scale). Table \ref{table1} describes the granularity of election data used in this work -- electoral units and their typical electorate size. While for the national-level general elections, we employ data from 3 different electoral scales (PC, AC, and PB), we use AC-level data for state elections. Depending on the electoral level considered, the winner and runner-up vote distributions have vastly different scales, with the winner vote distribution having wider support than the runner-up. However, when both distributions are scaled by their respective mean values (mean taken over all elections for which data is available), the winner and runner-up vote distributions -- $Q_{\widetilde{V_w}}(\widetilde{V_w})$ and $Q_{\widetilde{V_r}}(\widetilde{V_r})$ -- explicitly display a strong correlation with the corresponding scaled turnout distributions $Q_{\widetilde{T}}(\widetilde{T})$. Note that any variable $Y$, scaled by their mean $\langle Y \rangle$, is denoted by $\widetilde{Y} = Y / \langle Y \rangle$. Figure \ref{fig:1} displays this key result at four electoral units described in Table \ref{table1}. Remarkably, at larger electoral scales (PC and AC), not only the tail but the entire scaled distributions of winner and runner-up votes mimic the corresponding scaled turnout distribution as seen in Fig. \ref{fig:1}(b-d). This strong correlation indicates that the turnout distribution contains crucial information about different election statistics and can be leveraged to predict the scaled vote distributions of the winner and the runner-up. To explore this possibility, we employ our recently proposed random voting model (RVM) \cite{pal2024universal}, which is demonstrably effective at predicting the scaled distribution of several election statistics, such as the \emph{margin} of victory.
+\section{The Effective Number of Candidates}
+While our previous analysis employed a fixed number of candidates ($n^c = 3$) for the Random Voting Model, here we refine our approach by introducing the concept of the effective number of candidates \cite{laakso1979effective}. This metric, widely used in political science, captures the actual level of competition more accurately than the raw count of candidates on a ballot.
 
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=\columnwidth]{fig_1.pdf}
-    \caption{Winner, runner-up vote distributions, and turnout distributions, scaled by their respective means. Notably, at larger electoral scales (AC / PC), the winner and runner-up distributions mimic the corresponding turnout distribution.}
-    \label{fig:1}
-\end{figure}
-
-\begin{figure*}[t]
-    \centering
-    \includegraphics[width=\linewidth]{fig_2.pdf}
-    \caption{Winner and runner-up vote distributions scaled by their respective means. Panels (a, b), (c, d), and (e, f) depict, respectively, the scaled winner and runner-up vote distribution at the polling booth, assembly constituency, and parliamentary constituency level for Indian general elections. Panels (g, h) correspond to the distributions for the state elections at the assembly constituency level. The analytical predictions (solid lines) are in remarkable agreement with the empirical distributions (open circle). Predictions from RVM simulations (dashed line) closely follow the analytical curves.}
-    \label{fig:2}
-\end{figure*}
-
-The random voting model, later denoted as {RVM $(T, n^c)$}, is built around the framework of elections described above and consists of $N$ electoral units with $n^c_i$ number of candidates contesting for the votes of $T_i$ electors who have voted in the $i$-th electoral unit. Then, the probability that $j$-th candidate attracts electors' votes is:
-\begin{equation}
-    p_{ij} = \frac{w_{ij}}{\sum_{k=1}^{n^c_i} w_{ik}}, ~~~w_{ij} \sim \mathcal{U}(0, 1), ~~ (j = 1, 2, \cdots n^c_i).
-    \label{eq:prob}
-\end{equation}
-In this, $\mathcal{U}(0, 1)$ is the uniform distribution. This model was shown to capture the various statistical features of empirical election data, such as the margin distributions and the universal features embedded in the election data \cite{pal2024universal}. In particular, the random voting model with $n^c = 3$ candidates -- {RVM $(T, 3)$} -- predicts the scaled distribution of \emph{margin} remarkably well, irrespective of electoral scales and countries \cite{pal2024universal}. In this work, we employ a refined approach based on the notion of the effective number of parties defined as \cite{laakso1979effective}:
+The effective number of candidates is defined as:
 \begin{equation}
     ^{(E)}n^c_i = \frac{1}{\sum_{k=1}^{n^c_i} (V_{ik} / T_{i})^2}.
     \label{eq:effc}
 \end{equation}
-In large elections exercise such as that in India, even though many candidates join the fray, a few corner most of the votes. For instance, if all the votes are garnered by just one candidate, then $V_{i1}=T_i$, and $V_{ij}=0$ for $j=2, \dots n^c$. In this case, $^{(E)}n^c_i=1$. However, if all the votes are split equally among two candidates, $^{(E)}n^c_i=2$, thus, Eq. \ref{eq:effc} captures the idea of an effective number of candidates in $i$-th electoral unit. Further, by averaging over all the electoral units, we obtain: 
+In large electoral exercises such as those in India, even though many candidates join the fray, a few corner most of the votes. For instance, if all the votes are garnered by just one candidate, then $V_{i1}=T_i$, and $V_{ij}=0$ for $j=2, \dots n^c$. In this case, $^{(E)}n^c_i=1$. However, if all the votes are split equally among two candidates, $^{(E)}n^c_i=2$, thus, Eq. \ref{eq:effc} captures the idea of an effective number of candidates in $i$-th electoral unit.
+
+By averaging over all the electoral units, we obtain:
 \begin{equation}
     ^{(E)}\Tilde{n}^c =  \left[\frac{1}{N}\sum_{k=1}^{N}{}^{(E)}n^{c}_k \right],
 \end{equation}
-where $\left[\:*\:\right]$ denotes the operation of extracting the closest integer value. And $^{(E)}\Tilde{n}^c $ indicates the effective number of candidates for an entire election at different electoral scales. From empirical data of Indian elections at different scales, we find $^{(E)}\Tilde{n}^c = 2$ at the polling booth (PB-GE) level for the General Elections. However, for all the other three cases of AC-GE, PC-GE, and AC-SE, we obtain $^{(E)}\Tilde{n}^c = 3$. Now, we shall solve RVM $(T, n^c)$ for $n^c = 2$ and $n = 3$ to analytically describe the results observed in Fig. \ref{fig:1}.\\
+where $\left[\:*\:\right]$ denotes the operation of extracting the closest integer value. And $^{(E)}\Tilde{n}^c $ indicates the effective number of candidates for an entire election at different electoral scales.
 
-The primary object of interest is the distribution of the votes received by the winner and the runner-up. In the large turnout limit, $T >> 1$, the votes received by $j$-th candidate can be approximated as $V_j \approx p_j T$ (index $i$ is dropped as we focus on a single electoral unit). Consequently, the vote share is defined as:
+From empirical data of Indian elections at different scales, we find $^{(E)}\Tilde{n}^c = 2$ at the polling booth (PB) level for the General Elections. However, for all the other three cases of Assembly Constituency in General Elections (AC-GE), Parliamentary Constituency in General Elections (PC-GE), and Assembly Constituency in State Elections (AC-SE), we obtain $^{(E)}\Tilde{n}^c = 3$. This insight allows us to adapt our modeling approach to better match the electoral reality at each scale.
+\section{Relationship Between Turnout and Vote Distributions}
+Depending on the electoral level considered, the winner and runner-up vote distributions have vastly different scales, with the winner vote distribution having wider support than the runner-up. However, when both distributions are scaled by their respective mean values (mean taken over all elections for which data is available), the winner and runner-up vote distributions -- $Q_{\widetilde{V_w}}(\widetilde{V_w})$ and $Q_{\widetilde{V_r}}(\widetilde{V_r})$ -- explicitly display a strong correlation with the corresponding scaled turnout distributions $Q_{\widetilde{T}}(\widetilde{T})$. Figure \ref{fig:turnout_winner_runnerup} shows this correlation for four different electoral scales in India.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{chapters/chapter6/turnout_winner_runerup.pdf}
+    \caption{Winner, runner-up vote distributions, and turnout distributions, scaled by their respective means. Notably, at larger electoral scales (AC / PC), the winner and runner-up distributions mimic the corresponding turnout distribution.}
+    \label{fig:turnout_winner_runnerup}
+\end{figure}
+Remarkably, at larger electoral scales (Parliamentary and Assembly constituencies), not only the tail but the entire scaled distributions of winner and runner-up votes mimic the corresponding scaled turnout distribution (panel (b) and (c) and (d) in Fig. \ref{fig:turnout_winner_runnerup}). This strong correlation indicates that the turnout distribution contains crucial information about different election statistics and can be leveraged to predict the scaled vote distributions of the winner and the runner-up. To explore this possibility, we apply the Random Voting Model, which has already demonstrated effectiveness at predicting the scaled distribution of margins of victory.
+
+\section{Predicting Vote Distributions from Turnout Distributions}
+We now extend our analytical framework to derive the distributions of votes received by winners and runner-ups in the RVM.
+
+\subsection{Random Voting Model: a Quick Recap}
+In Random Voting Model, in the $i$-th electoral unit, electorates vote for the $j$-th candidate with a probability $p_{ij}$. These probabilities as assigned to the candidates as follows:
+\begin{equation}
+    w_{ij} \sim \mathcal{U}(0, 1) \quad \text{and} \quad p_{ij} = \frac{w_{ij}}{\sum_k w_{ik}}, \text{ with } j = 1, 2 \dots n^c_i,
+    \label{eq:RVM_prob}
+\end{equation}
+where $\mathcal{U}(0, 1)$ denotes a uniformly distributed random variable in $(0,1)$ and $n^c_i$ is the number of candidates in the $i$-th electoral unit.
+
+\subsection{Vote Share Distributions at Large Turnout Limit}
+For large turnout $(T \gg 1)$, the votes received by the $j$-th candidate can be approximated as $V_j \approx p_j T$ (we remove the electoral unit index $i$ for brevity). Consequently, the vote share is defined as:
 \begin{equation}
     v_j = V_j/T ~~ \text{with} ~ j = 1, 2, \dots n^c.
     \label{eq:voteshare}
 \end{equation}
-
-Thus, in this limit, the vote share distribution is effectively the same as the distribution of $p_j$. Recall that $p_j$ can be constructed from random weights using Eq.~\ref{eq:prob}. These weights are $n^c$ \emph{i.i.d.} random variables $\{w_1, w_2, \cdots, w_{n^c}\}$ drawn from the uniform distribution $\mathcal{U}(0, 1)$. When arranged in ascending order, the random variable at the $k$-th place is defined as the $k$-th order statistics and is denoted by $w^{n^c}_{(k)}$ \cite{BarBalNag2008}. Specifically, $w^{n^c}_{(1)}$ and $w^{n^c}_{(n^c)}$ represent the smallest and the largest weights, respectively. Then, the joint probability distribution function (jpdf) or all the order statistics is given by:
-\begin{equation}
-    \mathbbm{P}\left(w^{n^c}_{(1)}, w^{n^c}_{(2)}, ... w^{n^c}_{(n^c)}\right) = n^c!.
-    \label{eq:jpdf1}
-\end{equation}
-Finally, the winner's vote share $v_w$ and runner-up's vote share $v_r$ can be expressed in terms of order statistics as:
+Thus, in this limit, the vote share distribution is effectively the same as the distribution of $p_j$. Building on the order statistics framework introduced in the previous chapter, the winner's vote share $v_w$ and runner-up's vote share $v_r$ can be expressed as:
 \begin{equation}
     v_w = \frac{w^{n^c}_{(n^c)}}{\sum_{k = 1}^{n^c}w^{n^c}_{(k)}} ~~~\text{and}~~~ v_r = \frac{w^{n^c}_{(n^c - 1)}}{\sum_{k = 1}^{n^c}w^{n^c}_{(k)}}.
     \label{eq:voteshare_order_stat}
 \end{equation}
 
-Their distributions can be obtained from the jpdf in Eq.~\ref{eq:jpdf1} by integrating out the other variables (for detailed calculations, see Supplementary Material \cite{supp}). When the number of candidates $n^c = 2$, the distribution of the winner's vote share $P_{v_w}(v_w)$ is found to be:
+\subsection{Random Voting Model with two candidates}
+In the following sections, we derive analytical expressions for the vote share distributions of winner and runner-up candidates. We begin with the simpler two-candidate case before extending to the more complex three-candidate scenario. These mathematical derivations will allow us to predict the shape of vote distributions based solely on turnout data.
+
+In the two-candidate Random Voting Model, we have $n = n^c = 2$ and $w_{j} \sim \mathcal{U}(0, 1)$. Hence, the joint probability distribution of all the order statistics have the following form,
+\begin{center}
+    \begin{align}
+        \mathbbm{P}\left(w_{(1)}, w_{(2)}\right) = 2! = 2; \text{ with } 0<w_{(1)}<w_{(2)}<1,
+        \label{eq:jpd-2}
+    \end{align}
+\end{center}
+and $\mathbbm{P}\left(w_{(1)}, w_{(2)}\right) = 0$ otherwise, with the following normalization:
 \begin{equation}
-{P_{v_w}(v_w) = }
-\begin{dcases}
-     \frac{1}{v_w^2}, ~~\text{ if } ~~ \frac{1}{2} < v_w < 1,\\
-     0, ~~\text{ otherwise}.
-\end{dcases}
-\label{eq:wdist1}
+    \int_{0}^{1}dw_{(2)}\int_{0}^{w_{(2)}}2 dw_{(1)} = 1.
 \end{equation}
-The vote share distribution of the runner-up can also be calculated similarly and is given by:
+
+\subsubsection{Winner vote share distribution}
+\noindent From the joint probability distribution of all the order statistics (Eq.~\ref{eq:jpd-2}), the approximate vote share distribution of the winner can be obtained as,
+\begin{center}
+    \begin{align}
+        \nonumber P_{v_w}\left(v_w\right) & = 2 \nonumber \int_{0}^{1}dw_{(2)}\int_{0}^{w_{(2)}}\delta\left(v_w - \frac{w_{(2)}}{w_{(1)} + w_{(2)}}\right)dw_{(1)},\\
+        & = 2 \int_{0}^{1}\frac{2 w_{(2)}}{v_w^2} \nonumber \mathbbm{1}_{1 / 2 \leq v_w < 1} dw_{(2)},\\
+    \end{align}
+\end{center}
+or,
+\begin{numcases}{P_{v_w}(v_w) = }
+     \frac{1}{v_w^2} \text{ if } \frac{1}{2} \leq v_w < 1\\
+     0, \text{ otherwise}.
+\end{numcases}
+
+\subsubsection{Runner-up vote share distribution}
+\noindent We can similarly calculate the probability density function of the runner-up vote share as the following,
+\begin{center}
+    \begin{align}
+        \nonumber P_{v_r}\left(v_r\right) & = 2 \nonumber \int_{0}^{1}dw_{(2)}\int_{0}^{w_{(2)}}\delta\left(v_r - \frac{w_{(1)}}{w_{(1)} + w_{(2)}}\right)dw_{(1)},\\
+        & = 2 \int_{0}^{1}\frac{2 w_{(2)}}{(1 - v_r)^2} \nonumber \mathbbm{1}_{0 < v_r < 1 / 2} dw_{(2)},\\
+    \end{align}
+\end{center}
+or,
+\begin{numcases}{P_{v_r}(v_r) = }
+     \frac{1}{(1 - v_r)^2} \text{ if } 0 < v_r < \frac{1}{2}\\
+     0, \text{ otherwise}.
+\end{numcases}
+
+\subsection{Random Voting Model with three candidates}
+In the three-candidate Random Voting Model, we have $n = n^c = 3$ and $w_{j} \sim \mathcal{U}(0, 1)$. Then, the joint probability distribution of all the order statistics is,
+\begin{center}
+    \begin{align}
+        \mathbbm{P}\left(w_{(1)}, w_{(2)}, w_{(3)}\right) = 3! = 6; \text{ with } 0<w_{(1)}<w_{(2)}<w_{(3)}<1,
+    \end{align}
+\end{center}
+and $\mathbbm{P}\left(w_{(1)}, w_{(2)}, w_{(3)}\right) = 0$ otherwise, with the following normalization:
 \begin{equation}
-{P_{v_r}(v_r) = }
-\begin{dcases}
-     \frac{1}{(1- v_r)^2}, ~~\text{ if } ~~ 0 < v_r \leq \frac{1}{2},\\
-     0, ~~\text{ otherwise}.
-\end{dcases}
-\label{eq:rdist1}
+    \int_{0}^{1}dw_{(3)}\int_{0}^{w_{(3)}}dw_{(2)}\int_{0}^{w_{(2)}} 6 dw_{(1)} = 1.
 \end{equation}
-The conditions in Eqs.~\ref{eq:wdist1}-\ref{eq:rdist1} reflect the intuitive idea that when there are only two candidates, the winner's vote share cannot be less than $1/2$, and the runner-up cannot exceed $1/2$. For $n^c = 3$, the winner's vote share distribution is:
+\subsubsection{Winner vote share distribution}
+\noindent From the joint probability distribution of all the order statistics, we calculate the approximate probability density function of the winner vote share $v_w = V_w / T$ as follows, 
+\begin{center}
+    \begin{align}
+        \nonumber P_{v_w}\left(v_w\right) & = 6 \nonumber \int_{0}^{1}dw_{(3)}\int_{0}^{w_{(3)}}dw_{(2)}\int_{0}^{w_{(2)}} \delta\left(v_w - \frac{w_{(3)}}{w_{(1)} + w_{(2)} + w_{(3)}}\right)dw_{(1)},\\
+        & = 6 \int_{0}^{1}dw_{(3)}\int_{0}^{w_{(3)}} \frac{w_{(3)}}{v_w^2} \nonumber \mathbbm{1}_{0<\frac{w_{(3)} - v_w \left(w_{(2)} + w_{(3)}\right)}{v_w}<w_{(2)}} dw_{(2)},\\
+    \end{align}
+\end{center}
+or,
+\begin{numcases}{P_{v_w} = }
+     6 \int_{0}^{1} w_{(3)}^2\frac{3v_w - 1}{2 v_w^3}dw_{(3)}, \text{ if } \frac{1}{3} < v_w \leq \frac{1}{2}\\
+     6 \int_{0}^{1} w_{(3)}^2\frac{1 - v_w}{2 v_w^3}dw_{(3)}, \text{ if } \frac{1}{2} < v_w \leq 1\\
+     0, \text{ otherwise}.
+\end{numcases}
+
+\noindent Finally, after performing the integral, we get
+\begin{numcases}{P_{v_w} = }
+     \frac{3v_w - 1}{ v_w^3} \text{ if } \frac{1}{3} < v_w \leq \frac{1}{2}\\
+     \frac{1 - v_w}{v_w^3}, \text{ if } \frac{1}{2} < v_w < 1\\
+     0, \text{ otherwise}.
+\end{numcases}
+
+\subsubsection{Runner-up vote share distribution}
+\noindent Similarly, the probability density function of the runner-up vote share $v_r = V_r / T$ can be obtained as follows,
+
+\begin{center}
+    \begin{align}
+        \nonumber P_{v_r}\left(v_w\right) & = 6 \nonumber \int_{0}^{1}dw_{(3)}\int_{0}^{w_{(3)}}dw_{(2)}\int_{0}^{w_{(2)}} \delta\left(v_r - \frac{w_{(2)}}{w_{(1)} + w_{(2)} + w_{(3)}}\right)dw_{(1)},\\
+        & = 6 \int_{0}^{1}dw_{(3)}\int_{0}^{w_{(3)}} \frac{w_{(2)}}{v_r^2} \nonumber \mathbbm{1}_{0< (1 / v_r - 1) w_{(2)} - w_{(3)}< w_{(2)}} dw_{(2)},\\
+    \end{align}
+\end{center}
+or,
+\begin{numcases}{P_{v_r}(v_r) = }
+     6 \int_{0}^{1} w_{(3)}^2\frac{v_r(2-3v_r)}{2 (1 - v_r)^2 (1 - 2v_r)^2}dw_{(3)}, \text{ if } 0 < v_r \leq \frac{1}{3}\\
+     6 \int_{0}^{1} w_{(3)}^2\frac{1 - 2v_r}{2v_r^2 (1 - v_r)^2 }dw_{(3)}, \text{ if } \frac{1}{3} < v_r < \frac{1}{2}\\
+     0, \text{ otherwise}.
+\end{numcases}
+
+\noindent Finally, after performing the integral, we get
+\begin{numcases}{P_{v_r}(v_r) = }
+    \frac{v_r (2 - 3v_r)}{(1 - v_r)^2 (1 - 2v_r)^2} \text{ if } 0 < v_r \leq \frac{1}{3}\\
+     \frac{1 - 2v_r}{v_r^2(1 - v_r)^2}, \text{ if } \frac{1}{3} < v_r < \frac{1}{3}\\
+     0, \text{ otherwise}.
+\end{numcases}
+
+\subsection{Calculating the \emph{scaled} distributions}
+\noindent The winner and runner-up vote shares and specific margins are random variables scaled by the voter turnout $T$. However, through a simple change of variable, $Y = yT$, we can obtain the conditional distributions of the unscaled variables as,
 \begin{equation}
-P_{v_w}(v_w) = 
-\begin{dcases}
-     \frac{3v_w - 1}{ v_w^3}, ~~\text{ if } ~~\frac{1}{3} < v_w \leq \frac{1}{2}\\
-     \frac{1 - v_w}{v_w^3}, ~~\text{ if } ~~\frac{1}{2} < v_w < 1\\
-     0, ~~\text{ otherwise},
-\end{dcases}
+    \mathcal{P}\left(Y|T\right) = \frac{1}{T}P_y\left(Y / T \right),
 \end{equation}
-and the distribution of the runner-up's vote share is:
+where $y$ can be $v_w, v_r$, and $\mu$ and $Y$ represents unscaled variables  $V_w, V_r$, and $M$ respectively. The distribution of $Y$ for an arbitrary turnout distribution $g(T)$ can be obtained as,
 \begin{equation}
-{P_{v_r}(v_r) = }
-\begin{dcases}
-    \frac{v_r (2 - 3 v_r)}{(1 - v_r)^2 (1 - 2 v_r)^2}, ~~\text{ if } ~~ 0 < v_r \leq \frac{1}{3}\\
-    \frac{1 - 2 v_r}{v_r^2(1 - v_r)^2}, ~~\text{ if } ~~ \frac{1}{3} < v_r \leq \frac{1}{2}\\
-     0, ~~ \text{ otherwise}.
-\end{dcases}
-\end{equation}
-The vote share distribution of the winner and the runner-up are defined as piecewise functions. They are non-zero when $\frac{1}{3} < v_w < 1$ and $0 < v_r \leq \frac{1}{2}$, respectively.
-Based on Eq.~\ref{eq:voteshare}, the distribution of unscaled variables $Y = (V_w, V_r)$, given $T$, is related to the scaled variables $y = (v_w, v_r)$ via:
-\begin{equation}
-    \mathcal{P}(Y|T) = \frac{1}{T}P_y\left(\frac{Y}{T}\right),
-    \label{eq:PYT}
-\end{equation}
-where $P_y(y)$ is the probability density function for the scaled variable, $y = (v_w, v_r)$. The distribution of $Y$ for arbitrary turnout distribution $g(T)$ is:
-\begin{equation}
-    Q_Y(Y) = \int g(T)~\mathcal{P}(Y|T)~dT, 
+    Q_Y(Y) = \int g(T) ~ \mathcal{P}(Y|T)dT, 
     \label{eq:QY}
 \end{equation}
-with $\langle Y \rangle = \int Y ~  Q_Y(Y)~dY$.
-Finally, for the scaled variable $\widetilde{Y} = Y / \langle Y \rangle$, the distribution is:
+with $\langle Y\rangle$ defined as,
 \begin{equation}
-    Q_{\widetilde{Y}}(\widetilde{Y}) =  \langle Y \rangle ~ Q_Y(\widetilde{Y}  \langle Y \rangle). 
+    \langle Y \rangle = \int Y ~ Q_Y(Y)dY.
+\end{equation}
+\noindent Finally the distribution of \emph{scaled} $Y$, defined as $\widetilde{Y} = Y / \langle Y \rangle$, can be obtained as follows,
+\begin{equation}
+    {Q}_{\widetilde{Y}}(\widetilde{Y}) =  \langle Y \rangle ~ Q_{Y}(\widetilde{Y}  \langle Y \rangle)
     \label{eq:QYscaled}
 \end{equation}
-\begin{figure}[h!]
+\noindent Again, the dummy random variable $Y$ can be either, $V_w$ or $V_r$.
+\section{Empirical Validation across Electoral Scales}
+Having derived the analytical expressions for vote share distributions, we now turn to testing these predictions against real-world election data. This validation process will demonstrate how well our theoretical framework captures the essential features of electoral outcomes across different scales.
+
+To validate our analytical framework, we compare the predicted distributions against empirical data from four different electoral scales in India:
+
+\begin{enumerate}
+    \item Parliamentary Constituency level in General Elections (GE-PC): $\sim 10^6$ voters
+    \item Assembly Constituency level in General Elections (GE-AC): $\sim 10^5$ voters
+    \item Polling Booth level in General Elections (GE-PB): $\sim 10^3$ voters
+    \item Assembly Constituency level in State Elections (SE-AC): $\sim 10^5$ voters
+\end{enumerate}
+\begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{fig_3.pdf}
-    \caption{Margin distributions scaled by their respective means. (a) Data collapse in the scaled margin distributions of Indian elections at four electoral scales. (b) In contrast, such collapse is absent in the election data from the USA.}
-    \label{fig:3}
+    \includegraphics[width=\linewidth]{chapters/chapter6/winner_runnerup_dist_india.pdf}
+    \caption{Winner and runner-up vote distributions scaled by their respective means. Panels (a, b), (c, d), and (e, f) depict, respectively, the scaled winner and runner-up vote distribution at the polling booth, assembly constituency, and parliamentary constituency level for Indian general elections. Panels (g, h) correspond to the distributions for the state elections at the assembly constituency level. The analytical predictions (solid lines) are in remarkable agreement with the empirical distributions (open circle). Predictions from RVM simulations (dashed line) closely follow the analytical curves. Note particularly the power-law behavior in the tails ($\widetilde{V} \gg 1$) across all scales, and the distinct profiles at small values ($\widetilde{V} \ll 1$) that vary with the effective number of candidates.}
+    \label{fig:winner_runnerup_dist_india}
 \end{figure}
-Using the empirical turnout distribution $g(T)$ from election data, Eq.~\ref{eq:QY} is numerically integrated. The resulting distribution is then scaled using Eq.~\ref{eq:QYscaled} to obtain the scaled distributions for the winner and runner-up vote shares, $ Q_{\widetilde{V_w}}(\widetilde{V_w})$ and $Q_{\widetilde{V_r}}(\widetilde{V_r})$, respectively. As demonstrated in Fig.~\ref{fig:2}, the analytical prediction (solid lines) is remarkably consistent with the empirical vote share distributions. The predictions from RVM simulations, which use the raw turnout data and $n^c = {^{(E)}\Tilde{n}^c}$ as inputs, closely follow the analytical distributions in Fig.~\ref{fig:2}. The scaled distributions of winner and runner-up votes depicted across all electoral scales, in Fig.~\ref{fig:2}, typically exhibit a power-law behavior in the tails for $\widetilde{V}_w, \widetilde{V}_r \gg 1$. Conversely, for $\widetilde{V}_w, \widetilde{V}_r \ll 1$, the distributions display different profiles. Remarkably, these differences are well captured by RVM predictions: RVM $(T, 2)$ accurately predicts distribution at the GE-PB level, while RVM $(T, 3)$ closely matches the distributions at the GE-AC, GE-PC, and SE-AC levels. Hence, the effective number of candidates (Eq.~\ref{eq:effc}) and the turnout distribution $g(T)$, when used within the RVM framework, successfully predict the winner and runner-up vote share distributions across distinct electoral scales.
+Using the empirical turnout distribution $g(T)$ from election data, Eq.~\ref{eq:QY} is numerically integrated. The resulting distribution is then scaled using Eq.~\ref{eq:QYscaled} to obtain the scaled distributions for the winner and runner-up vote shares, $ Q_{\widetilde{V_w}}(\widetilde{V_w})$ and $Q_{\widetilde{V_r}}(\widetilde{V_r})$, respectively. As demonstrated in Fig.~\ref{fig:winner_runnerup_dist_india}, the analytical prediction (solid lines) is remarkably consistent with the empirical vote share distributions. The predictions from RVM simulations, which use the raw turnout data and $n^c = {^{(E)}\Tilde{n}^c}$ as inputs, closely follow the analytical distributions in Fig.~\ref{fig:winner_runnerup_dist_india}.
 
-Next, we consider the effect of voter turnouts $T$ on the \emph{margin} of victory $M$. To do this, firstly we define {\it specific margin} as $\mu = M / T = (V_w - V_r) / T$. In the large turnout $(T >> 1)$ limit, the specific margin can be expressed in terms of the order statistics of $w$ as:
-\begin{equation}
-    \mu = \frac{w^{n^c}_{(n^c)} - w^{n^c}_{(n^c - 1)}}{\sum_{k = 1}^{n^c}w^{n^c}_{(k)}},
-\end{equation}
-where $n^c$ is the number of candidates. Using the jpdf in Eq. \ref{eq:jpdf1}, for RVM $(T, 2)$ the distribution of specific margin can be obtained as (see Ref.~\cite{supp} for more details):
-\begin{equation}
-    P_{\mu}(\mu) = \frac{2}{(1 + \mu)^2},
-\end{equation}
-and for RVM $(T, 3)$, the distribution becomes:
-\begin{equation}
-    P_{\mu}(\mu) = \frac{(1 - \mu)(5 + 7\mu)}{(1 + \mu)^2(1 + 2\mu)^2}.
-    \label{eq:24}
-\end{equation}
-Using Eq.~ \ref{eq:QY} - \ref{eq:QYscaled} and the empirical turnout distributions $g(T)$, the scaled margin distribution $Q_{\widetilde{M}}(\widetilde{M})$ can be obtained for the four different electoral scales which match the corresponding empirical distributions closely (see Ref.~\cite{supp}). Remarkably, the scaled distributions for the margin for Indian elections at four different scales collapse onto a single curve, as shown in Fig.~\ref{fig:3}(a). This data collapse is a direct consequence of the similarity in tail behavior in the corresponding turnout distributions (see Fig. \ref{fig:1}). This appears to be a characteristic of Indian elections and is not observed in most other countries. For instance, this data collapse is absent in the US elections for the empirical data at the County and Congressional district levels, as demonstrated in Fig.~\ref{fig:3} (b).
-\begin{figure}[t]
+The scaled distributions of winner and runner-up votes depicted across all electoral scales, in Fig.~\ref{fig:winner_runnerup_dist_india}, typically exhibit a power-law behavior in the tails for $\widetilde{V}_w, \widetilde{V}_r \gg 1$. Conversely, for $\widetilde{V}_w, \widetilde{V}_r \ll 1$, the distributions display different profiles. Remarkably, these differences are well captured by RVM predictions: RVM $(T, 2)$ accurately predicts distribution at the GE-PB level, while RVM $(T, 3)$ closely matches the distributions at the GE-AC, GE-PC, and SE-AC levels. Hence, the effective number of candidates (Eq.~\ref{eq:effc}) and the turnout distribution $g(T)$, when used within the RVM framework, successfully predict the winner and runner-up vote share distributions across distinct electoral scales.   
+
+\section{Scale Invariance of Margin Distributions in Indian Elections}
+Building on our analysis of specific margins $\mu = M/T$ from the previous chapter, we now examine the behavior of the scaled margin distributions $Q_{\widetilde{M}}(\widetilde{M})$ across different electoral scales in India.
+\begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{fig_4.pdf}
-    \caption{Specific margin distributions scaled by their respective means at distinct electoral scales in different types of Indian elections. The scaled specific margin distributions collapse on the analytical universal curve.}
-    \label{fig:4}
+    \includegraphics[width=1\linewidth]{chapters/chapter6/scaled_margin_dist_India_us.pdf}
+    \caption{Margin distributions scaled by their respective means. (a) Data collapse in the scaled margin distributions of Indian elections at four electoral scales. Note how despite the vastly different electoral sizes (from $\sim 10^2$ to $\sim 10^6$ voters), the distributions align remarkably well. (b) In contrast, such collapse is absent in the election data from the USA, where county and district level distributions differ significantly.}
+    \label{fig:margin_dist_india_us}
 \end{figure}
 
-Recently, we have shown that the scaled distribution of specific margins $Q_{\widetilde{\mu}}(\widetilde{\mu})$, is universal irrespective of electoral scales and countries \cite{pal2024universal}. This universal distribution can be analytically obtained by rescaling Eq.~\ref{eq:24} with $\langle \mu \rangle = {1} / {2}+\ln \left({9 \sqrt[4]{3}} / {16}\right)$ (see Ref.~\cite{supp}). The empirical distributions from large election datasets are proposed to exhibit a better collapse to the analytical curve, as finite-size effects are suppressed. The presence of such universality helps us distill the complexity of the electoral processes in terms of universal behavior. As the electorate size in India is large (960 million in 2024) and datasets are available at various electoral scales, Indian elections provide the best test-bed to demonstrate such universality. Fig.~\ref{fig:4} demonstrates such universality. The distributions $Q_{\widetilde{\mu}}(\widetilde{\mu})$ at four distinct electoral scales (colored open circles) remarkably collapse onto the analytically predicted universal curve (solid line). This excellent collapse strengthens the proposition that in fairly conducted elections, the apparent deviation from universality can originate from finite data size.
+Remarkably, as demonstrated in Fig.~\ref{fig:margin_dist_india_us} (a), the scaled distributions for the margin for Indian elections at four different scales (GE-PB, GE-AC, GE-PC, and SE-AC) collapse onto a single curve. This data collapse is a direct consequence of the similarity in tail behavior in the corresponding turnout distributions. This appears to be a characteristic feature of Indian elections.
 
-In summary, elections are a source of excellent datasets for exploring collective decision-making by millions of people (interacting agents) at {\it distinct electoral scales}. However, most of the earlier works on elections have ignored the effects arising from differences in electoral scales. The voter turnout distribution $g(T)$ is a good indicator of the public trust and interest in the electoral process. Remarkably, we show that they also encode information about several crucial election statistics. Aided by election data from India -- the largest democracy in the world -- we demonstrate our results for different types of elections at multiple {\it distinct electoral scales}. Given the empirical $g(T)$ and an effective number of candidates for each electoral scale, we analytically obtain the scaled distributions of the winner and the runner-up votes using the framework of our recently proposed random voting model. The analytical predictions and the simulations are in excellent agreement with the empirical election data. Further, we demonstrate that the random voting model is effective in predicting the scaled margin distributions of Indian elections at vastly different electoral scales. Surprisingly, the scaled margin distribution remains invariant with respect to changes in electoral scales, making it a characteristic feature of Indian elections. Finally, the scaled specific margin distributions of Indian elections show a remarkable data collapse, strengthening the recently proposed universality \cite{pal2024universal}. This work paves the way for a wider understanding of electoral statistics from turnout distributions.
+For instance, scaled margin distributions from US elections at the County and Congressional district levels do not exhibit such a collapse (Fig.~\ref{fig:margin_dist_india_us} (b)). This finding highlights a unique characteristic of the Indian electoral system that deserves further investigation.
+
+\section{Conclusion: Turnout Distributions as Electoral Predictors}
+
+In summary, this chapter has demonstrated that voter turnout distributions are not merely indicators of public trust and interest in the electoral process, but they also encode crucial information about several key election statistics. The Random Voting Model, enhanced with the concept of effective number of candidates, provides a powerful framework for predicting various electoral statistics from turnout distributions alone.
+
+Our analysis reveals that voter turnout distributions strongly correlate with winner and runner-up vote distributions, especially at larger electoral scales. This correlation is particularly evident in the remarkable agreement between the analytical predictions from our model and the empirical data. The RVM, when parameterized with the appropriate effective number of candidates ($n^c = 2$ for polling booth level, $n^c = 3$ for constituency levels), accurately predicts the scaled distributions of winner and runner-up votes across different electoral contexts.
+
+Perhaps most striking among our findings is that Indian elections exhibit a unique scale invariance in margin distributions, with scaled margin distributions collapsing onto a single curve across vastly different electoral scales. This phenomenon, not observed in many other democratic systems including the United States, highlights distinctive characteristics of the Indian electoral landscape. Furthermore, the universality of the scaled specific margin distribution is confirmed across multiple electoral scales within India, reinforcing the robustness of our analytical framework.
+
+These findings deepen our understanding of electoral statistics and their relationship with voter turnouts. The predictive power of the RVM framework, using only turnout data and the effective number of candidates as inputs, provides a valuable tool for electoral analysis and could potentially aid in identifying anomalies or irregularities in electoral processes.
+
+As we move to the next chapter, we will explore the practical applications of these insights, focusing on designing interventions and developing methods to flag electoral malpractice based on deviations from the expected statistical patterns.

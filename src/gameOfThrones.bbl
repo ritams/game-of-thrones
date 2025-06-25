@@ -316,6 +316,36 @@ Shintaro Mori, Masato Hisakado, and Kazuaki Nakayama.
 \newblock Voter model on networks and the multivariate beta distribution.
 \newblock {\em Phys. Rev. E}, 99:052307, May 2019.
 
+\bibitem{jacobson1987marginals}
+Gary~C Jacobson.
+\newblock The marginals never vanished: Incumbency and competition in elections to the us house of representatives, 1952-82.
+\newblock {\em American Journal of Political Science}, pages 126--141, 1987.
+
+\bibitem{mccann1997threatening}
+Stewart~JH McCann.
+\newblock Threatening times," strong" presidential popular vote winners, and the victory margin, 1824--1964.
+\newblock {\em Journal of personality and social psychology}, 73(1):160, 1997.
+
+\bibitem{mulligan2003empirical}
+Casey~B Mulligan and Charles~G Hunter.
+\newblock The empirical frequency of a pivotal vote.
+\newblock {\em Public Choice}, 116(1):31--54, 2003.
+
+\bibitem{magrino2011computing}
+Thomas~R Magrino, Ronald~L Rivest, and Emily Shen.
+\newblock Computing the margin of victory in $\{$IRV$\}$ elections.
+\newblock In {\em 2011 Electronic Voting Technology Workshop/Workshop on Trustworthy Elections (EVT/WOTE 11)}, 2011.
+
+\bibitem{xia2012computing}
+Lirong Xia.
+\newblock Computing the margin of victory for various voting rules.
+\newblock In {\em Proceedings of the 13th ACM conference on electronic commerce}, pages 982--999, 2012.
+
+\bibitem{bhattacharyya2021predicting}
+Arnab Bhattacharyya and Palash Dey.
+\newblock Predicting winner and estimating margin of victory in elections using sampling.
+\newblock {\em Artificial Intelligence}, 296:103476, 2021.
+
 \bibitem{india_data}
 Election data of india.
 \newblock \url{https://www.eci.gov.in}.
@@ -332,6 +362,30 @@ Election data of canada.
 MIT~Election Data and Science Lab.
 \newblock {County Presidential Election Returns 2000-2020}, 2018.
 
+\bibitem{brigaldino2011elections}
+Glenn Brigaldino.
+\newblock Elections in the imperial periphery: Ethiopia hijacked.
+\newblock {\em Review of African political economy}, 38(128):327--334, 2011.
+
+\bibitem{frear2014parliamentary}
+Matthew Frear.
+\newblock The parliamentary elections in belarus, september 2012.
+\newblock {\em Electoral Studies}, 33(1):350--353, 2014.
+
+\bibitem{belarus_report}
+Report of organization for security and co-operation in europe (osce).
+\newblock \url{https://www.osce.org/odihr/elections/belarus}, 2020.
+
+\bibitem{czwolek2021belarusian}
+Arkadiusz Czwo{\l}ek and Julia Ko{\l}odziejska.
+\newblock Belarusian parliamentary election in 2019.
+\newblock {\em The Copernicus Journal of Political Studies}, (1):81--93, 2021.
+
+\bibitem{bedford_2021}
+Sofie Bedford.
+\newblock The 2020 presidential election in belarus: Erosion of authoritarian stability and re-politicization of society.
+\newblock {\em Nationalities Papers}, 49(5):808–819, 2021.
+
 \bibitem{klimek2012statistical}
 Peter Klimek, Yuri Yegorov, Rudolf Hanel, and Stefan Thurner.
 \newblock Statistical detection of systematic election irregularities.
@@ -341,11 +395,6 @@ Peter Klimek, Yuri Yegorov, Rudolf Hanel, and Stefan Thurner.
 Ra{\'u}l Jimenez, Manuel Hidalgo, and Peter Klimek.
 \newblock Testing for voter rigging in small polling stations.
 \newblock {\em Science advances}, 3(6):e1602363, 2017.
-
-\bibitem{brigaldino2011elections}
-Glenn Brigaldino.
-\newblock Elections in the imperial periphery: Ethiopia hijacked.
-\newblock {\em Review of African political economy}, 38(128):327--334, 2011.
 
 \bibitem{the-group-polarization-phemomenon}
 David~G Myers and Helmut Lamm.
@@ -431,5 +480,10 @@ Barry~C. Arnold, N.~Balakrishnan, and H.~N. Nagaraja.
 Milton Abramowitz and Irene~A. Stegun.
 \newblock {\em Handbook of Mathematical Functions with Formulas, Graphs, and Mathematical Tables}.
 \newblock Dover, New York, ninth dover printing, tenth gpo printing edition, 1964.
+
+\bibitem{laakso1979effective}
+Markku Laakso and Rein Taagepera.
+\newblock “effective” number of parties: a measure with application to west europe.
+\newblock {\em Comparative political studies}, 12(1):3--27, 1979.
 
 \end{thebibliography}

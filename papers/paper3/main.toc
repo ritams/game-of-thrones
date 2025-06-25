@@ -1,0 +1,22 @@
+\contentsline {title}{Voter Turnouts Govern Key Electoral Statistics}{1}{section*.2}%
+\contentsline {abstract}{Abstract}{1}{section*.1}%
+\contentsline {section}{\numberline {}Acknowledgments}{S1}{section*.3}%
+\tocdepth@munge 
+\contentsline {section}{\numberline {}Contents}{S2}{section*.4}%
+\tocdepth@restore 
+\contentsline {section}{\numberline {S1}Description of Random Voting Model (RVM)}{S2}{section*.5}%
+\contentsline {section}{\numberline {S2}Analytical Calculations of Different Election Statistics}{S2}{section*.6}%
+\contentsline {subsection}{\numberline {A}Order statistics and its connection to winner and runner-up vote share and margins}{S2}{section*.7}%
+\contentsline {subsection}{\numberline {B}Random Voting Model with two candidates}{S3}{section*.8}%
+\contentsline {subsubsection}{\numberline {1}Winner vote share distribution}{S3}{section*.9}%
+\contentsline {subsubsection}{\numberline {2}Runner-up vote share distribution}{S3}{section*.10}%
+\contentsline {subsubsection}{\numberline {3}Specific margin distribution}{S4}{section*.11}%
+\contentsline {subsection}{\numberline {C}Random Voting Model with three candidates}{S4}{section*.12}%
+\contentsline {subsubsection}{\numberline {1}Winner vote share distribution}{S4}{section*.13}%
+\contentsline {subsubsection}{\numberline {2}Runner-up vote share distribution}{S5}{section*.14}%
+\contentsline {subsubsection}{\numberline {3}Specific margin distribution}{S5}{section*.15}%
+\contentsline {subsection}{\numberline {D}Calculating the \emph {scaled} distributions}{S6}{section*.16}%
+\contentsline {subsection}{\numberline {E}The universal distribution of scaled specific margins}{S6}{section*.17}%
+\contentsline {section}{\numberline {S3}Simulation Details}{S6}{section*.18}%
+\contentsline {section}{\numberline {S4}Prediction of Scaled Margin Distribution at Different Scales}{S6}{section*.19}%
+\contentsline {section}{\numberline {S5}Data Summary}{S7}{section*.20}%

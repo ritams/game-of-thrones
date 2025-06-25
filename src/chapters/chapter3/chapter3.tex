@@ -43,62 +43,65 @@ The temporal depth of our dataset provides exceptional analytical power, with so
 
 Table \ref{tab:election_stats} presents comprehensive summary statistics for our dataset, illustrating the extraordinary diversity of electoral scales and patterns across different democratic systems. The table demonstrates the multi-scale nature of our analysis, with electoral unit sizes varying by more than three orders of magnitude within single countries and by over four orders of magnitude across the complete dataset.
 
-\begin{table}[h]
-\centering
-\caption{Summary Statistics of Election Data}
-\label{tab:election_stats}
-\begin{tabular}{|l|l|l|l|l|l|l|}
-\hline
-Country & Time span & Number & Scale    & Mean turnout & Mean margin  & Number \\ 
- &  & of  &  &  &  & of electoral \\ 
- &  & elections  &  &  &  & units \\ 
- &  &  &  &  &  & (consolidated) \\ \hline
-Australia & 1901-2016 & 37 & Constituency & $7.37\times 10^{4}$ & $1.31\times 10^{4}$ & 1740\\ \hline
-Bangladesh & 1973-2008 & 4 & Constituency & $1.57\times 10^{5}$ & $3.15\times 10^{4}$ & 1188\\ \hline
-Belarus & 2004-2019 & 5 & Constituency & $4.83\times 10^{4}$ & $2.61\times 10^{4}$ & 441\\ \hline
-Canada & 1867-2019 & 43 & Constituency & $2.76\times 10^{4}$ & $5.50\times 10^{3}$ & 10662\\ \hline
-Canada & 2004-2021 & 7 & Polling Booth & $5.56\times 10^{2}$ & $1.35\times 10^{2}$ & 489919\\ \hline
-Chile & 1945-2017 & 7 & Constituency & $1.07\times 10^{5}$ & $1.05\times 10^{4}$ & 420\\ \hline
-Denmark & 1849-2019 & 30 & Constituency & $2.70\times 10^{3}$ & $4.64\times 10^{2}$ & 2178\\ \hline
-Ethiopia & 2010-2010 & 1 & Constituency & $4.95\times 10^{4}$ & $4.18\times 10^{4}$ & 492\\ \hline
-France & 1973-2017 & 3 & Constituency & $7.88\times 10^{4}$ & $1.10\times 10^{4}$ & 1712\\ \hline
-Germany & 1871-2017 & 19 & Constituency & $1.37\times 10^{5}$ & $2.26\times 10^{4}$ & 5108\\ \hline
-Ghana & 1992-2016 & 6 & Constituency & $3.75\times 10^{4}$ & $9.88\times 10^{3}$ & 1410\\ \hline
-Hungary & 1990-2018 & 6 & Constituency & $5.32\times 10^{4}$ & $8.57\times 10^{3}$ & 936\\ \hline
-India & 1951-2019 & 18 & Constituency & $5.69\times 10^{5}$ & $8.33\times 10^{4}$ & 8389\\ \hline
-India & 2004-2019 & 4 & Polling Booth & $5.82\times 10^{2}$ & $1.89\times 10^{2}$ & 752786\\ \hline
-Japan & 1947-2017 & 26 & Constituency & $2.88\times 10^{5}$ & $2.35\times 10^{4}$ & 4603\\ \hline
-Kenya & 1961-2013 & 2 & Constituency & $3.72\times 10^{4}$ & $1.19\times 10^{4}$ & 417\\ \hline
-Korea & 1948-2012 & 13 & Constituency & $6.17\times 10^{4}$ & $1.01\times 10^{4}$ & 2258\\ \hline
-Lithuania & 1992-2020 & 8 & Constituency & $3.24\times 10^{4}$ & $3.98\times 10^{3}$ & 570\\ \hline
-Malawi & 1994-2019 & 4 & Constituency & $2.31\times 10^{4}$ & $6.29\times 10^{3}$ & 755\\ \hline
-Malaysia & 1959-2018 & 13 & Constituency & $3.41\times 10^{4}$ & $8.90\times 10^{3}$ & 2199\\ \hline
-Myanmar & 2010-2015 & 2 & Constituency & $6.76\times 10^{4}$ & $2.32\times 10^{4}$ & 634\\ \hline
-New Zealand & 1943-2020 & 9 & Constituency & $3.04\times 10^{4}$ & $6.94\times 10^{3}$ & 637\\ \hline
-Nigeria & 2003-2019 & 2 & Constituency & $7.75\times 10^{4}$ & $2.20\times 10^{4}$ & 710\\ \hline
-Pakistan & 1988-2013 & 3 & Constituency & $1.28\times 10^{5}$ & $2.45\times 10^{4}$ & 683\\ \hline
-Papua New Guinea & 1972-2017 & 8 & Constituency & $5.07\times 10^{4}$ & $5.66\times 10^{3}$ & 841\\ \hline
-Philippines & 1946-2013 & 17 & Constituency & $1.83\times 10^{5}$ & $2.63\times 10^{4}$ & 2525\\ \hline
-Solomon Islands & 1967-2019 & 14 & Constituency & $3.67\times 10^{3}$ & $4.37\times 10^{2}$ & 543\\ \hline
-Taiwan & 1986-2020 & 11 & Constituency & $2.33\times 10^{5}$ & $1.98\times 10^{4}$ & 482\\ \hline
-Tanzania & 2005-2020 & 2 & Constituency & $5.37\times 10^{4}$ & $2.01\times 10^{4}$ & 492\\ \hline
-Thailand & 1969-2011 & 12 & Constituency & $1.86\times 10^{5}$ & $1.46\times 10^{4}$ & 2263\\ \hline
-Trinidad and Tobago & 1925-2020 & 13 & Constituency & $1.53\times 10^{4}$ & $5.12\times 10^{3}$ & 411\\ \hline
-Uganda & 2006-2021 & 4 & Constituency & $4.45\times 10^{4}$ & $1.08\times 10^{4}$ & 1430\\ \hline
-UK & 1832-2019 & 46 & Constituency & $3.43\times 10^{4}$ & $6.30\times 10^{3}$ & 23105\\ \hline
-Ukraine & 1998-2019 & 5 & Constituency & $8.89\times 10^{4}$ & $1.67\times 10^{4}$ & 1072\\ \hline
-United States & 1788-2020 & 167 & Congressional District & $1.14\times 10^{5}$ & $2.96\times 10^{4}$ & 33946\\ \hline
-United States & 2000-2020 & 6 & County & $1.78\times 10^{5}$ & $2.00\times 10^{4}$ & 18905\\ \hline
-Zimbabwe & 2005-2018 & 4 & Constituency & $1.77\times 10^{4}$ & $6.55\times 10^{3}$ & 743\\ \hline
-\end{tabular}
-\end{table}
-
 The summary statistics reveal several fundamental patterns in our comprehensive dataset. Electoral unit scales demonstrate extraordinary variation both within and across countries, exemplified by the contrast between Canadian polling booths averaging 556 voters and Indian parliamentary constituencies averaging 587,329 voters. The consolidated number of electoral units provides insight into the statistical power available for each country, ranging from Ethiopia's limited 492 units to India's extensive polling booth dataset encompassing 752,786 units.
 
 Cross-national analysis reveals significant differences in electoral competitiveness as measured by the margin-to-turnout ratio. Countries like Denmark and Solomon Islands exhibit relatively high competitiveness with smaller margins relative to turnout, while others show broader victory margins suggesting different competitive dynamics. These variations reflect the complex interplay of electoral systems, political culture, and institutional arrangements across different democratic contexts.
 
 The temporal coverage demonstrates the robustness of our longitudinal analysis, with consolidated data representing decades or centuries of democratic evolution. Countries like Australia contribute 37 elections from 1901 to 2016, while Canada's constituency-level data spans an remarkable 43 elections from 1867 to 2019. This extensive temporal depth enables investigation of how electoral patterns evolve over time within stable democratic systems, providing insights into the persistence or change of competitive structures across different historical periods.
-
+\newpage
+\begin{table}[h]
+    \centering
+    \caption{Summary Statistics of Election Data}
+    \label{tab:election_stats}
+    {\scriptsize
+    \begin{tabular}{|l|l|l|l|l|l|l|}
+    \hline
+    Country & Time span & Number & Scale    & Mean turnout & Mean margin & Number \\ 
+     &  & of  &  &  &  & of electoral \\ 
+     &  & elections  &  &  &  & units \\ 
+     &  &  &  &  &  & (consolidated) \\ \hline
+    Australia & 1901-2016 & 37 & Constituency & $7.37\times 10^{4}$ & $1.31\times 10^{4}$ & 1740\\ \hline
+    Bangladesh & 1973-2008 & 4 & Constituency & $1.57\times 10^{5}$ & $3.15\times 10^{4}$ & 1188\\ \hline
+    Belarus & 2004-2019 & 5 & Constituency & $4.83\times 10^{4}$ & $2.61\times 10^{4}$ & 441\\ \hline
+    Canada & 1867-2019 & 43 & Constituency & $2.76\times 10^{4}$ & $5.50\times 10^{3}$ & 10662\\ \hline
+    Canada & 2004-2021 & 7 & Polling Booth & $5.56\times 10^{2}$ & $1.35\times 10^{2}$ & 489919\\ \hline
+    Chile & 1945-2017 & 7 & Constituency & $1.07\times 10^{5}$ & $1.05\times 10^{4}$ & 420\\ \hline
+    Denmark & 1849-2019 & 30 & Constituency & $2.70\times 10^{3}$ & $4.64\times 10^{2}$ & 2178\\ \hline
+    Ethiopia & 2010-2010 & 1 & Constituency & $4.95\times 10^{4}$ & $4.18\times 10^{4}$ & 492\\ \hline
+    France & 1973-2017 & 3 & Constituency & $7.88\times 10^{4}$ & $1.10\times 10^{4}$ & 1712\\ \hline
+    Germany & 1871-2017 & 19 & Constituency & $1.37\times 10^{5}$ & $2.26\times 10^{4}$ & 5108\\ \hline
+    Ghana & 1992-2016 & 6 & Constituency & $3.75\times 10^{4}$ & $9.88\times 10^{3}$ & 1410\\ \hline
+    Hungary & 1990-2018 & 6 & Constituency & $5.32\times 10^{4}$ & $8.57\times 10^{3}$ & 936\\ \hline
+    India & 1951-2019 & 18 & Constituency & $5.69\times 10^{5}$ & $8.33\times 10^{4}$ & 8389\\ \hline
+    India & 2004-2019 & 4 & Polling Booth & $5.82\times 10^{2}$ & $1.89\times 10^{2}$ & 752786\\ \hline
+    Japan & 1947-2017 & 26 & Constituency & $2.88\times 10^{5}$ & $2.35\times 10^{4}$ & 4603\\ \hline
+    Kenya & 1961-2013 & 2 & Constituency & $3.72\times 10^{4}$ & $1.19\times 10^{4}$ & 417\\ \hline
+    Korea & 1948-2012 & 13 & Constituency & $6.17\times 10^{4}$ & $1.01\times 10^{4}$ & 2258\\ \hline
+    Lithuania & 1992-2020 & 8 & Constituency & $3.24\times 10^{4}$ & $3.98\times 10^{3}$ & 570\\ \hline
+    Malawi & 1994-2019 & 4 & Constituency & $2.31\times 10^{4}$ & $6.29\times 10^{3}$ & 755\\ \hline
+    Malaysia & 1959-2018 & 13 & Constituency & $3.41\times 10^{4}$ & $8.90\times 10^{3}$ & 2199\\ \hline
+    Myanmar & 2010-2015 & 2 & Constituency & $6.76\times 10^{4}$ & $2.32\times 10^{4}$ & 634\\ \hline
+    New Zealand & 1943-2020 & 9 & Constituency & $3.04\times 10^{4}$ & $6.94\times 10^{3}$ & 637\\ \hline
+    Nigeria & 2003-2019 & 2 & Constituency & $7.75\times 10^{4}$ & $2.20\times 10^{4}$ & 710\\ \hline
+    Pakistan & 1988-2013 & 3 & Constituency & $1.28\times 10^{5}$ & $2.45\times 10^{4}$ & 683\\ \hline
+    Papua New Guinea & 1972-2017 & 8 & Constituency & $5.07\times 10^{4}$ & $5.66\times 10^{3}$ & 841\\ \hline
+    Philippines & 1946-2013 & 17 & Constituency & $1.83\times 10^{5}$ & $2.63\times 10^{4}$ & 2525\\ \hline
+    Solomon Islands & 1967-2019 & 14 & Constituency & $3.67\times 10^{3}$ & $4.37\times 10^{2}$ & 543\\ \hline
+    Taiwan & 1986-2020 & 11 & Constituency & $2.33\times 10^{5}$ & $1.98\times 10^{4}$ & 482\\ \hline
+    Tanzania & 2005-2020 & 2 & Constituency & $5.37\times 10^{4}$ & $2.01\times 10^{4}$ & 492\\ \hline
+    Thailand & 1969-2011 & 12 & Constituency & $1.86\times 10^{5}$ & $1.46\times 10^{4}$ & 2263\\ \hline
+    Trinidad and Tobago & 1925-2020 & 13 & Constituency & $1.53\times 10^{4}$ & $5.12\times 10^{3}$ & 411\\ \hline
+    Uganda & 2006-2021 & 4 & Constituency & $4.45\times 10^{4}$ & $1.08\times 10^{4}$ & 1430\\ \hline
+    UK & 1832-2019 & 46 & Constituency & $3.43\times 10^{4}$ & $6.30\times 10^{3}$ & 23105\\ \hline
+    Ukraine & 1998-2019 & 5 & Constituency & $8.89\times 10^{4}$ & $1.67\times 10^{4}$ & 1072\\ \hline
+    United States & 1788-2020 & 167 & Congressional District & $1.14\times 10^{5}$ & $2.96\times 10^{4}$ & 33946\\ \hline
+    United States & 2000-2020 & 6 & County & $1.78\times 10^{5}$ & $2.00\times 10^{4}$ & 18905\\ \hline
+    Zimbabwe & 2005-2018 & 4 & Constituency & $1.77\times 10^{4}$ & $6.55\times 10^{3}$ & 743\\ \hline
+    \end{tabular}
+    }
+    \end{table}
+    
+\newpage
 \section{Dataset Validation and Analytical Framework}
 
 This comprehensive dataset represents the empirical foundation upon which our discovery of electoral universality rests. The systematic collection, cleaning, and validation of data from 34 countries across six continents provides unprecedented analytical power for investigating fundamental patterns in democratic competition. Our dataset encompasses over 2.3 million electoral units when consolidated across all countries and scales, representing one of the most extensive cross-national electoral databases assembled for statistical physics analysis.
