@@ -1,19 +1,19 @@
 # Fdb version 4
-["bibtex gameOfThrones"] 1750822556.2011 "gameOfThrones.aux" "gameOfThrones.bbl" "gameOfThrones" 1750822558.17533 0
+["bibtex gameOfThrones"] 1750838528.70424 "gameOfThrones.aux" "gameOfThrones.bbl" "gameOfThrones" 1750838530.79672 0
   "./ref.bib" 1750822554.0872 46588 d073ebca7fcb1fbb66d3176be86dc2dd ""
   "/usr/local/texlive/2025/texmf-dist/bibtex/bst/base/unsrt.bst" 1292289607 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "gameOfThrones.aux" 1750822557.85905 47791 7877c899c45147d9e846502a1cb336d6 "pdflatex"
+  "gameOfThrones.aux" 1750838530.46557 51012 3fb3757bc82a12c467f5c3087dd94985 "pdflatex"
   (generated)
   "gameOfThrones.bbl"
   "gameOfThrones.blg"
   (rewritten before read)
-["makeindex gameOfThrones.idx"] 1750822459.83523 "gameOfThrones.idx" "gameOfThrones.ind" "gameOfThrones" 1750822558.17522 0
-  "gameOfThrones.idx" 1750822556.86696 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex gameOfThrones.idx"] 1750836804.50056 "gameOfThrones.idx" "gameOfThrones.ind" "gameOfThrones" 1750838530.79661 2
+  "gameOfThrones.idx" 1750838529.38469 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "gameOfThrones.ilg"
   "gameOfThrones.ind"
   (rewritten before read)
-["pdflatex"] 1750822556.29382 "/Users/rip/projects/game-of-thrones/src/gameOfThrones.tex" "gameOfThrones.pdf" "gameOfThrones" 1750822558.17547 0
+["pdflatex"] 1750838528.80071 "/Users/rip/projects/game-of-thrones/src/gameOfThrones.tex" "gameOfThrones.pdf" "gameOfThrones" 1750838530.79688 0
   "/Users/rip/Library/texlive/2025/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk" 1747030888.32102 8424 ffa8ebbdccd5d05844d021a8edf34008 ""
   "/Users/rip/projects/game-of-thrones/src/gameOfThrones.tex" 1750822406.95487 3315 badbe9c2c22611fb96f5a226aec9cc10 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -43,7 +43,6 @@
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/bbm/bbm6.tfm" 1227036886 560 4c5ff0e6c23877f3f630ae9d8ef92c6e ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/bbm/bbm8.tfm" 1227036886 560 2e80f8a1cb59527f57d99bb5fccd0f3c ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm" 1136768653 1116 4e6ba9d7914baa6482fd69f67d126380 ""
-  "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx6.tfm" 1136768653 1344 8a0be4fe4d376203000810ad4dc81558 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm" 1136768653 1332 1fde11373e221473104d6cc5993f046e ""
@@ -53,7 +52,6 @@
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm" 1136768653 1520 eccf95517727cb11801f4f1aee3a21b4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm" 1136768653 1524 554068197b70979a55370e6c6495f441 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1136768653 1288 655e228510b4c2a1abe905c368440826 ""
-  "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr17.tfm" 1136768653 1292 296a67155bdbfc32aa9c636f21e91433 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr6.tfm" 1136768653 1300 b62933e007d01cfd073f79b963c01526 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1136768653 1292 21c1c5bfeaebccffdb478fd231a0997d ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1136768653 1124 6c73e740cf17375f03eec0ee63599741 ""
@@ -70,6 +68,7 @@
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1248133631 36741 fa121aac0049305630cf160b86157ee4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1248133631 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
@@ -296,15 +295,18 @@
   "chapters/chapter4/turnout_margin_empirical_distribution_pc.pdf" 1750786405.35011 220499 5743a0b8a59da6db38eb37b2195496f3 ""
   "chapters/chapter4/universality_empirical.pdf" 1750786306.64833 219532 55e8f6561d92ad5141211977c9e2c3f4 ""
   "chapters/chapter4/universality_simulation_empirical_analytical.pdf" 1750786355.28936 317320 3bbeb99a65de6ad204bff15d907bf992 ""
-  "chapters/chapter5/chapter5.tex" 1750819602.01315 28330 195182c510940334153925baeeb62f1f ""
+  "chapters/chapter5/chapter5.tex" 1750838523.86787 27254 d2879e2a266bac5c3af4268560c72441 ""
   "chapters/chapter5/margin_turnout_dists.pdf" 1750808289.54627 698007 13e69468a9ebd070dc87bfbdb135f9d3 ""
+  "chapters/chapter5/scale_margin_distribution_32_countries.pdf" 1750812623.46291 275039 b34c276c79c0ed6acb325fa613bfa311 ""
+  "chapters/chapter5/turnout_margin_empirical_simulation_distribution_diff_scale.pdf" 1750812189.16239 265761 d4053000bd7686c30baa2a873286c643 ""
+  "chapters/chapter5/turnout_margin_empirical_simulation_distribution_pc.pdf" 1750812241.34803 241878 b62b5d6ba433d908c5d6296699cd26ba ""
   "chapters/chapter5/universality_empirical_analytical.pdf" 1750803308.11074 221831 513fcbe5d49c1b20895cc6fdf7df6659 ""
-  "gameOfThrones.aux" 1750822557.85905 47791 7877c899c45147d9e846502a1cb336d6 "pdflatex"
-  "gameOfThrones.bbl" 1750822556.29033 20268 7ba40e3e005a2bfb2baf26e5c85b703e "bibtex gameOfThrones"
-  "gameOfThrones.ind" 1750822459.91561 0 d41d8cd98f00b204e9800998ecf8427e "makeindex gameOfThrones.idx"
-  "gameOfThrones.out" 1750822557.86171 19452 8f8f9319a6e79d3c9585a44c8a078b6a "pdflatex"
+  "gameOfThrones.aux" 1750838530.46557 51012 3fb3757bc82a12c467f5c3087dd94985 "pdflatex"
+  "gameOfThrones.bbl" 1750838528.79599 20058 def363798cb5b0b4b5da9afe4dcd5d4e "bibtex gameOfThrones"
+  "gameOfThrones.ind" 0 -1 0 "makeindex gameOfThrones.idx"
+  "gameOfThrones.out" 1750838530.46945 20130 2395a97ffb749d2c6644c6aa8edf14af "pdflatex"
   "gameOfThrones.tex" 1750822406.95487 3315 badbe9c2c22611fb96f5a226aec9cc10 ""
-  "gameOfThrones.toc" 1750822557.86196 7642 fcea36c97f219154fe354e07a7fd5c5e "pdflatex"
+  "gameOfThrones.toc" 1750838530.46984 7610 ce20375f18aa960783f48ae8f11a887f "pdflatex"
   (generated)
   "gameOfThrones.aux"
   "gameOfThrones.idx"

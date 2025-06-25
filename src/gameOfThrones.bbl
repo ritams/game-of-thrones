@@ -432,7 +432,4 @@ Milton Abramowitz and Irene~A. Stegun.
 \newblock {\em Handbook of Mathematical Functions with Formulas, Graphs, and Mathematical Tables}.
 \newblock Dover, New York, ninth dover printing, tenth gpo printing edition, 1964.
 
-\bibitem{supp}
-See Supplemental Material [URL] for (1) the description of RVM, (2) theoretical calculations for RVM and other related discussions, (3) data summary, and (4) figures, which includes Refs. [40].
-
 \end{thebibliography}

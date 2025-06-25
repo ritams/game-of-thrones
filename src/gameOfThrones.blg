@@ -17,45 +17,45 @@ Warning--I didn't find a database entry for "belarus2012parliamentary"
 Warning--I didn't find a database entry for "belarusian2019parliamentary"
 Warning--I didn't find a database entry for "belarus2020presidential"
 Warning--empty journal in opinioin-dynamics-and-bounded-confidence
-You've used 88 entries,
+You've used 87 entries,
             1791 wiz_defined-function locations,
-            996 strings with 20183 characters,
-and the built_in function-call counts, 19544 in all, are:
-= -- 1700
-> -- 887
+            994 strings with 19987 characters,
+and the built_in function-call counts, 19458 in all, are:
+= -- 1696
+> -- 886
 < -- 2
-+ -- 334
++ -- 333
 - -- 246
 * -- 1495
-:= -- 3161
-add.period$ -- 260
-call.type$ -- 88
+:= -- 3156
+add.period$ -- 259
+call.type$ -- 87
 change.case$ -- 81
 chr.to.int$ -- 0
-cite$ -- 89
-duplicate$ -- 794
-empty$ -- 1938
+cite$ -- 88
+duplicate$ -- 789
+empty$ -- 1920
 format.name$ -- 246
-if$ -- 4248
+if$ -- 4225
 int.to.chr$ -- 0
-int.to.str$ -- 88
+int.to.str$ -- 87
 missing$ -- 90
-newline$ -- 438
+newline$ -- 435
 num.names$ -- 84
-pop$ -- 172
+pop$ -- 163
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 313
+skip$ -- 307
 stack$ -- 0
 substring$ -- 1458
-swap$ -- 106
+swap$ -- 105
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
 while$ -- 190
-width$ -- 90
-write$ -- 942
+width$ -- 89
+write$ -- 937
 (There were 13 warnings)

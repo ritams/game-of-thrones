@@ -20,7 +20,7 @@ After each of the $n_i$ electors (voters) in $i$-th electoral unit casts their v
 Hence, as part of the model specification, we fix the number of candidates in each electoral unit to be three, i.e., $c_i = 3$ for all $i$.
 
 The only input to this model is the raw turnout data, i.e., the number of voters (who actually voted) in each constituency. For the model simulation, we use the turnout data of real elections as the total number of voters in different constituencies. To understand how simulations are performed, consider this notional example: if a country has $N=100$ constituencies and data for five such elections is available. Then, the model is simulated on $500$ electoral units. The number of electors in each electoral unit is taken from the consolidated turnouts. Such a simulation of election is performed multiple times to get the average distributions.
-\section{The RVM's First Symphony: Obtaining the Universal $Q_{\widetilde{\mu}}\left(\widetilde{\mu}\right)$}
+\section{Analytical Derivation of the Universal Specific Margin Distribution}
 \label{sec:RVM_first_symphony}
 We now demonstrate how the RVM explains the universal distribution of scaled specific margin $Q_{\widetilde{\mu}}\left(\widetilde{\mu}\right)$ observed in the previous chapter. As mentioned in the previous section (\ref{sec:RVM_intro}), we consider the case where $3$ candidates are contesting in an election. The weight assigned for the $j$-th candidate of the $i$-th electoral unit is $w_{ij}$. These weights are drawn independently at random from a uniform distribution between $0$ and $1$.  The corresponding probability $p_{ij}$ of receiving votes is calculated by normalizing these weights. Hence, we have the following,
 \begin{equation}
@@ -57,9 +57,9 @@ Consider $n$ \emph{iid} random variables $\{X_1, X_2 \dots X_n\}$ drawn from a d
 
 The joint probability density of all the order statistics of the above-mentioned $n$ random variables, $\mathbbm{P}\left(x_{(1)}, x_{(2)}, ... x_{(n)}\right)$, defined as the probability density that the random variable $X_{(k)}$ takes the value $x_{(k)}$ for $k \in \{ 1, 2, \dots, n\}$, is
 \begin{equation}
-    \mathbbm{P}\left(x_{(1)}, x_{(2)}, ... x_{(n)}\right) = n!\prod_{k=1}^{n}\rho\left(x_{(n)}\right).
+    \mathbbm{P}\left(x_{(1)}, x_{(2)}, ... x_{(n)}\right) = n!\prod_{k=1}^{n}\rho\left(x_{(k)}\right).
 \end{equation}
-\subsection{Back to Reality: RVM's First Symphony}
+\subsection{Application to the Random Voting Model}
 Now that we understand the joint probability density of the order statistics, for RVM, we have $n = 3$ and $\rho(x) = \mathcal{U}(0, 1)$. Hence we have,    
 \begin{center}
     \begin{align}
@@ -96,7 +96,7 @@ This derived distribution $Q_{\widetilde{\mu}}\left(\widetilde{\mu}\right)$ is p
     \label{fig:RVM_mu}
 \end{figure}
 
-\section{Expanding the Repertoire: Predicting Margins from Turnouts}
+\section{Predicting Margin Distributions from Turnout Distributions}
 Having established that the RVM predicts the universal specific margin distribution, we now explore how the model can predict the margin distribution $Q_M(M)$ from an arbitrary turnout distribution $g(T)$. From the previous section, we have the distribution of the specific margin $\mu = M / T$ to be
 \begin{equation}
     Q_{\mu}\left(\mu\right) = \frac{(1 - \mu)(5 + 7\mu)}{(1 + \mu)^2(1 + 2\mu)^2}.
@@ -189,7 +189,7 @@ where,
     I_2(y) = \int \frac{y(y - 1)(5y + 7)}{(1 + y)^2 (2 + y)^2}dy = -\frac{4}{y+1}+\frac{18}{y+2}-4 \ln (y+1)+9 \ln (y+2).
 \end{equation}
 \subsection{RVM Simulations with Synthetic Turnout Distributions}
-The RVM enables us to estimate the scaled margin distribution $f(M / \langle M \rangle)$ using only the raw turnout data, indicating that $f(M / \langle M \rangle)$ is driven by the details of the turnout distribution $g(T)$. To further quantify the effect of $g(T)$ on the scaled margin distribution $f(M / \langle M \rangle)$, we simulate elections using RVM, with turnouts drawn from vastly different synthetically generated distributions. In particular, to study the tail behaviors, we use the following four different turnout distributions:
+We perform simulation using the following four different synthetic turnout distributions, to further validate our analytical results, specifically the tail behavior of the margin distribution.
 \begin{enumerate}
     \item \textbf{Gaussian Turnout Distribution:} $g(T) = \frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(T - \mu)^2}{2\sigma^2}\right), \text{ with } \mu = 50000$, $\sigma = 10000$ and $T > 0$.
     \item \textbf{Exponential Turnout Distribution:} $g(T) = \frac{1}{\tau} \exp{\left(-\frac{T}{\tau}\right)}, \text{ with } \tau = 50000$.
@@ -197,38 +197,45 @@ The RVM enables us to estimate the scaled margin distribution $f(M / \langle M \
     \item \textbf{Uniform Turnout Distribution:} $T \sim \mathcal{U} (a, b)$, with $a = 100$ and $b = 100000$. $\mathcal{U}(a, b)$ denotes uniform distribution between the range $a$ and $b$.
 \end{enumerate}
 
-Each of the RVM simulations was performed on $10^6$ electoral units, with turnouts (rounded down to the nearest integer) drawn from one of these three distributions. The simulation demonstrates that the tail of the margin distribution mimics the turnout distribution's tail.  This is evident in Fig.~\ref{fig_sup_1}(a), (b), and (c). The tail of the margin distribution (Fig.~\ref{fig_sup_1} (c)) corresponding to power law turnouts decays with the same power law exponent.  In the simulation with Gaussian turnout distribution, we find the tail of the margin distribution also has a Gaussian falloff (Fig.~\ref{fig_sup_1} (a)). Similarly, the margin distribution corresponding to exponential turnouts has an exponential tail (Fig.~\ref{fig_sup_1} (b)). As the probability density function of uniform turnout distribution and corresponding margin distribution have finite supports, their tails can not be properly defined. We find a sharp cutoff in the corresponding margin distribution. The analytical (semi-analytical for Gaussian turnout) predictions for the margin distributions (shown as black lines in Fig.~\ref{fig_sup_1}) corresponding to all four aforementioned turnout distributions are in excellent agreement with the RVM simulation. In empirical county-level election data of the United States, the heavy-tailed decay of the turnout distribution is reflected in the corresponding margin distribution (Fig.~\ref{fig_sup_1}(e)). In Fig.~\ref{fig_sup_1} (f), we see a similar decay trend in both margin and turnout distribution, which correspond to congressional district-level election data of the USA. We obtain the scaled margin distribution $f(M / \langle M \rangle)$ by scaling $Q(M)$ by its mean; hence, both $Q(M)$ and $f(M / \langle M \rangle)$ have similar decay and are strongly related to the corresponding turnout distribution $g(T)$.
+Each of the RVM simulations was performed on $10^6$ electoral units, with turnouts (rounded down to the nearest integer) drawn from one of these four distributions. The simulation demonstrates that the tail of the margin distribution mimics the turnout distribution's tail.  This is evident in Fig.~\ref{fig:margin_turnout_dists}(a), (b), and (c). The tail of the margin distribution (Fig.~\ref{fig:margin_turnout_dists} (c)) corresponding to power law turnouts decays with the same power law exponent.  In the simulation with Gaussian turnout distribution, we find the tail of the margin distribution also has a Gaussian falloff (Fig.~\ref{fig:margin_turnout_dists} (a)). Similarly, the margin distribution corresponding to exponential turnouts has an exponential tail (Fig.~\ref{fig:margin_turnout_dists} (b)). As the probability density function of uniform turnout distribution and corresponding margin distribution have finite supports, their tails can not be properly defined. We find a sharp cutoff in the corresponding margin distribution. The analytical (semi-analytical for Gaussian turnout) predictions for the margin distributions (shown as black lines in Fig.~\ref{fig:margin_turnout_dists}) corresponding to all four aforementioned turnout distributions are in excellent agreement with the RVM simulation. In empirical county-level election data of the United States, the heavy-tailed decay of the turnout distribution is reflected in the corresponding margin distribution (Fig.~\ref{fig:margin_turnout_dists}(e)). In Fig.~\ref{fig:margin_turnout_dists}(f), we see a similar decay trend in both margin and turnout distribution, which correspond to congressional district-level election data of the USA. 
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{chapters/chapter5/margin_turnout_dists.pdf}
-    \caption{The margin distribution $Q(M)$ is plotted with the corresponding turnout distribution $g(T)$ to demonstrate that the tails of both these distributions are correlated. Panels (a), (b), (c), and (d) correspond to Gaussian, exponential, power law, and uniform turnout distributions, respectively. Blue open circles denote the turnout distributions. Red open circles denote the margin distribution computed through RVM simulations. Black solid lines correspond to the margin distribution computed using Eq.~\ref{eq:pm}. For exponential, power law, and uniform turnout distributions, the integration was analytically calculated, and for Gaussian turnout distribution, it was evaluated numerically. Panels (e) and (f) depict the margin and turnout distribution for the county-level and congressional district-level election data of the USA, respectively.}
-    \label{fig_sup_1}
+    \caption{The margin distribution $Q_M(M)$ is plotted with the corresponding turnout distribution $g(T)$ to demonstrate that the tails of both these distributions are correlated. Panels (a), (b), (c), and (d) correspond to Gaussian, exponential, power law, and uniform turnout distributions, respectively. Blue open circles denote the turnout distributions. Red open circles denote the margin distribution computed through RVM simulations. Black solid lines correspond to the margin distribution computed using Eq.~\ref{eq:pm}. For exponential, power law, and uniform turnout distributions, the integration was analytically calculated, and for Gaussian turnout distribution, it was evaluated numerically. Panels (e) and (f) depict the margin and turnout distribution for the county-level and congressional district-level election data of the USA, respectively.}
+    \label{fig:margin_turnout_dists}
 \end{figure}
-\subsection{Need of the Hour: Scaling by Mean}
-RVM can remarkably predict the overall trend, especially the tail behaviors of the margin distributions $Q_M(M)$. However, the prediction of the whole distribution is sadly not possible, due to RVM's inability of relaiably prediting the mean margin. To surcumnavigate this limitaion, we scale the margin distributions with their sample mean, 
+\subsection{The Necessity of Scaling in Margin Distribution Analysis}
+While the RVM successfully explains the shape of the margin distributions $Q_M(M)$ and capture their tail behaviors remarkably well, it fails to predict the empirical mean of those distributions. To overcome this limitation, we scale the margin distribution by its mean $\langle M \rangle$, and investigate the predictive power of the RVM on the scaled margin distribution $Q_{\widetilde{M}}(\widetilde{M})$.
+\subsubsection{Predicting Scaled Margin Distributions Across Countries}
+As demonstrated in the previous chapter, different countries exhibit vastly different turnout distributions $g(T)$ that reflect distinct electoral systems and contexts. The key question is whether the RVM can capture the resulting variations in scaled margin distributions $Q_{\widetilde{M}}(\widetilde{M})$.
 
-\subsubsection{PC}
-% paraphrase
-Figure \ref{fig_1}(a) displays the distribution of raw turnout $g(T)$ at the constituency level for national elections in six countries, namely, India, USA, South Korea, Canada, Japan, and Germany. Striking dissimilarities in $g(T)$ are visible in the shape and support of distribution for countries. For Germany, $g(T)$ has a unimodal character, while that for Canada and the USA display multiple peaks. The corresponding scaled margin $M/\langle M \rangle$ is displayed as distribution $f(M/\langle M \rangle)$ (computed from the consolidated margin data for each country) in Fig.~\ref{fig_1}(b-g). While they appear to be broadly similar, certain differences are clearly noticeable. In particular, $f(M/\langle M \rangle)$ for German elections in Fig.~\ref{fig_1}(g) has a sharp cutoff, but for India and Japan in Fig.~\ref{fig_1}(b, f) the distribution has a slower decay. These observations motivate the questions of whether $f(M/\langle M \rangle)$ is related to the raw turnout distribution and can be obtained from it.
+Figure \ref{fig:RVM_country_predictions} (b-g) shows that the RVM predictions (solid lines) achieve excellent agreement with empirical scaled margin distributions (open circles) across diverse countries including India, USA, South Korea, Canada, Japan, and Germany. Notably, the model faithfully captures the disparate decay features observed in different countries — from the sharp cutoff characteristic of German elections to the heavier tails seen in Indian and Japanese data. This demonstrates that raw turnout data carries intrinsic information about the margin distribution, which the RVM effectively leverages without requiring any parameter tuning.
 
-To investigate this question, we propose a Random Voting Model (RVM) ${\mathcal V}(T)$ that takes raw turnouts $T=\{T_1, T_2 \dots T_N\}$ as input. This model emulates an election taking place at $N$ electoral units (say, constituencies). At $i$-th unit, each of the $T_i$ voters (raw turnout at $i$-th unit) can cast only one vote, independently and by randomly choosing one of the $c_i$ contesting candidates. The probability that candidate $j$ in $i$-th unit can attract a vote is $p_{ij}= w_{ij}/\sum_k w_{ik}$, where $w_{ij} \in [0,1]$ is a random number drawn from a uniform distribution. While this protocol provides a natural and effective choice for $p_{ij}$, the sensitivity of the RVM predictions on different protocols is discussed in Sec.~S5 of Ref. \cite{supp}. In election data that we use, averaged over all the 34 countries, the top two (three) candidates account for 79\% (87\%) of all votes polled. Hence, the model assumes three candidates at every constituency: $c_i=3$ for $i=1,2 \dots N$, and that all eligible voters cast their votes, implying $T_i = n_i$. By simulating this model, margin $M_i$ is obtained for $i$-th electoral unit and $\langle M \rangle = (1/N) \sum_{i=1}^N M_i$ is the associated sample mean. For a detailed description of the model, see Sec.~S1 of Ref. \cite{supp}. 
-
-The model predictions depend exclusively on the actual turnout distribution, and no free parameters to be tuned. As illustrated in Fig.~\ref{fig_1}(b - g), the scaled margin distributions predicted by this model (solid lines) show a remarkable agreement with those computed from empirical margin data from real elections. Notably, RVM faithfully captures disparate decay features in  $f(M/\langle M \rangle)$ for India, USA, South Korea, Canada, Japan, and Germany (for 28 other countries, see Sec.~S7 of Ref. \cite{supp}). This suggests that the raw turnout data carries intrinsic information about the margin distribution. RVM effectively leverages this information embedded in the turnout distribution to predict the scaled margin distribution. 
-\begin{figure}
-    
-\end{figure}
-\subsubsection{Different Scale}
-Next, we show that these results are independent of the number of voters or size of electoral units. In large countries, depending on the size of the electoral unit, the typical turnout can differ by several orders of magnitude. For example, in India, polling booths have a typical electoral size $\sim 10^3$, whereas, at the parliamentary constituency level, it is about $10^6$. Further, the shapes of $g(T)$ are also vastly different at different scales. Figure \ref{fig_2}$(a)$ captures the striking differences in range and shape of $g(T)$ for India, the US, and Canada at two different scales. Quite remarkably, despite these vast differences in the scale, the same RVM ${\mathcal V}(T)$, without any parameter adjustments, accurately predicts the scaled margin distribution. Figure \ref{fig_2}$(b, c, d)$ shows the empirical distribution of scaled margins (in national elections) at the constituency-level scale, and Figure \ref{fig_2}$(e, f, g)$ shows the same at the scale of polling booths (county for USA).
-
-\begin{figure}
-    
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{chapters/chapter5/turnout_margin_empirical_simulation_distribution_pc.pdf}
+    \caption{RVM predictions of scaled margin distributions across diverse electoral systems. (a) Turnout distributions $g(T)$ showing the diversity in electoral contexts. (b-g) Empirical scaled margin distributions $Q_{\widetilde{M}}(\widetilde{M})$ (open circles) compared with parameter-free RVM predictions (solid lines) for India, USA, South Korea, Canada, Japan, and Germany. The shaded regions represent prediction variability from multiple RVM realizations.}
+    \label{fig:RVM_country_predictions}
 \end{figure}
 
-\subsubsection{All 32 Countries}
-Further in figure X we demonstrate the remarkable prediction scaled margin distributions by RVM.
+\subsubsection{Scale-Independent Predictive Accuracy}
+The predictive power of the RVM extends across different electoral scales without requiring parameter adjustments. As shown in Figure \ref{fig:RVM_scale_predictions} (b-g), the same model accurately predicts scaled margin distributions at both constituency-level (larger scale) and polling booth/county-level (smaller scale) for India, USA, and Canada. Despite turnout distributions that differ by orders of magnitude in scale and exhibit completely different shapes, the RVM maintains its predictive accuracy, confirming that the underlying statistical principles captured by the model are truly scale-invariant.
 
-\begin{figure}
-    
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{chapters/chapter5/turnout_margin_empirical_simulation_distribution_diff_scale.pdf}
+    \caption{Scale-independent RVM predictions. (a) Turnout distributions $g(T)$ at two different electoral scales: dashed lines for smaller scales (polling booths/counties), solid lines for larger scales (constituencies/congressional districts). (b-g) Empirical $Q_{\widetilde{M}}(\widetilde{M})$ (open circles) and RVM predictions (lines) demonstrate excellent agreement across both scales despite vastly different turnout characteristics.}
+    \label{fig:RVM_scale_predictions}
+\end{figure}
+
+\subsubsection{Comprehensive Validation Across All Countries}
+Figure \ref{fig:RVM_all_countries} provides a comprehensive demonstration of the RVM's predictive accuracy across our complete dataset of 32 countries. The remarkable agreement between empirical distributions (colored circles) and parameter-free RVM predictions (black lines) across such diverse electoral systems — spanning different continents, political cultures, and institutional arrangements — underscores the model's robustness and the fundamental nature of the statistical principles it captures.
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{chapters/chapter5/scale_margin_distribution_32_countries.pdf}
+    \caption{Comprehensive validation of RVM predictive accuracy. Empirical scaled margin distributions $Q_{\widetilde{M}}(\widetilde{M})$ (colored circles) compared with parameter-free RVM predictions (black solid lines) across all 32 countries in our dataset, demonstrating consistent predictive accuracy across diverse electoral systems.}
+    \label{fig:RVM_all_countries}
 \end{figure}
 
 \section{Conclusion: The Power and Limitations of RVM}
@@ -243,4 +250,4 @@ However, the RVM also has limitations. While it excellently predicts the shape a
 
 Despite these limitations, the success of this minimal statistical model in capturing key universal features of electoral competition demonstrates the power of stochastic approaches in understanding complex social phenomena. It reveals that certain macroscopic patterns in electoral systems may be governed more by basic statistical principles than by the intricacies of voter psychology or electoral rules.
 
-In the next chapter, we will build upon this foundation to explore how deviations from the universal pattern predicted by RVM might serve as indicators of electoral anomalies or potential fraud. By establishing a statistical baseline for "typical" electoral competition, we gain a powerful tool for detecting unusual patterns that may warrant closer scrutiny. This approach may ultimately provide a data-driven, politically neutral method for monitoring electoral integrity worldwide.
+In the next chapter, we will build upon this foundation to explore prediction of several other key electoral statistics.
