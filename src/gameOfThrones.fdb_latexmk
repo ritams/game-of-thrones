@@ -1,21 +1,21 @@
 # Fdb version 4
-["bibtex gameOfThrones"] 1750847533.6607 "gameOfThrones.aux" "gameOfThrones.bbl" "gameOfThrones" 1750847672.65016 0
+["bibtex gameOfThrones"] 1750854797.48124 "gameOfThrones.aux" "gameOfThrones.bbl" "gameOfThrones" 1750854855.39275 0
   "./ref.bib" 1750841822.04309 51375 49f6ef4d7435f81bcd88127d564f0e9b ""
   "/usr/local/texlive/2025/texmf-dist/bibtex/bst/base/unsrt.bst" 1292289607 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "gameOfThrones.aux" 1750847672.29997 58343 585b14c6997d2175a5b9dcec279140d4 "pdflatex"
+  "gameOfThrones.aux" 1750854855.08155 64713 c93c6848f0bb76e37c0b69297bbc4df3 "pdflatex"
   (generated)
   "gameOfThrones.bbl"
   "gameOfThrones.blg"
   (rewritten before read)
-["makeindex gameOfThrones.idx"] 1750847531.5238 "gameOfThrones.idx" "gameOfThrones.ind" "gameOfThrones" 1750847672.65002 0
-  "gameOfThrones.idx" 1750847671.14746 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex gameOfThrones.idx"] 1750852685.67215 "gameOfThrones.idx" "gameOfThrones.ind" "gameOfThrones" 1750854855.39265 0
+  "gameOfThrones.idx" 1750854854.61784 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "gameOfThrones.ilg"
   "gameOfThrones.ind"
   (rewritten before read)
-["pdflatex"] 1750847670.51208 "/Users/rip/projects/game-of-thrones/src/gameOfThrones.tex" "gameOfThrones.pdf" "gameOfThrones" 1750847672.65034 0
+["pdflatex"] 1750854852.62713 "/Users/rip/projects/game-of-thrones/src/gameOfThrones.tex" "gameOfThrones.pdf" "gameOfThrones" 1750854855.39291 0
   "/Users/rip/Library/texlive/2025/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk" 1747030888.32102 8424 ffa8ebbdccd5d05844d021a8edf34008 ""
-  "/Users/rip/projects/game-of-thrones/src/gameOfThrones.tex" 1750845248.49577 3281 98d8766f431179bd2b7cebadc7ead86b ""
+  "/Users/rip/projects/game-of-thrones/src/gameOfThrones.tex" 1750852684.40452 3273 7846343e17fdd01fd876d339e1c5481a ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136768653 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -299,7 +299,10 @@
   "chapters/chapter2/parameters_vs_nudge.pdf" 1750749896.96624 642421 dde4e255658adb87769f552a0f1fecf6 ""
   "chapters/chapter2/polarization_definition.pdf" 1750749896.976 100795 d2de911f80b1914fd9a8e2cf941c6b11 ""
   "chapters/chapter2/polarized_and_depolarized_trajectories.pdf" 1750749896.99194 2012611 c0553087c90610bb270af1a048902692 ""
-  "chapters/chapter3/chapter3.tex" 1750842576.64082 17782 71a0e08032a387b3a53281ae5c3952b0 ""
+  "chapters/chapter3/chapter3.tex" 1750854852.35732 19680 38fed085bbcac67e98877f116885bacb ""
+  "chapters/chapter3/clea.png" 1750854410.17324 513187 caf2f7553d30f4f1279d2841121ffc4e ""
+  "chapters/chapter3/eci_pc.png" 1750850785.73246 149339 10911a3edfc38bfde1a2effbc4c1f2f8 ""
+  "chapters/chapter3/form_20.png" 1750850681.43101 230709 1696f2ad4d3a962305ff866a4289446b ""
   "chapters/chapter4/chapter4.tex" 1750820842.87803 23484 0328777ded2ff3b4b0c1b0e7d6562dfb ""
   "chapters/chapter4/election_template.png" 1750758849.20767 100720 37983ea46b421fda635e87a68f4935a4 ""
   "chapters/chapter4/turnout_margin_empirical_distribution_diff_scale.pdf" 1750786423.54227 258698 28404f7d412c2d41fdb4e3a856da5080 ""
@@ -312,16 +315,18 @@
   "chapters/chapter5/turnout_margin_empirical_simulation_distribution_diff_scale.pdf" 1750812189.16239 265761 d4053000bd7686c30baa2a873286c643 ""
   "chapters/chapter5/turnout_margin_empirical_simulation_distribution_pc.pdf" 1750812241.34803 241878 b62b5d6ba433d908c5d6296699cd26ba ""
   "chapters/chapter5/universality_empirical_analytical.pdf" 1750803308.11074 221831 513fcbe5d49c1b20895cc6fdf7df6659 ""
-  "chapters/chapter6/chapter6.tex" 1750847670.22308 21258 8a41c2afe341804e2e7b3215a93eddb6 ""
+  "chapters/chapter6/chapter6.tex" 1750848283.49106 21256 5b2d4e1e1c18e0780065286bc76bead7 ""
   "chapters/chapter6/scaled_margin_dist_India_us.pdf" 1750812706.85254 207921 4a0c85a3b037d04c819c0eb150dfbaec ""
   "chapters/chapter6/turnout_winner_runerup.pdf" 1750844182.77952 241141 1eba7cab7888173584e7470656bf2bb2 ""
   "chapters/chapter6/winner_runnerup_dist_india.pdf" 1750812706.86949 246804 c1b77c564673a2184c44732a3fcd89ec ""
-  "gameOfThrones.aux" 1750847672.29997 58343 585b14c6997d2175a5b9dcec279140d4 "pdflatex"
-  "gameOfThrones.bbl" 1750847534.17059 22422 e4e263c5b9f46f3e9f9f9255a7622d96 "bibtex gameOfThrones"
-  "gameOfThrones.ind" 1750847531.61151 0 d41d8cd98f00b204e9800998ecf8427e "makeindex gameOfThrones.idx"
-  "gameOfThrones.out" 1750847672.30329 24650 127505763df3147b87bb7083941334ed "pdflatex"
-  "gameOfThrones.tex" 1750845248.49577 3281 98d8766f431179bd2b7cebadc7ead86b ""
-  "gameOfThrones.toc" 1750847672.30351 9385 c7d5aef08519e2acb323ec9531bde852 "pdflatex"
+  "chapters/chapter7/chapter7.tex" 1750852840.30328 13920 a6d15057e2d67b0442b8c76b47fab6b1 ""
+  "chapters/chapter7/malpractice_flag.pdf" 1750849380.93694 244524 d92e0c82e0810cc48ef5d8d4afb29665 ""
+  "gameOfThrones.aux" 1750854855.08155 64713 c93c6848f0bb76e37c0b69297bbc4df3 "pdflatex"
+  "gameOfThrones.bbl" 1750854797.57866 22422 e4e263c5b9f46f3e9f9f9255a7622d96 "bibtex gameOfThrones"
+  "gameOfThrones.ind" 1750852685.75705 0 d41d8cd98f00b204e9800998ecf8427e "makeindex gameOfThrones.idx"
+  "gameOfThrones.out" 1750854855.08514 27492 496e53a9254d220c5ffdd3f1778ad8d0 "pdflatex"
+  "gameOfThrones.tex" 1750852684.40452 3273 7846343e17fdd01fd876d339e1c5481a ""
+  "gameOfThrones.toc" 1750854855.0854 10541 a45c392582ef8d4eeed9ebcdd43d089f "pdflatex"
   (generated)
   "gameOfThrones.aux"
   "gameOfThrones.idx"

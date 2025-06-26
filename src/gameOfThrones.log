@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.11)  25 JUN 2025 16:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.11)  25 JUN 2025 18:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1257,7 +1257,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[2])
+[2]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[3])
 \tf@toc=\write7
 \openout7 = `gameOfThrones.toc'.
 
@@ -1270,15 +1279,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[3]
-
-[4
-
-] (./chapters/chapter1/chapter1.tex
+[4] (./chapters/chapter1/chapter1.tex
 Chapter 1.
 
 
 [1
+
 
 
 ]
@@ -1332,7 +1338,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[6])
+[6]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[7])
 Overfull \hbox (26.90477pt too wide) in paragraph at lines 86--101
 []\OT1/ptm/m/n/12 Having es-tab-lished the foun-da-tional con-text, we now em-b
 ark on our first crit-i-cal in-quiry|designing
@@ -1347,30 +1362,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[7] (./chapters/chapter2/chapter2.tex
+[8] (./chapters/chapter2/chapter2.tex
 
-[8]
+[9]
 Chapter 2.
 
 
-[9
+[10
 
 ]
-Underfull \vbox (badness 1337) has occurred while \output is active []
-
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[10]
-Underfull \vbox (badness 6608) has occurred while \output is active []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1380,16 +1380,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [11]
-<chapters/chapter2/consensus_radicalization_polarization.pdf, id=627, 1599.6121
-2pt x 501.875pt>
-File: chapters/chapter2/consensus_radicalization_polarization.pdf Graphic file 
-(type pdf)
-<use chapters/chapter2/consensus_radicalization_polarization.pdf>
-Package pdftex.def Info: chapters/chapter2/consensus_radicalization_polarizatio
-n.pdf  used on input line 57.
-(pdftex.def)             Requested size: 463.77995pt x 145.50938pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1248) has occurred while \output is active []
 
 
 
@@ -1401,7 +1392,28 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [12]
-<chapters/chapter2/polarization_definition.pdf, id=636, 461.06734pt x 359.41304
+<chapters/chapter2/consensus_radicalization_polarization.pdf, id=687, 1599.6121
+2pt x 501.875pt>
+File: chapters/chapter2/consensus_radicalization_polarization.pdf Graphic file 
+(type pdf)
+<use chapters/chapter2/consensus_radicalization_polarization.pdf>
+Package pdftex.def Info: chapters/chapter2/consensus_radicalization_polarizatio
+n.pdf  used on input line 57.
+(pdftex.def)             Requested size: 463.77995pt x 145.50938pt.
+
+Underfull \vbox (badness 6047) has occurred while \output is active []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[13]
+<chapters/chapter2/polarization_definition.pdf, id=696, 461.06734pt x 359.41304
 pt>
 File: chapters/chapter2/polarization_definition.pdf Graphic file (type pdf)
 <use chapters/chapter2/polarization_definition.pdf>
@@ -1417,10 +1429,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[13 <./chapters/chapter2/consensus_radicalization_polarization.pdf>]
-Underfull \vbox (badness 2503) has occurred while \output is active []
-
-
+[14 <./chapters/chapter2/consensus_radicalization_polarization.pdf>]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1429,7 +1438,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[14 <./chapters/chapter2/polarization_definition.pdf>]
+[15 <./chapters/chapter2/polarization_definition.pdf>]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 8
 1.
 
@@ -1444,8 +1453,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[15]
-<chapters/chapter2/polarized_and_depolarized_trajectories.pdf, id=714, 1243.646
+[16]
+<chapters/chapter2/polarized_and_depolarized_trajectories.pdf, id=773, 1243.646
 26pt x 419.5675pt>
 File: chapters/chapter2/polarized_and_depolarized_trajectories.pdf Graphic file
  (type pdf)
@@ -1462,7 +1471,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[16]
+[17]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1471,8 +1480,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[17 <./chapters/chapter2/polarized_and_depolarized_trajectories.pdf>]
-<chapters/chapter2/echochamber.jpg, id=734, 3125.6775pt x 1405.25pt>
+[18 <./chapters/chapter2/polarized_and_depolarized_trajectories.pdf>]
+<chapters/chapter2/echochamber.jpg, id=793, 3125.6775pt x 1405.25pt>
 File: chapters/chapter2/echochamber.jpg Graphic file (type jpg)
 <use chapters/chapter2/echochamber.jpg>
 Package pdftex.def Info: chapters/chapter2/echochamber.jpg  used on input line 
@@ -1487,14 +1496,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[18 <./chapters/chapter2/echochamber.jpg>]
-<chapters/chapter2/parameters_vs_nudge.pdf, id=755, 573.61433pt x 209.78375pt>
+[19 <./chapters/chapter2/echochamber.jpg>]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[20]
+<chapters/chapter2/parameters_vs_nudge.pdf, id=820, 573.61433pt x 209.78375pt>
 File: chapters/chapter2/parameters_vs_nudge.pdf Graphic file (type pdf)
 <use chapters/chapter2/parameters_vs_nudge.pdf>
 Package pdftex.def Info: chapters/chapter2/parameters_vs_nudge.pdf  used on inp
 ut line 135.
 (pdftex.def)             Requested size: 463.77995pt x 169.61978pt.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1503,17 +1524,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[19]
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[20 <./chapters/chapter2/parameters_vs_nudge.pdf>]
-<chapters/chapter2/optimization_heatmap.pdf, id=811, 1797.96033pt x 493.45866pt
+[21 <./chapters/chapter2/parameters_vs_nudge.pdf>]
+<chapters/chapter2/optimization_heatmap.pdf, id=871, 1797.96033pt x 493.45866pt
 >
 File: chapters/chapter2/optimization_heatmap.pdf Graphic file (type pdf)
 <use chapters/chapter2/optimization_heatmap.pdf>
@@ -1521,9 +1533,6 @@ Package pdftex.def Info: chapters/chapter2/optimization_heatmap.pdf  used on in
 put line 149.
 (pdftex.def)             Requested size: 463.77995pt x 127.28726pt.
 
-Underfull \vbox (badness 3068) has occurred while \output is active []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1532,8 +1541,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[21 <./chapters/chapter2/optimization_heatmap.pdf>]
-<chapters/chapter2/new_model.pdf, id=838, 1204.5pt x 941.89783pt>
+[22 <./chapters/chapter2/optimization_heatmap.pdf>]
+<chapters/chapter2/new_model.pdf, id=897, 1204.5pt x 941.89783pt>
 File: chapters/chapter2/new_model.pdf Graphic file (type pdf)
 <use chapters/chapter2/new_model.pdf>
 Package pdftex.def Info: chapters/chapter2/new_model.pdf  used on input line 16
@@ -1551,7 +1560,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[22]
+[23]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1560,7 +1569,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[23 <./chapters/chapter2/new_model.pdf>]
+[24 <./chapters/chapter2/new_model.pdf>]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1569,7 +1578,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[24])
+[25])
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1578,19 +1587,23 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[25]
+[26] (./chapters/chapter3/chapter3.tex
 
-[26
+[27
 
-] (./chapters/chapter3/chapter3.tex
-
-[27]
+]
 Chapter 3.
 
 
 [28
 
 ]
+<chapters/chapter3/clea.png, id=977, 1543.7675pt x 877.2775pt>
+File: chapters/chapter3/clea.png Graphic file (type png)
+<use chapters/chapter3/clea.png>
+Package pdftex.def Info: chapters/chapter3/clea.png  used on input line 29.
+(pdftex.def)             Requested size: 463.77995pt x 263.5467pt.
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1600,83 +1613,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [29]
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[30]
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[31]
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[32]
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[33])
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[34] (./chapters/chapter4/chapter4.tex
-
-[35]
-Chapter 4.
-
-
-[36
-
-]
-<chapters/chapter4/election_template.png, id=969, 1403.2425pt x 347.2975pt>
-File: chapters/chapter4/election_template.png Graphic file (type png)
-<use chapters/chapter4/election_template.png>
-Package pdftex.def Info: chapters/chapter4/election_template.png  used on input
- line 29.
-(pdftex.def)             Requested size: 463.77995pt x 114.7834pt.
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[37]
-<chapters/chapter4/turnout_margin_empirical_distribution_pc.pdf, id=976, 822.97
-269pt x 268.93369pt>
-File: chapters/chapter4/turnout_margin_empirical_distribution_pc.pdf Graphic fi
-le (type pdf)
-<use chapters/chapter4/turnout_margin_empirical_distribution_pc.pdf>
-Package pdftex.def Info: chapters/chapter4/turnout_margin_empirical_distributio
-n_pc.pdf  used on input line 42.
-(pdftex.def)             Requested size: 463.77995pt x 151.55386pt.
+<chapters/chapter3/eci_pc.png, id=985, 767.86874pt x 786.94pt>
+File: chapters/chapter3/eci_pc.png Graphic file (type png)
+<use chapters/chapter3/eci_pc.png>
+Package pdftex.def Info: chapters/chapter3/eci_pc.png  used on input line 36.
+(pdftex.def)             Requested size: 463.77995pt x 475.30167pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1689,9 +1630,113 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[38 <./chapters/chapter4/election_template.png>]
-<chapters/chapter4/turnout_margin_empirical_distribution_diff_scale.pdf, id=988
-, 822.97269pt x 274.14198pt>
+[30 <./chapters/chapter3/clea.png>]
+<chapters/chapter3/form_20.png, id=992, 1208.515pt x 780.9175pt>
+File: chapters/chapter3/form_20.png Graphic file (type png)
+<use chapters/chapter3/form_20.png>
+Package pdftex.def Info: chapters/chapter3/form_20.png  used on input line 43.
+(pdftex.def)             Requested size: 463.77995pt x 299.68303pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[31 <./chapters/chapter3/eci_pc.png>]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[32 <./chapters/chapter3/form_20.png>]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[33]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[34]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[35])
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[36] (./chapters/chapter4/chapter4.tex
+
+[37]
+Chapter 4.
+
+
+[38
+
+]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[39]
+<chapters/chapter4/election_template.png, id=1050, 1403.2425pt x 347.2975pt>
+File: chapters/chapter4/election_template.png Graphic file (type png)
+<use chapters/chapter4/election_template.png>
+Package pdftex.def Info: chapters/chapter4/election_template.png  used on input
+ line 29.
+(pdftex.def)             Requested size: 463.77995pt x 114.7834pt.
+<chapters/chapter4/turnout_margin_empirical_distribution_pc.pdf, id=1052, 822.9
+7269pt x 268.93369pt>
+File: chapters/chapter4/turnout_margin_empirical_distribution_pc.pdf Graphic fi
+le (type pdf)
+<use chapters/chapter4/turnout_margin_empirical_distribution_pc.pdf>
+Package pdftex.def Info: chapters/chapter4/turnout_margin_empirical_distributio
+n_pc.pdf  used on input line 42.
+(pdftex.def)             Requested size: 463.77995pt x 151.55386pt.
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[40 <./chapters/chapter4/election_template.png>]
+<chapters/chapter4/turnout_margin_empirical_distribution_diff_scale.pdf, id=106
+4, 822.97269pt x 274.14198pt>
 File: chapters/chapter4/turnout_margin_empirical_distribution_diff_scale.pdf Gr
 aphic file (type pdf)
 <use chapters/chapter4/turnout_margin_empirical_distribution_diff_scale.pdf>
@@ -1710,7 +1755,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[39 <./chapters/chapter4/turnout_margin_empirical_distribution_pc.pdf>]
+[41 <./chapters/chapter4/turnout_margin_empirical_distribution_pc.pdf>]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1719,8 +1764,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[40 <./chapters/chapter4/turnout_margin_empirical_distribution_diff_scale.pdf>]
-<chapters/chapter4/universality_empirical.pdf, id=1070, 407.06865pt x 278.76013
+[42 <./chapters/chapter4/turnout_margin_empirical_distribution_diff_scale.pdf>]
+<chapters/chapter4/universality_empirical.pdf, id=1145, 407.06865pt x 278.76013
 pt>
 File: chapters/chapter4/universality_empirical.pdf Graphic file (type pdf)
 <use chapters/chapter4/universality_empirical.pdf>
@@ -1739,7 +1784,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[41]
+[43]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -1751,10 +1796,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[42 <./chapters/chapter4/universality_empirical.pdf>]
-Underfull \vbox (badness 1688) has occurred while \output is active []
-
-
+[44 <./chapters/chapter4/universality_empirical.pdf>]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1763,8 +1805,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[43]
-<chapters/chapter4/universality_simulation_empirical_analytical.pdf, id=1143, 7
+[45]
+<chapters/chapter4/universality_simulation_empirical_analytical.pdf, id=1219, 7
 43.12415pt x 278.09346pt>
 File: chapters/chapter4/universality_simulation_empirical_analytical.pdf Graphi
 c file (type pdf)
@@ -1781,22 +1823,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[44 <./chapters/chapter4/universality_simulation_empirical_analytical.pdf>]
+[46 <./chapters/chapter4/universality_simulation_empirical_analytical.pdf>]
 Overfull \hbox (14.61278pt too wide) in paragraph at lines 123--123
 |[]\OT1/ptm/b/n/17.28 Conclusion: Uni-ver-sal-ity as a Sig-na-ture of Demo-crat
 ic Com-
  []
 
-)
 
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[45]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1805,16 +1838,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[46] (./chapters/chapter5/chapter5.tex
+[47])
 
-[47]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[48] (./chapters/chapter5/chapter5.tex
+
+[49]
 Chapter 5.
 
-Underfull \vbox (badness 5771) has occurred while \output is active []
 
-
-
-[48
+[50
 
 ]
 Overfull \hbox (2.30898pt too wide) in paragraph at lines 23--23
@@ -1823,9 +1862,6 @@ in Dis-
  []
 
 
-Underfull \vbox (badness 7133) has occurred while \output is active []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1834,7 +1870,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[49]
+[51]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[52]
 LaTeX Font Info:    Trying to load font information for U+bbm on input line 58.
 
  (/usr/local/texlive/2025/texmf-dist/tex/latex/bbm-macros/ubbm.fd
@@ -1848,20 +1893,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[50]
-Underfull \vbox (badness 2245) has occurred while \output is active []
-
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[51]
-<chapters/chapter5/universality_empirical_analytical.pdf, id=1345, 407.06865pt 
+[53]
+<chapters/chapter5/universality_empirical_analytical.pdf, id=1420, 407.06865pt 
 x 278.76013pt>
 File: chapters/chapter5/universality_empirical_analytical.pdf Graphic file (typ
 e pdf)
@@ -1881,10 +1914,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[52 <./chapters/chapter5/universality_empirical_analytical.pdf>]
-Underfull \vbox (badness 1436) has occurred while \output is active []
-
-
+[54 <./chapters/chapter5/universality_empirical_analytical.pdf>]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1893,7 +1923,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[53]
+[55]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1902,7 +1932,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[54]
+[56]
 Underfull \hbox (badness 10000) in paragraph at lines 171--173
 
  []
@@ -1914,9 +1944,6 @@ ns for the three above-mentioned turnout
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1925,17 +1952,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[55]
-<chapters/chapter5/margin_turnout_dists.pdf, id=1447, 762.85pt x 762.8919pt>
+[57]
+<chapters/chapter5/margin_turnout_dists.pdf, id=1524, 762.85pt x 762.8919pt>
 File: chapters/chapter5/margin_turnout_dists.pdf Graphic file (type pdf)
 <use chapters/chapter5/margin_turnout_dists.pdf>
 Package pdftex.def Info: chapters/chapter5/margin_turnout_dists.pdf  used on in
 put line 204.
 (pdftex.def)             Requested size: 463.77995pt x 463.80353pt.
 
-Underfull \vbox (badness 2809) has occurred while \output is active []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1944,7 +1968,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[56]
+[58]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -1956,9 +1980,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[57 <./chapters/chapter5/margin_turnout_dists.pdf>]
+[59 <./chapters/chapter5/margin_turnout_dists.pdf>]
 <chapters/chapter5/turnout_margin_empirical_simulation_distribution_pc.pdf, id=
-1500, 822.97269pt x 268.93369pt>
+1575, 822.97269pt x 268.93369pt>
 File: chapters/chapter5/turnout_margin_empirical_simulation_distribution_pc.pdf
  Graphic file (type pdf)
 <use chapters/chapter5/turnout_margin_empirical_simulation_distribution_pc.pdf>
@@ -1973,7 +1997,7 @@ le) and polling booth/county-level (smaller
  []
 
 
-Underfull \vbox (badness 7168) has occurred while \output is active []
+Underfull \vbox (badness 2245) has occurred while \output is active []
 
 
 
@@ -1984,10 +2008,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[58 <./chapters/chapter5/turnout_margin_empirical_simulation_distribution_pc.pd
+[60 <./chapters/chapter5/turnout_margin_empirical_simulation_distribution_pc.pd
 f>]
 <chapters/chapter5/turnout_margin_empirical_simulation_distribution_diff_scale.
-pdf, id=1532, 822.97269pt x 274.14198pt>
+pdf, id=1607, 822.97269pt x 274.14198pt>
 File: chapters/chapter5/turnout_margin_empirical_simulation_distribution_diff_s
 cale.pdf Graphic file (type pdf)
 <use chapters/chapter5/turnout_margin_empirical_simulation_distribution_diff_sc
@@ -1995,7 +2019,7 @@ ale.pdf>
 Package pdftex.def Info: chapters/chapter5/turnout_margin_empirical_simulation_
 distribution_diff_scale.pdf  used on input line 227.
 (pdftex.def)             Requested size: 463.77995pt x 154.48892pt.
-<chapters/chapter5/scale_margin_distribution_32_countries.pdf, id=1534, 532.307
+<chapters/chapter5/scale_margin_distribution_32_countries.pdf, id=1609, 532.307
 05pt x 702.08937pt>
 File: chapters/chapter5/scale_margin_distribution_32_countries.pdf Graphic file
  (type pdf)
@@ -2015,7 +2039,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[59 <./chapters/chapter5/turnout_margin_empirical_simulation_distribution_diff_
+[61 <./chapters/chapter5/turnout_margin_empirical_simulation_distribution_diff_
 scale.pdf>]
 Overfull \vbox (20.75072pt too high) has occurred while \output is active []
 
@@ -2028,7 +2052,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[60 <./chapters/chapter5/scale_margin_distribution_32_countries.pdf>]
+[62 <./chapters/chapter5/scale_margin_distribution_32_countries.pdf>]
 Overfull \hbox (5.19649pt too wide) in paragraph at lines 247--248
 []\OT1/ptm/m/n/12 The model's abil-ity to pre-dict scaled mar-gin dis-tri-bu-ti
 ons from raw turnout data alone|without
@@ -2043,16 +2067,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[61] (./chapters/chapter6/chapter6.tex
+[63]
 
-[62]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[64] (./chapters/chapter6/chapter6.tex
+
+[65]
 Chapter 6.
 
 
-[63
+[66
 
 ]
-<chapters/chapter6/turnout_winner_runerup.pdf, id=1651, 579.63806pt x 431.48409
+<chapters/chapter6/turnout_winner_runerup.pdf, id=1730, 579.63806pt x 431.48409
 pt>
 File: chapters/chapter6/turnout_winner_runerup.pdf Graphic file (type pdf)
 <use chapters/chapter6/turnout_winner_runerup.pdf>
@@ -2060,36 +2093,9 @@ Package pdftex.def Info: chapters/chapter6/turnout_winner_runerup.pdf  used on
 input line 31.
 (pdftex.def)             Requested size: 463.77995pt x 345.2404pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 3849) has occurred while \output is active []
 
 
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[64]
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[65 <./chapters/chapter6/turnout_winner_runerup.pdf>]
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[66]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2107,7 +2113,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[68]
+[68 <./chapters/chapter6/turnout_winner_runerup.pdf>]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2117,17 +2123,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [69]
-<chapters/chapter6/winner_runnerup_dist_india.pdf, id=1738, 1084.05pt x 397.485
-pt>
-File: chapters/chapter6/winner_runnerup_dist_india.pdf Graphic file (type pdf)
-<use chapters/chapter6/winner_runnerup_dist_india.pdf>
-Package pdftex.def Info: chapters/chapter6/winner_runnerup_dist_india.pdf  used
- on input line 192.
-(pdftex.def)             Requested size: 463.77995pt x 170.05397pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2137,18 +2132,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [70]
-<chapters/chapter6/scaled_margin_dist_India_us.pdf, id=1756, 361.35pt x 505.89p
-t>
-File: chapters/chapter6/scaled_margin_dist_India_us.pdf Graphic file (type pdf)
-
-<use chapters/chapter6/scaled_margin_dist_India_us.pdf>
-Package pdftex.def Info: chapters/chapter6/scaled_margin_dist_India_us.pdf  use
-d on input line 204.
-(pdftex.def)             Requested size: 463.77995pt x 649.29697pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2157,10 +2140,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[71 <./chapters/chapter6/winner_runnerup_dist_india.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
+[71]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2170,7 +2150,33 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [72]
-Overfull \vbox (71.69301pt too high) has occurred while \output is active []
+<chapters/chapter6/winner_runnerup_dist_india.pdf, id=1824, 1084.05pt x 397.485
+pt>
+File: chapters/chapter6/winner_runnerup_dist_india.pdf Graphic file (type pdf)
+<use chapters/chapter6/winner_runnerup_dist_india.pdf>
+Package pdftex.def Info: chapters/chapter6/winner_runnerup_dist_india.pdf  used
+ on input line 195.
+(pdftex.def)             Requested size: 463.77995pt x 170.05397pt.
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[73]
+<chapters/chapter6/scaled_margin_dist_India_us.pdf, id=1836, 361.35pt x 505.89p
+t>
+File: chapters/chapter6/scaled_margin_dist_India_us.pdf Graphic file (type pdf)
+
+<use chapters/chapter6/scaled_margin_dist_India_us.pdf>
+Package pdftex.def Info: chapters/chapter6/scaled_margin_dist_India_us.pdf  use
+d on input line 203.
+(pdftex.def)             Requested size: 371.02538pt x 519.43602pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -2181,7 +2187,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[73 <./chapters/chapter6/scaled_margin_dist_India_us.pdf>])
+[74 <./chapters/chapter6/winner_runnerup_dist_india.pdf>]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2190,7 +2196,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[74]
+[75 <./chapters/chapter6/scaled_margin_dist_India_us.pdf>])
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2199,14 +2205,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[75]
-
-[76] (./gameOfThrones.bbl
-
-[77
-
-
-]
+[76]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2214,17 +2213,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[77] (./chapters/chapter7/chapter7.tex
 
 [78]
+Chapter 7.
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+[79
 
-[79]
+]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2243,6 +2241,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [81]
+Overfull \hbox (9.42381pt too wide) in paragraph at lines 46--47
+\OT1/ptm/m/n/12 Electoral mal-prac-tice un-der-mines the foun-da-tional prin-ci
+-ple of democ-racy|that gov-er-nance should
+ []
+
+<chapters/chapter7/malpractice_flag.pdf, id=1935, 417.55556pt x 325.12326pt>
+File: chapters/chapter7/malpractice_flag.pdf Graphic file (type pdf)
+<use chapters/chapter7/malpractice_flag.pdf>
+Package pdftex.def Info: chapters/chapter7/malpractice_flag.pdf  used on input 
+line 57.
+(pdftex.def)             Requested size: 463.77995pt x 361.13416pt.
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2252,6 +2262,85 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [82]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[83 <./chapters/chapter7/malpractice_flag.pdf>]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[84])
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[85]
+
+[86] (./gameOfThrones.bbl
+
+[87
+
+
+]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[88]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[89]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[90]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[91]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[92]
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 3
 51.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1pcr.fd
@@ -2271,7 +2360,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[83]
+[93]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2280,7 +2369,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[84])
+[94])
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2289,7 +2378,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[85] (./gameOfThrones.aux)
+[95] (./gameOfThrones.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -2299,16 +2388,16 @@ L3 programming layer <2025-01-18>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `gameOfThrones.out' has not changed.
-(rerunfilecheck)             Checksum: 127505763DF3147B87BB7083941334ED;24650.
+(rerunfilecheck)             Checksum: 496E53A9254D220C5FFDD3F1778AD8D0;27492.
  ) 
 Here is how much of TeX's memory you used:
- 35705 strings out of 473190
- 713101 string characters out of 5715800
- 1112878 words of memory out of 5000000
- 57973 multiletter control sequences out of 15000+600000
+ 35785 strings out of 473190
+ 714992 string characters out of 5715800
+ 1119830 words of memory out of 5000000
+ 58023 multiletter control sequences out of 15000+600000
  586714 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,12n,121p,1797b,1535s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,12n,121p,1797b,1514s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/rip/Library/texlive/2025/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.
 600pk></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10
 .pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cm
@@ -2332,10 +2421,10 @@ e/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/
 s/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/u
 tmri8a.pfb>
-Output written on gameOfThrones.pdf (89 pages, 12417522 bytes).
+Output written on gameOfThrones.pdf (99 pages, 13108816 bytes).
 PDF statistics:
- 2075 PDF objects out of 2487 (max. 8388607)
- 1564 compressed objects within 16 object streams
- 363 named destinations out of 1000 (max. 500000)
- 785 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2222 PDF objects out of 2487 (max. 8388607)
+ 1689 compressed objects within 17 object streams
+ 389 named destinations out of 1000 (max. 500000)
+ 893 words of extra memory for PDF output out of 10000 (max. 10000000)
 
